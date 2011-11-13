@@ -205,7 +205,7 @@ plaintext and the secret key. </p>
 		          <p>Do your rough work here:<br>
 		            <textarea id="textarea2" name="textarea" rows="8" cols="50"></textarea>
 		          </p>
-		          <!break point---->
+		          <!--------------break point---->
 		    <br/>
 		    <hr>
 		    <br/>
@@ -243,8 +243,8 @@ plaintext and the secret key. </p>
 	            </select>
 	            </p>
 	            <p>
-	              <input name="btnEn" value="v Encrypt v" onclick="Shift_Encrypt()" type="button">
-	              <input name="btnDe" value="^ Decrypt ^" onclick="Shift_Decrypt()" type="button">
+	              <input name="btnEn" value="v Encrypt v" onclick="Shift_Encrypt('shift_plaintext', 'shift_ciphertext')" type="button">
+	              <input name="btnDe" value="^ Decrypt ^" onclick="Shift_Decrypt('shift_ciphertext','shift_plaintext')" type="button">
 	            </p>
 	            <p>Ciphertext<br>
 	              <textarea id="shift_ciphertext" name="shift_ciphertext" rows="2" cols="50"></textarea>
