@@ -16,7 +16,7 @@ edit -->
   <!-- The lab Header contains the logo and the name of the lab,
   usually displayed on the top of the page-->
 
-  <header id="experiment-header" class="default">
+  <header id="experiment-header" >
   
     <div id="experiment-header-logo" class="logo">
       <!-- Enclose the logo image of your lab or write it in 
@@ -28,7 +28,7 @@ edit -->
       <!-- Write the name of your lab and link it to the home 
       page of your lab (h1 tag is preferred while writing your 
       lab name)-->
-      <a href="../index.html">Physics Lab</a>	
+      <a href="../index.html">Cryptograpy Lab</a>	
     </div>
 
     <!-- Add any additional element you want to add to the lab 
@@ -51,7 +51,7 @@ edit -->
       <header id="experiment-article-heading" class="heading">
         <!-- You can add a welcome message or title of the 
         experiment here -->
-        Simple Pendulum
+        Vernam Cipher and Perfect secrecy
         <!-- Add any additional element if required with proper 
         enclosing-->
       </header>
@@ -91,29 +91,25 @@ edit -->
           element, You can also include images with <img> tag -->
           <div id="experiment-article-section-1-content" 
           class="content">	
-            <p>
-            In this module, basic concepts of simple oscillator 
-            are explained. Initially, an example of simple 
-            pendulum is taken and the basic terminology i.e., 
-            what is <span class="term">initial displacement</span>, <span class="term">
-            initial velocity</span>,<span class="term">natural frequency
-            </span> and <span class="term">time period</span> are explained. 
-            Each of these terms is illustrated by giving an 
-            example, where user can enter his value and observe 
-            the behavior of structure for his input.
-            </p>
 
             <p>
-            Simple harmonic oscillator consists of a <span class="term"> 
-            mass (m) </span> hanging from a string of <span class="term">
-            length (l)</span>, fixed at a pivot point P. 
-            When the mass is displaced from its <span class="term"> mean 
-            position </span> by giving some initial displacement 
-            (angle), oscillator starts swinging back and fourth 
-            with <span class="term">periodic motion</span>.
-            </p>
+		Here we see a perfectly secure cryptosystem which was developed by
+		Gilbert Vernam in 1918. Vernam sees a trade off between security and
+		convenience, and the trade-off has to do with the length of the key
+		tape as its security depends on the fact that the key is used only
+		once.
+	    </p>	
 
-          <img src="../images/Pendulum.JPG" alt="pendulum">
+	    <br>
+
+	    <h3>About the experiment:</h3>
+	    <p>
+		The main idea is to realize that any perfectly secure encryption scheme
+		(and not just the One-Time Pad) requires the keyspace to be at least as
+		large as the message space, and is therefore <span style="font-style: italic;">impractical</span>
+	   </p>
+
+       
         </div>
 
 
@@ -141,31 +137,24 @@ edit -->
         <div id="experiment-article-section-2-content" 
         class="content">
           <p>
-          There are two solutions to \(ax^2 + bx + c = 0\) and 
-          they are $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$ 
-          </p>
-          <p>
-          By applying <span class="term">Newton's second law</span> for 
-          rotational systems, the equation of motion for the 
-          pendulum may be obtained.
-          </p> 
-
-          <p>
-          Here \(\tau\)  =  <span class="term">Torque </span>;   I  =  
-          <span class="term">Moment of Inertia</span>;
-          &alpha; = <span class="term"> Angular
-          Velocity</span>. m is mass of the oscillator, l is
-          the length of the oscillator and \(\theta\) is initial
-          displacement. 
-          </p>
-          
-          <p>							
-          If the amplitude of the angular displacement is 
-          small then we can use the approximation 
-          $$ sin \theta \approx \theta $$
-
-          </p>
-
+	Vernam proposed a bit-wise exclusive or of the message stream with a
+	truely random zero-one stream which was shared by sender and receipient.
+	</p>
+	<pre>
+	Example:<br><br>   SENDING<br>   -------<br>   message: 0 0 1 0 1 1 0 1 0 1 1 1 ...<br>   pad:     1 0 0 1 1 1 0 0 1 0 1 1 ...<br>   XOR      ---------------------------<br>   cipher:  1 0 1 1 0 0 0 1 1 1 0 0 ...<br><br>   RECEIVING<br>   ---------<br>   cipher:  1 0 1 1 0 0 0 1 1 1 0 0 ...<br>   pad:     1 0 0 1 1 1 0 0 1 0 1 1 ...<br>   XOR      ---------------------------<br>   message: 0 0 1 0 1 1 0 1 0 1 1 1 ...<br>
+	</pre><br><br>
+	<p>
+	This cipher is unbreakable in a very strong sense. The intuition is
+	that any message can be transformed into any cipher (of the same
+	length) by a pad, and all transformations are equally likely. Given a
+	two letter message, there is a pad which adds to the message to give
+	OK, and another pad which adds to the message to give NO. Since either
+	of these pads are equally likely, the message is equally likely to be
+	OK or NO.
+	</p>
+	<p>
+	For more details on the topic, click <a href="media/lec1.pdf">here</a><br>
+	</p>
         </div>
       </section>
 
@@ -186,15 +175,12 @@ edit -->
         <div id="experiment-article-section-3-content" 
         class="content">
           <p>
-            Objective of simple harmonic oscillator experiment 
-            is to understand the concept of <span class="term">time period 
-            </span>(natural frequency) in <span class="term"> harmonic 
-            oscillations </span>.
-          </p> 
+		To understand that perfectly secure encrytion is possible (for instance we
+		may use the Vernam cipher)&nbsp; but&nbsp; is&nbsp; terribly&nbsp;
+		impractical<br>
+	  </p>
        
-          <img  src="http://cite.iiit.ac.in/vlab/cITe/images/eerc/Expr1/simple-pendulum.JPG" 
-          alt="simple pendulum" />
-
+         
         </div>
 
       </section>
@@ -215,12 +201,61 @@ edit -->
 
         <div id="experiment-article-section-4-content" 
         class="content">
-          <p>
-	        Place or link to your experiment java applet 
-	        or flash file here. 
-	        
-            
-          </p>
+             		<h2>Testing Perfect Secrecy using Shannon's Theorem<br>
+</h2>
+			<p>
+			Is the following encryption scheme perfectly secure?
+			You can observe as many encrypted text and key pairs as you wish.
+			Press "Next Ciphertext" method to get more pairs.</p>
+			<pre> Plaintext: <textarea name="plainarea" cols="50" rows="1" readonly="readonly" id="plainarea">11101010</textarea>   <input name="changePlainText" value="Next Plaintext" onclick="next_plain_text()" type="button">
+       Key: <textarea name="keyarea_gen" cols="50" rows="1" readonly="readonly" id="keyarea_gen">01010100</textarea>   <input name="changeKey" value="Next Keytext" onclick="next_key()" type="button"> <br>
+Derive another key such that p=0.5:
+          <textarea name="keyarea" cols="50" rows="1" id="keyarea"></textarea>  
+	 <input name="checkKey" value="Check Key" onclick="check_key()" type="button">
+	 <textarea id="key_notify" rows="1" cols="50" style="border: 0pt none ;"></textarea>
+			</pre>
+			<p>
+		            <input name="btnEn" value="v Encrypt v" onclick="Encrypt_p()" type="button">
+			</p>
+<pre>Ciphertext: <textarea name="cipherarea" cols="50" rows="1" readonly="readonly" id="cipherarea">01010100</textarea><br>
+                    <input name="Next_Encryption" value="Next Encryption Scheme" onclick="Next_Encryption()" type="button">
+</pre>
+
+		          <p>For all the possible pairs of plaintext of
+size 8, and the key given by you, we will provide you with the
+encrypted texts with the same encryption scheme. You can observe the
+input and try to break it. <br>Put your key here (between size 6 and 12): </p><form name="user_key"><input id="user_key" name="limitedtextfield" cols="12" value="01010100" maxlength="12" type="text"></form><br>
+			   <input name="generatePairs" value="Encrytion Set" onclick="generate_all_pairs()" type="button"><br>
+
+			    <br>Multiple tuples of &lt;Plaintext, Ciphertext&gt;:<br>
+		            <textarea id="textarea2" name="textarea" rows="8" cols="50"></textarea>
+		          <p></p>
+		          <br>
+
+         		<h2>Is the given encryption scheme secure?</h2>
+			<hr>
+<p>Yes/No   </p><form name="yesno"><input id="yesno" value="" maxlength="3" type="text"></form>
+<p>If NO, Give two plaintexts 'm1' and 'm2' for the above key such that Encryption(m1) = Encryption(m2)? </p>
+<form name="m">m1: <input id="m1" value="" maxlength="20" type="text">
+m2: <input id="m2" value="" maxlength="20" type="text"></form>
+<input name="checkAnswer" value="Check Answer!!" onclick="checkAnswer()" type="button"> <br><br>
+<textarea id="notification" name="notification" rows="1" cols="50" style="border: 0pt none ;"></textarea>
+<p></p>
+
+         		<h2>Simulator</h2>
+			<hr><br>
+			<p>plaintext<br><textarea id="p" name="p" rows="1" cols="25">10010011000110</textarea>
+		          </p><p>key =
+		            <input id="key" name="key" size="25" maxchars="25" value="1010110 0110001" type="text">
+		              <input name="genKey" value="Generate Random Key" onclick="Vernam_RandKey()" type="button">
+		          </p>
+		          <p>
+		            <input name="btnEn" value="v Encrypt v" onclick="Vernam_Encrypt()" type="button">
+		            <input name="btnDe" value="^ Decrypt ^" onclick="Vernam_Decrypt()" type="button">
+		          </p>
+		          <p>Ciphertext<br>
+		              <textarea id="c" name="c" rows="2" cols="50"></textarea>
+	                </p>
         </div>
 
       </section>
@@ -240,38 +275,24 @@ edit -->
 
         <div id="experiment-article-section-5-content" 
         class="content">
-          <p> 
-            Start the experiment with the default values of 
-            length, mass and intial displacement (in angle). 
-            Pause the experiment after few cycles and note 
-            the observation.
-          </p> 
-
-        <h3>Observation 1:</h3> 
-          <ol> 
-            
-            <li>
-              Find the time period of the pendulum by noting the 
-              time interval of any one complete cycle from the 
-              response graph. 
-            </li> 
-
-            <li>
-              You may note that this time period value is same 
-              for any complete cycle.
-              <a  class="more" href="cITe/Documents/eerc/
-              pdf/1.manual.pdf">Read More</a>  
-            </li> 
-
-          </ol>
-
-          <a onclick="window.open('http://cite.iiit.ac.in/vlab/cITe/media/eerc/Expr1/shm.htm', 
-          null,'scrollbars=yes, width=' + (screen.availWidth) 
-          +',height=' + (screen.availHeight)); return false;"
-
-          href="http://cite.iiit.ac.in/vlab/cITe/media/eerc/Expr1/shm.htm">		   
-          <img src="http://cite.iiit.ac.in/vlab/cITe/images/demo.JPG" 
-          alt="" width="400" height="200"></a>
+          <p>
+STEP 1: Select a plain text and a key by clicking on the Next buttons
+next to the respective fields.<br><br>
+				STEP 2: If the generated key is biased, make it unbiased in 0 and 1, and use it. You can use the idea given in theory part.<br><br>
+STEP 3: On clicking on "Encrypt" button, you will get the ciphertext
+for the same encryption scheme. You can get the cipher text for as many
+plaintext and key pairs as you like for the same encryption scheme. You
+can change the encryption scheme too if you want.<br><br>
+STEP 4: You can take a look at all the possible 2^(length of plaintext
++ length of key) tuples of plaintext, key and ciphertext in the next
+block.<br><br>
+STEP 5: By observing the tuples obtained above, you need to tell if the
+encryption scheme being used is secure or not. If not, you need to find
+the message, m and ciphertext, c such that P(M=m|C=c) = P(M=m). In the
+experiment the size of the message space and that of the key space are
+equal. Thus from Shannon's theorem, to show that a scheme is not
+perfect, it is enough if you locate two distinct plaintexts that are
+encrypted to obtain the same ciphertext for the same key&nbsp; </p>
 
           </div>
 
@@ -293,50 +314,16 @@ edit -->
           <div id="experiment-article-section-6-content" 
           class="content">
             
-            <p>
-              
-              <b>Q1.</b> 
-              Time taken for one complete oscillation 
-              is called Time Period of the oscillator. <br> 
-              <input type="radio" name="q1" id="q1" value="1"> 
-                <font color="green"> True </font> <br> 
-              <input type="radio" name="q1" id="q1" value="0">
-                <font color="red"> False </font> <br/><br/> 
-              
-              <b>Q2.</b> 
-              Time period of the oscillator is constant for 
-              given values of mass, length and initial 
-              conditions.<br> 
-              <input type="radio" name="q2" id="q2" value="1"> 
-                <font color="green"> True </font> <br> 
-              <input type="radio" name="q2" id="q2"value="0">
-                <font color="red"> False </font> <br/><br/> 
-              
-              <b>Q3.</b> 
-              Value of Time period depends on initial 
-              conditions. <br> 
-              <input type="radio" name="q3" id="q3" value="1"> 
-                <font color="green"> True </font> <br> 
-              <input type="radio" name="q3" id="q3"value="0">
-                <font color="red"> False </font> <br/><br/> 
-              
-              <b>Q4.</b> 
-              Value of time period depends on mass. <br> 
-              <input type="radio" name="q4" id="q4" value="1"> 
-                <font color="green"> True </font> <br> 
-              <input type="radio" name="q4" id="q4" value="0">
-                <font color="red"> False </font> <br/><br/> 
-              
-              <b>Q5.</b> 
-              Value of time period depends on length of the 
-              oscillator. <br> 
-              <input type="radio" name="q5" id="q5" value="1"> 
-                <font color="green"> True </font> <br> 
-              <input type="radio" name="q5" id="q5"value="0">
-                <font color="red"> False </font> <br/><br/> 
-              <input type="submit" value="Submit Answers" 
-                class="button" />
-            </p>
+           <ul>
+  <li>&nbsp;Prove that if only a single character is encrypted, then the shift cipher is perfectly secret.</li>
+  <li>What is the largest plaintext space M you can find for which the
+mono-alphabetic substitution cipher provides perfect secrecy? (Note: M
+need not contain only valid English words.)<br>
+  </li>
+  <li>Show how to use the Vigenere cipher to encrypt any word of length
+t so that perfect secrecy is obtained (Note: you can choose the length
+of the key).</li>
+</ul>
 
           </div>
 
@@ -358,7 +345,7 @@ edit -->
           <div id="experiment-article-section-7-content" 
           class="content">
 	    <p>
-	      Procedure for the experiment is as follows.
+	      Procedure for the experiment is given in thoery and manual.
 	    </p>
 	  </div>
 	
@@ -382,20 +369,15 @@ edit -->
           class="content">
             <ul>	
               <li>
-                <a href="http://en.wikipedia.org/wiki/
-                Simple_harmonic_motion">http://en.wikipedia.org/wiki/Simple_harmonic_motion</a>
+               <a href=http://en.wikipedia.org/wiki/One-time_pad>Wikipedia</a>
               </li>
               <li>
-                <a href="http://www.physics.uoguelph.ca/
-                tutorials/shm/Q.shm.html">http://www.physics.uoguelph.ca/tutorials/shm/Q.shm.html</a>
+                <a href=http://www.cs.berkeley.edu/~luca/cs276/lecture01.pdf>Notes on One Time Pad</a>
               </li> 
               <li>
-                Dynamics of structures by Anil K chopra. 
+                Introduction to Modern Cryptography,Jonathan Katz
               </li> 
-              <li>
-                <a href="http://surendranath.tripod.com/Applets/
-                Oscillations/SHM/SHMApplet.html">http://surendranath.tripod.com/Applets/Oscillations/SHM/SHMApplet.html</a> 
-              </li>
+             
             </ul>
           </div>
 
