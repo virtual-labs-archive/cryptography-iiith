@@ -51,7 +51,7 @@ edit -->
       <header id="experiment-article-heading" class="heading">
         <!-- You can add a welcome message or title of the 
         experiment here -->
-        Simple Pendulum
+        Breaking the Shift Cipher
         <!-- Add any additional element if required with proper 
         enclosing-->
       </header>
@@ -139,31 +139,14 @@ plaintext and the secret key. </p>
         element, we can also include images with <img> tag -->
         <div id="experiment-article-section-2-content" 
         class="content">
-          <p>
-          There are two solutions to \(ax^2 + bx + c = 0\) and 
-          they are $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$ 
-          </p>
-          <p>
-          By applying <span class="term">Newton's second law</span> for 
-          rotational systems, the equation of motion for the 
-          pendulum may be obtained.
-          </p> 
-
-          <p>
-          Here \(\tau\)  =  <span class="term">Torque </span>;   I  =  
-          <span class="term">Moment of Inertia</span>;
-          &alpha; = <span class="term"> Angular
-          Velocity</span>. m is mass of the oscillator, l is
-          the length of the oscillator and \(\theta\) is initial
-          displacement. 
-          </p>
-          
-          <p>							
-          If the amplitude of the angular displacement is 
-          small then we can use the approximation 
-          $$ sin \theta \approx \theta $$
-
-          </p>
+         <p>For a very brief theory of shift ciphers and their analysis, click <a href="shiftcipher.pdf">here</a><br></p>
+			<a href="shiftcipher.pdf"><img src="image1.png" alt="here"/></a><br>
+<br>
+</div><div id="objective"><h3>Objective</h3>
+                    <p>
+			To understand that secure encryption is not possible with small keyspace. This is more popularly&nbsp; known as the <span style="font-style: italic;">principle of large key space
+		    </span></p>
+                    <br>
 
         </div>
       </section>
@@ -185,15 +168,12 @@ plaintext and the secret key. </p>
         <div id="experiment-article-section-3-content" 
         class="content">
           <p>
-            Objective of simple harmonic oscillator experiment 
-            is to understand the concept of <span class="term">time period 
-            </span>(natural frequency) in <span class="term"> harmonic 
-            oscillations </span>.
+           <p>
+			To understand that secure encryption is not possible with small keyspace. This is more popularly&nbsp; known as the <span style="font-style: italic;">principle of large key space
+		    </span></p>
           </p> 
        
-          <img  src="http://cite.iiit.ac.in/vlab/cITe/images/eerc/Expr1/simple-pendulum.JPG" 
-          alt="simple pendulum" />
-
+         
         </div>
 
       </section>
@@ -209,17 +189,107 @@ plaintext and the secret key. </p>
 
         <div id="experiment-article-section-4-heading" 
         class="heading">
-          Experiment
+          Experiment :
         </div>
 
         <div id="experiment-article-section-4-content" 
         class="content">
-          <p>
-	        Place or link to your experiment java applet 
-	        or flash file here. 
-	        
-            
-          </p>
+          <script type="application/javascript" src="js/exp1.js"></script>
+         		<h2>Breaking the Shift Cipher</h2>
+		<p><b>Decrypt the following ciphertext. You can use the tool beneath in PART III to simulate the Shift cipher.</b></p>
+		    <hr/>	
+		    <p><b>PART I</b></p>	
+		    <p>Ciphertext to be decrypted:<br>
+		            <textarea cols="50" rows="2" readonly="readonly" id="textarea">haahjr ha khdu</textarea><br/>
+		            <input name="btnEn2" value="Next Ciphertext" onclick="Next_Shift_Test()" type="button">
+		          </p>
+			  <br/><hr><br/>
+			  <p><b>PART II</b></p>	
+		          <p>Do your rough work here:<br>
+		            <textarea id="textarea2" name="textarea" rows="8" cols="50"></textarea>
+		          </p>
+		          <!break point---->
+		    <br/>
+		    <hr>
+		    <br/>
+		        <p><b>PART III</b></p>
+			<p> Plaintext:<br>
+	            <textarea id="shift_plaintext" name="shift_plaintext" rows="2" cols="50">the quick brown fox</textarea>
+	             shift:
+	              <select id="shift_key" name="shift_key" size="1">
+	                <option value="0">0</option>
+	                <option value="1">1</option>
+	                <option value="2">2</option>
+	                <option value="3">3</option>
+	                <option value="4">4</option>
+	                <option value="5" selected="selected">5</option>
+	                <option value="6">6</option>
+	                <option value="7">7</option>
+	                <option value="8">8</option>
+	                <option value="9">9</option>
+	                <option value="10">10</option>
+	                <option value="11">11</option>
+	                <option value="12">12</option>
+	                <option value="13">13</option>
+	                <option value="14">14</option>
+	                <option value="15">15</option>
+	                <option value="16">16</option>
+	                <option value="17">17</option>
+	                <option value="18">18</option>
+	                <option value="19">19</option>
+	                <option value="20">20</option>
+	                <option value="21">21</option>
+	                <option value="22">22</option>
+	                <option value="23">23</option>
+	                <option value="24">24</option>
+	                <option value="25">25</option>
+	            </select>
+	            </p>
+	            <p>
+	              <input name="btnEn" value="v Encrypt v" onclick="Shift_Encrypt()" type="button">
+	              <input name="btnDe" value="^ Decrypt ^" onclick="Shift_Decrypt()" type="button">
+	            </p>
+	            <p>Ciphertext<br>
+	              <textarea id="shift_ciphertext" name="shift_ciphertext" rows="2" cols="50"></textarea>
+	            </p><br/>
+		    <hr><br/>
+		    <p><b>PART IV</b></p>	
+		    <p>Enter your solution Plaintext and shift key here:<br>
+		            <textarea id="textarea3" name="textarea3" rows="2" cols="50"></textarea>
+		          Key          
+		          <select id="select_ans_shift" name="select" size="1">
+		            <option value="0">0</option>
+		            <option value="1">1</option>
+		            <option value="2">2</option>
+		            <option value="3">3</option>
+		            <option value="4">4</option>
+		            <option value="5">5</option>
+		            <option value="6">6</option>
+		            <option value="7">7</option>
+		            <option value="8">8</option>
+		            <option value="9">9</option>
+		            <option value="10">10</option>
+		            <option value="11">11</option>
+		            <option value="12">12</option>
+		            <option value="13">13</option>
+		            <option value="14">14</option>
+		            <option value="15">15</option>
+		            <option value="16">16</option>
+		            <option value="17">17</option>
+		            <option value="18">18</option>
+		            <option value="19">19</option>
+		            <option value="20">20</option>
+		            <option value="21">21</option>
+		            <option value="22">22</option>
+		            <option value="23">23</option>
+		            <option value="24">24</option>
+		            <option value="25">25</option>
+		            <option value="-1" selected="selected">_</option>
+		            </select>
+		          </p>
+		            <input name="checkAnswer" value="Check my answer!" onclick="CheckAnswer()" type="button"> <br> <br>
+		            <textarea id="notification" name="notification" rows="1" cols="50" style="border: 0pt none ;"></textarea>
+
         </div>
 
       </section>
@@ -239,12 +309,44 @@ plaintext and the secret key. </p>
 
         <div id="experiment-article-section-5-content" 
         class="content">
-          <p> 
-            Start the experiment with the default values of 
-            length, mass and intial displacement (in angle). 
-            Pause the experiment after few cycles and note 
-            the observation.
-          </p> 
+          <p><b>STEP1:</b> For the given ciphertext in the <b>PART I</b> of the simulation
+page, the first step is to decrypt it using each of the twenty-six
+different keys, k=0,1,...,25 and obtain the corresponding plaintexts.
+For decryption, you may use the tool given in the <b>PART III</b> of the
+simulation page.<br><br> <b>STEP 2:</b> After each decryption, you may
+cut-and-paste the resultant plaintext in the scratch-pad in the
+<b>(PART II)</b> of the simulation page, if you need to remember it.<br><br>
+<b>STEP 3:</b> Finally, observe the plaintexts and choose the most appropriate
+one (the one that is a meaningful English text) as the recovered
+plaintext and cut-and-paste it in the text-field named <b>PART IV</b> "Solution
+Plaintext". Also select the corresponding key in the text-field named
+"Key" and click on "Check My answer" Button.<br> <br>
+			<b>STEP 4 [OPTIONAL]:</b> Verify that your answer is correct, by encrypting the solution plaintext with your key.</p>
+ 			<p> 
+			<i><u>An Example:</u></i><br><br>
+			Let us say we have a cipher text "KRZ DUH BRX" generated by a shift cipher.<br>
+      			We carry out the brute force attack as follows:<br><br>
+			For k=0:
+			</p><div id="manualexample">
+			cipher text: &nbsp;K R Z&nbsp;&nbsp;D U H&nbsp;&nbsp;B R X<br>
+			&nbsp;&nbsp;plain text: &nbsp;k r z&nbsp;&nbsp;d u h&nbsp;&nbsp;b r x
+			</div>
+			For k=1:
+			<div id="manualexample">
+			cipher text: &nbsp;K R Z&nbsp;&nbsp;D U H&nbsp;&nbsp;B R X<br>
+			&nbsp;&nbsp;plain text: &nbsp;j q y&nbsp;&nbsp;c t g&nbsp;&nbsp;a q w
+			</div>
+			For k=2:
+			<div id="manualexample">
+			cipher text: &nbsp;K R Z&nbsp;&nbsp;D U H&nbsp;&nbsp;B R X<br>
+			&nbsp;&nbsp;plain text: &nbsp;l p x&nbsp;&nbsp;b s f&nbsp;&nbsp;z p v
+			</div>
+			For k=3:
+			<div id="manualexample">
+			cipher text: &nbsp;K R Z&nbsp;&nbsp;D U H&nbsp;&nbsp;B R X<br>
+			&nbsp;&nbsp;plain text: &nbsp;h o w&nbsp;&nbsp;a r e&nbsp;&nbsp;y o u
+			</div><br>
+			For k=3, we obtain a meaningful plain text namely how are you and hence we are done.
 
         <h3>Observation 1:</h3> 
           <ol> 
@@ -292,51 +394,62 @@ plaintext and the secret key. </p>
           <div id="experiment-article-section-6-content" 
           class="content">
             
-            <p>
-              
-              <b>Q1.</b> 
-              Time taken for one complete oscillation 
-              is called Time Period of the oscillator. <br> 
-              <input type="radio" name="q1" id="q1" value="1"> 
-                <font color="green"> True </font> <br> 
-              <input type="radio" name="q1" id="q1" value="0">
-                <font color="red"> False </font> <br/><br/> 
-              
-              <b>Q2.</b> 
-              Time period of the oscillator is constant for 
-              given values of mass, length and initial 
-              conditions.<br> 
-              <input type="radio" name="q2" id="q2" value="1"> 
-                <font color="green"> True </font> <br> 
-              <input type="radio" name="q2" id="q2"value="0">
-                <font color="red"> False </font> <br/><br/> 
-              
-              <b>Q3.</b> 
-              Value of Time period depends on initial 
-              conditions. <br> 
-              <input type="radio" name="q3" id="q3" value="1"> 
-                <font color="green"> True </font> <br> 
-              <input type="radio" name="q3" id="q3"value="0">
-                <font color="red"> False </font> <br/><br/> 
-              
-              <b>Q4.</b> 
-              Value of time period depends on mass. <br> 
-              <input type="radio" name="q4" id="q4" value="1"> 
-                <font color="green"> True </font> <br> 
-              <input type="radio" name="q4" id="q4" value="0">
-                <font color="red"> False </font> <br/><br/> 
-              
-              <b>Q5.</b> 
-              Value of time period depends on length of the 
-              oscillator. <br> 
-              <input type="radio" name="q5" id="q5" value="1"> 
-                <font color="green"> True </font> <br> 
-              <input type="radio" name="q5" id="q5"value="0">
-                <font color="red"> False </font> <br/><br/> 
-              <input type="submit" value="Submit Answers" 
-                class="button" />
-            </p>
+           <p><b>Solve the following using TOOL given below:</b></p>
+			<ul>
+				<li><p>Encrypt the following plain text using key k = 7.<br>
+				    Plain Text : Lord Rama was a good king.</p></li>
 
+				<li><p>Given a plain text and its corresponding cipher text, find out the key used for the encryption of the plain text.<br>
+				    <br>Plain Text : abcdefghijklmnopqrstuvwxyz<br>
+				    Cipher Text : TDNUCBZROHLGYVFPWIXSEKAMQJ</p></li>
+
+				<li><p>How many different keys are possible with an n-letter alphabet?</p></li>
+
+				<li><p>Given a cipher text, find out the corresponding plain text using brute force attack.<br>
+				    Cipher text : HAAHJR HA KHDU </p></li>
+			</ul>
+			
+			<hr/>
+			<p><b>TOOL</b></p>
+			<p> Plaintext:<br>
+	            <textarea id="shift_plaintext2" name="shift_plaintext2" rows="2" cols="50">the quick brown fox</textarea>
+	             shift:
+	              <select id="shift_key" name="shift_key" size="1">
+	                <option value="0">0</option>
+	                <option value="1">1</option>
+	                <option value="2">2</optishift_plaintext2on>
+	                <option value="3">3</option>
+	                <option value="4">4</option>
+	                <option value="5" selected="selected">5</option>
+	                <option value="6">6</option>
+	                <option value="7">7</option>
+	                <option value="8">8</option>
+	                <option value="9">9</option>
+	                <option value="10">10</option>
+	                <option value="11">11</option>
+	                <option value="12">12</option>
+	                <option value="13">13</option>
+	                <option value="14">14</option>
+	                <option value="15">15</option>
+	                <option value="16">16</option>
+	                <option value="17">17</option>
+	                <option value="18">18</option>
+	                <option value="19">19</option>
+	                <option value="20">20</option>
+	                <option value="21">21</option>
+	                <option value="22">22</shift_plaintext2option>
+	                <option value="23">23</option>
+	                <option value="24">24</option>
+	                <option value="25">25</option>
+	            </select>
+	            </p>
+	            <p>
+	              <input name="btnEn" value="v Encrypt v" onclick="Shift_Encrypt('shift_plaintext2', 'shift_ciphertext2')" type="button">
+	              <input name="btnDe" value="^ Decrypt ^" onclick="Shift_Decrypt('shift_ciphertext2','shift_plaintext2')" type="button">
+	            </p>
+	            <p>Ciphertext<br>
+	              <textarea id="shift_ciphertext2" name="shift_ciphertext2" rows="2" cols="50"></textarea>
+	            </p><br>
           </div>
 
         </section>
@@ -357,7 +470,7 @@ plaintext and the secret key. </p>
           <div id="experiment-article-section-7-content" 
           class="content">
 	    <p>
-	      Procedure for the experiment is as follows.
+	      Procedure for the experiment is given in manual.
 	    </p>
 	  </div>
 	
@@ -381,20 +494,12 @@ plaintext and the secret key. </p>
           class="content">
             <ul>	
               <li>
-                <a href="http://en.wikipedia.org/wiki/
-                Simple_harmonic_motion">http://en.wikipedia.org/wiki/Simple_harmonic_motion</a>
+                <a href=http://en.wikipedia.org/wiki/Caesar_cipher>Wikipedia</a>
               </li>
               <li>
-                <a href="http://www.physics.uoguelph.ca/
-                tutorials/shm/Q.shm.html">http://www.physics.uoguelph.ca/tutorials/shm/Q.shm.html</a>
+                <a href=http://www.cs.berkeley.edu/~luca/cs276/lecture01.pdf>Notes on Shift cipher</a>
               </li> 
-              <li>
-                Dynamics of structures by Anil K chopra. 
-              </li> 
-              <li>
-                <a href="http://surendranath.tripod.com/Applets/
-                Oscillations/SHM/SHMApplet.html">http://surendranath.tripod.com/Applets/Oscillations/SHM/SHMApplet.html</a> 
-              </li>
+              
             </ul>
           </div>
 
