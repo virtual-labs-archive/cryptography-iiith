@@ -176,7 +176,7 @@ edit -->
 			<form name="rsatest" onsubmit="do_encrypt();return false;">
  Plaintext (string):
 <input name="user_input" value="test" id="input" size="40" type="text"> 
-<input onclick="document.getElementById('hash_value').value = hex_sha1(document.getElementById('input').value)" value="SHA-1" type="button"><br>
+<input onclick="document.getElementById('hash_value').value = hex_sha1(document.getElementById('user_input').value)" value="SHA-1" type="button"><br>
 Hash output(hex): <input id="hash_value" value="" size="40" readonly="true" type="text"><br><br>
 
 Input to RSA(hex): <input name="plaintext" value="" size="40" type="text">
