@@ -58,12 +58,18 @@
   <!-- All JavaScript at the bottom, except for Modernizr which
   enables HTML5 elements & feature detects -->
   <script type="text/javascript" src="js/modernizr-1.5.min.js"></script>
-    <script type="text/javascript" src="../js/exp11/rsa-dss.js"></script>
-  <script type="text/javascript" src="../js/exp11/sha1.js"></script>
-  <script type="text/javascript" src="../js/exp11/rsa.js"></script>
+  <script language="JavaScript" type="text/javascript" src="../js/exp11/rsa-dss.js"></script>
+  <script language="JavaScript" type="text/javascript" src="../js/exp11/sha1.js"></script>
+  <script language="JavaScript" type="text/javascript" src="../js/exp11/rsa.js"></script>
+  <script language="JavaScript" type="text/javascript" src="../js/exp11/jsbn.js"></script>
+  <script language="JavaScript" type="text/javascript" src="../js/exp11/prng4.js"></script>
+  <script language="JavaScript" type="text/javascript" src="../js/exp11/rng.js"></script>
+  <script language="JavaScript" type="text/javascript" src="../js/exp11/base64.js"></script>
+	
 </head>
 
-<body> 
+<body onload="set_1024f4();" onclick="rng_seed_time();" onkeypress="rng_seed_time();">
+> 
   <div id="container"></div>
   <div id="hidden-content"></div>
 	
