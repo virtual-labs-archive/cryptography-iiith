@@ -16,7 +16,7 @@ edit -->
   <!-- The lab Header contains the logo and the name of the lab,
   usually displayed on the top of the page-->
 
-  <header id="experiment-header" class="default">
+  <header id="experiment-header" >
   
     <div id="experiment-header-logo" class="logo">
       <!-- Enclose the logo image of your lab or write it in 
@@ -28,7 +28,7 @@ edit -->
       <!-- Write the name of your lab and link it to the home 
       page of your lab (h1 tag is preferred while writing your 
       lab name)-->
-      <a href="../index.html">Physics Lab</a>	
+      <a href="../index.html">Cryptography Lab</a>	
     </div>
 
     <!-- Add any additional element you want to add to the lab 
@@ -51,7 +51,7 @@ edit -->
       <header id="experiment-article-heading" class="heading">
         <!-- You can add a welcome message or title of the 
         experiment here -->
-        Simple Pendulum
+        Pseudorandom Generators and CPA Security
         <!-- Add any additional element if required with proper 
         enclosing-->
       </header>
@@ -91,29 +91,8 @@ edit -->
           element, You can also include images with <img> tag -->
           <div id="experiment-article-section-1-content" 
           class="content">	
-            <p>
-            In this module, basic concepts of simple oscillator 
-            are explained. Initially, an example of simple 
-            pendulum is taken and the basic terminology i.e., 
-            what is <span class="term">initial displacement</span>, <span class="term">
-            initial velocity</span>,<span class="term">natural frequency
-            </span> and <span class="term">time period</span> are explained. 
-            Each of these terms is illustrated by giving an 
-            example, where user can enter his value and observe 
-            the behavior of structure for his input.
-            </p>
-
-            <p>
-            Simple harmonic oscillator consists of a <span class="term"> 
-            mass (m) </span> hanging from a string of <span class="term">
-            length (l)</span>, fixed at a pivot point P. 
-            When the mass is displaced from its <span class="term"> mean 
-            position </span> by giving some initial displacement 
-            (angle), oscillator starts swinging back and fourth 
-            with <span class="term">periodic motion</span>.
-            </p>
-
-          <img src="../images/Pendulum.JPG" alt="pendulum">
+            <p>RC4 is a popular algorithm for generating a stream of random bits given a small random seed (usually derived from the secrat key) as input. Inthis experiment we shall familiarize ourselves with RC4 and design an encryption scheme that is secure against ciphertext-only attack
+	    </p>
         </div>
 
 
@@ -140,31 +119,8 @@ edit -->
         element, we can also include images with <img> tag -->
         <div id="experiment-article-section-2-content" 
         class="content">
-          <p>
-          There are two solutions to \(ax^2 + bx + c = 0\) and 
-          they are $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$ 
-          </p>
-          <p>
-          By applying <span class="term">Newton's second law</span> for 
-          rotational systems, the equation of motion for the 
-          pendulum may be obtained.
-          </p> 
-
-          <p>
-          Here \(\tau\)  =  <span class="term">Torque </span>;   I  =  
-          <span class="term">Moment of Inertia</span>;
-          &alpha; = <span class="term"> Angular
-          Velocity</span>. m is mass of the oscillator, l is
-          the length of the oscillator and \(\theta\) is initial
-          displacement. 
-          </p>
-          
-          <p>							
-          If the amplitude of the angular displacement is 
-          small then we can use the approximation 
-          $$ sin \theta \approx \theta $$
-
-          </p>
+          <p>For a very brief introduction to RC4 algorithm, click <a href="rc4.pdf">here</a></p><br>
+	<a href="rc4.pdf"><img src="image4.png" alt="here"/></a>
 
         </div>
       </section>
@@ -186,14 +142,12 @@ edit -->
         <div id="experiment-article-section-3-content" 
         class="content">
           <p>
-            Objective of simple harmonic oscillator experiment 
-            is to understand the concept of <span class="term">time period 
-            </span>(natural frequency) in <span class="term"> harmonic 
-            oscillations </span>.
-          </p> 
-       
-          <img  src="http://cite.iiit.ac.in/vlab/cITe/images/eerc/Expr1/simple-pendulum.JPG" 
-          alt="simple pendulum" />
+		To<span style="font-style: italic;"> </span>learn
+		about the RC4 algorithm and use it to design an encryption scheme that
+		is secure against eavesdropping (ciphertext-only attack) but not secure
+		against stronger attacks like chosen-plaintext attack and
+		chosen-ciphertext attack<br>
+	  </p>
 
         </div>
 
