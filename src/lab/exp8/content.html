@@ -171,14 +171,15 @@ edit -->
         class="content">
          <h2>AES (Rijndael) Encryption</h2>
 	<p>		<form name="aestest">
-			Choose your mode of operation:<p></p>
+			<p>Choose your mode of operation:</p>
+			<p>
 			<select id="select_mode" name="select_mode" size="1" onchange="selectMode();">
                             <option value="ecb" selected="selected">Electronic Code Book (ECB)</option>
                             <option value="cbc">Cipher Block Chaining</option>
                             <option value="ofb">Output Feedback</option>
                             <option value="ctr">Counter mode</option>
                         </select>
-
+			</p>
 			<hr>
 			<pre>Key size in bits: <select name="keySize" id="keySize"><option value="128" selected="selected">128</option><option value="192">192</option><option value="256">256</option></select>
 
@@ -187,8 +188,8 @@ edit -->
         IV: <textarea name="iv" cols="50" rows="1" readonly="readonly" id="iv"></textarea>   <input name="changeIV" value="Next IV" onclick="nextIV()" type="button"> </div> <div id="ctrtext">
        CTR: <textarea name="ctr" cols="50" rows="1" readonly="readonly" id="ctr"></textarea>   <input name="changeCTR" value="Next CTR" onclick="nextCTR()" type="button"> </div> </pre>
 <div id="calculateXor">
-Calculate XOR:<br><pre>     <textarea name="num1" cols="50" rows="1" id="num1"></textarea>
-     <textarea name="num2" cols="50" rows="1" id="num2"></textarea> <input name="calculateXOR" value="Calculate XOR" onclick="displayXOR()" type="button">
+<p>Calculate XOR:</p><br><pre>     <textarea name="num1" cols="50" rows="1" id="num1"></textarea>
+     <textarea name="num2" cols="50" rows="1" id="num2"></textarea> <p><input name="calculateXOR" value="Calculate XOR" onclick="displayXOR()" type="button"></p>
 XOR: <textarea name="xor" cols="50" rows="1" readonly="readonly" id="xor"></textarea> <br></pre> </div>
 
 			<table><tbody>
@@ -214,8 +215,8 @@ XOR: <textarea name="xor" cols="50" rows="1" readonly="readonly" id="xor"></text
 			</tbody></table>
 			</form>
 			<hr><br>
-			  Enter your answer here: <br>
-			  <input id="userans" size="65" type="text"> <input value="Check Answer!" onclick="checkAnswer();" type="button"> <br>
+			 <p> Enter your answer here:</p> <br>
+			 <p> <input id="userans" size="65" type="text"></p> <p><input value="Check Answer!" onclick="checkAnswer();" type="button"> </p><br>
 			  <div id="notification" style="width: 300px; height: 10px; padding-top: 20px;"></div>
 		</p>
 

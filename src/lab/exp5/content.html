@@ -192,13 +192,14 @@ Final Output: <textarea name="output" cols="50" rows="1" id="outputarea"></texta
 <pre></pre>
 
 
-Select the option you would use to make CBC-MAC secure <br>
+<p>Select the option you would use to make CBC-MAC secure </p><br>
+<p>
 <select id="secureOptions" onchange="select();">
   <option value="key" selected="selected">Compute and use your key</option>
   <option value="length">Prepend the message with its length</option>
   <option value="keys">Two keys</option>
 </select>
-	
+</p>	
 <pre>      Plaintext: <textarea name="plaintext" cols="50" rows="4" readonly="readonly" id="plaintext">1100000000111100101010</textarea>   <input name="changePlainText" value="Next Plaintext" onclick="next_plain_text()" type="button"> <br>
    <div id="user_message" style="color: red;">
  Your Plaintext: <textarea name="plaintext" cols="50" rows="4" id="plaintext"></textarea> <br>

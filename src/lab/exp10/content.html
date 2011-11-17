@@ -173,10 +173,11 @@ edit -->
         class="content">
           <p>
 	       <form name="rsatest" onsubmit="do_encrypt();return false;">
-			Plaintext (string):<br>
-			<input name="plaintext" value="test" size="60" type="text"><br>
+			<p>Plaintext (string):</p><br>
+			<p><input name="plaintext" value="test" size="60" type="text"><br>
 
-			<input value="encrypt" onclick="do_encrypt();" type="button"><p>
+			<input value="encrypt" onclick="do_encrypt();" type="button"></p>
+			<p>
 			Ciphertext (hex):<br>
 			<textarea name="ciphertext" rows="4" cols="70"></textarea><br>
 			<input value="decrypt" onclick="do_decrypt();" type="button"></p><p>

@@ -224,20 +224,20 @@ Derive another key such that p=0.5:
 		          <p>For all the possible pairs of plaintext of
 size 8, and the key given by you, we will provide you with the
 encrypted texts with the same encryption scheme. You can observe the
-input and try to break it. <br>Put your key here (between size 6 and 12): </p><form name="user_key"><input id="user_key" name="limitedtextfield" cols="12" value="01010100" maxlength="12" type="text"></form><br>
-			   <input name="generatePairs" value="Encrytion Set" onclick="generate_all_pairs()" type="button"><br>
+input and try to break it. <br>Put your key here (between size 6 and 12): </p> <p><form name="user_key"><input id="user_key" name="limitedtextfield" cols="12" value="01010100" maxlength="12" type="text"></form></p><br>
+			  <p> <input name="generatePairs" value="Encrytion Set" onclick="generate_all_pairs()" type="button"></p><br>
 
-			    <br>Multiple tuples of &lt;Plaintext, Ciphertext&gt;:<br>
-		            <textarea id="textarea2" name="textarea" rows="8" cols="50"></textarea>
-		          <p></p>
+			 <p>   <br>Multiple tuples of &lt;Plaintext, Ciphertext&gt;:<br></p>
+		          <p>  <textarea id="textarea2" name="textarea" rows="8" cols="50"></textarea></p>
+		          
 		          <br>
-
+			
          		<h2>Is the given encryption scheme secure?</h2>
 			<hr>
-<p>Yes/No   </p><form name="yesno"><input id="yesno" value="" maxlength="3" type="text"></form>
+<p>Yes/No   </p><p><form name="yesno"><input id="yesno" value="" maxlength="3" type="text"></form></p>
 <p>If NO, Give two plaintexts 'm1' and 'm2' for the above key such that Encryption(m1) = Encryption(m2)? </p>
-<form name="m">m1: <input id="m1" value="" maxlength="20" type="text">
-m2: <input id="m2" value="" maxlength="20" type="text"></form>
+<form name="m"><p>m1: <input id="m1" value="" maxlength="20" type="text"> </p>
+<p>m2: <input id="m2" value="" maxlength="20" type="text"></p></form>
 <input name="checkAnswer" value="Check Answer!!" onclick="checkAnswer()" type="button"> <br><br>
 <textarea id="notification" name="notification" rows="1" cols="50" style="border: 0pt none ;"></textarea>
 <p></p>
