@@ -158,20 +158,20 @@ edit -->
 				<td>E</td> <td>P</td>
 				</tr>
 			</tbody></table>
-				&nbsp;&nbsp;plain text: c r y p t o g r a p h y
+				<p>&nbsp;&nbsp;plain text: c r y p t o g r a p h y</p>
 			<br>
-				cipher text: B S E Z W U C S J Z N E<br><br>
-			Hence we obtain the cipher text as "BSEZWUCSJZNE".
+				<p>cipher text: B S E Z W U C S J Z N E</p><br><br>
+			<p>Hence we obtain the cipher text as "BSEZWUCSJZNE".</p>
 		    </p>
                     
-		    <h3>Cryptanalysis</h3>Note
+		    <h3>Cryptanalysis</h3><p>Note
 that the frequency of occurrence of characters in the plaintext is
 "preserved" in the ciphertext. For instance, the most frequent
 character in the ciphertext is likely to be the encryption of the
 plaintext character "e" which is the most frequently occurring
 charecter in English. For a very brief theory of&nbsp; the
 mono-alphabetic substitution cipher and its cryptanalysis, click <a href="media/monoalphacipher.pdf">here</a><br>
-<a href="media/monoalphacipher.pdf"><img src="../images/image2.png" alt="here"/></a><br/>
+<a href="media/monoalphacipher.pdf"><img src="../images/image2.png" alt="here"/></a><p/>
         </div>
       </section>
 
@@ -216,12 +216,12 @@ mono-alphabetic substitution cipher and its cryptanalysis, click <a href="media/
           <h3>Simulation</h3>
          		<h2>Breaking the Mono Alphabetic Substitution Cipher</h2>
 <br/><hr/><br/>
-			<b>PART I</b>
+			<p>PART I</p>
 <p>Decrypt the following cipher text. A tool to simulate the
 Mono-Alphabetic Subsitution cipher is provided beneath for your
 assistance.
 </p>
-Here is the table of frequencies of English alphabets for your reference:<br><br>
+<p>Here is the table of frequencies of English alphabets for your reference:</p>
 <div style="text-align: center;">
 <table ;="" bgcolor="black" border="0" cellpadding="3" cellspacing="1"> 
 <tbody><tr> 
@@ -256,18 +256,17 @@ Here is the table of frequencies of English alphabets for your reference:<br><br
 		          <p></p>
 <br/><hr/><br/>
 
-			<b>PART II</b>
+			<p>PART II</p>
 			  <p>Note that the <i>cipher text is in lower case</i> and when you replace any character, the final character of replacement, i.e., <i>plaintext is changed to upper case</i> automatically in the following scratchpad.</p>
 		          <p>Scratchpad:<br>
 		            <textarea id="textarea2" name="textarea" rows="10" cols="70"></textarea>
 		          </p>
 
-			  Modify the text above (in scratchpad):<br>
-			  <br><font size="1">This is case <i>insensitive</i> function and replaces only cipher text (lower case) by plain text (upper case):</font><br>
-			  <br>Replace cipher character &nbsp; <textarea id="char1" rows="1" cols="2" style="display: inline;"></textarea> by plaintext character &nbsp;&nbsp;<textarea id="char2" rows="1" cols="2" style="display: inline;"></textarea> &nbsp;&nbsp; <input name="btnModify" value="Modify" onclick="ModifyUserText()" style="display: inline;" type="button"><br><br>
-			  <br><font size="1">Use
-the following function to undo any unwanted exchange by giving an
-uppercase character and a lower case. This is a case sensitive function:</font><br>
+			  <p>Modify the text above (in scratchpad):</p>
+			  <p><font size="1">This is case <i>insensitive</i> function and replaces only cipher text (lower case) by plain text (upper case):</font></p>
+			  <p>Replace cipher character &nbsp; <textarea id="char1" rows="1" cols="2" style="display: inline;"></textarea> by plaintext character &nbsp;&nbsp;<textarea id="char2" rows="1" cols="2" style="display: inline;"></textarea> &nbsp;&nbsp; <input name="btnModify" value="Modify" onclick="ModifyUserText()" style="display: inline;" type="button"></p>
+			  <p><font size="1">Use the following function to undo any unwanted exchange by giving an
+uppercase character and a lower case. This is a case sensitive function:</font></p>
 			  <br>&nbsp;&nbsp;&nbsp;Replace character &nbsp; <textarea id="char3" rows="1" cols="2" style="display: inline;"></textarea> by character &nbsp;&nbsp;<textarea id="char4" rows="1" cols="2" style="display: inline;"></textarea> &nbsp;&nbsp; <input name="btnModify" value="Replace these exact characters" onclick="ModifyUserText2()" style="display: inline;" type="button">
 			  <p>Your replacement history:
 		          </p><div id="replacements" style="height: 100px; width: 150px;"></div>
