@@ -183,14 +183,14 @@ edit -->
 			<hr>
 			<pre>Key size in bits: <select name="keySize" id="keySize"><option value="128" selected="selected">128</option><option value="192">192</option><option value="256">256</option></select>
 
- Plaintext: <textarea name="plainarea" cols="50" rows="6" readonly="readonly" id="plainarea"></textarea>   <input name="changePlainText" value="Next Plaintext" onclick="nextPlainText()" type="button">
-       Key: <textarea name="keyarea" cols="50" rows="1" readonly="readonly" id="keyarea"></textarea>   <input name="changeKey" value="Next Keytext" onclick="nextKey()" type="button"> <div id="ivtext">
-        IV: <textarea name="iv" cols="50" rows="1" readonly="readonly" id="iv"></textarea>   <input name="changeIV" value="Next IV" onclick="nextIV()" type="button"> </div> <div id="ctrtext">
-       CTR: <textarea name="ctr" cols="50" rows="1" readonly="readonly" id="ctr"></textarea>   <input name="changeCTR" value="Next CTR" onclick="nextCTR()" type="button"> </div> </pre>
+ <p>Plaintext: <textarea name="plainarea" cols="50" rows="6" readonly="readonly" id="plainarea"></textarea>   <input name="changePlainText" value="Next Plaintext" onclick="nextPlainText()" type="button"></p>
+      <p>Key: <textarea name="keyarea" cols="50" rows="1" readonly="readonly" id="keyarea"></textarea>   <input name="changeKey" value="Next Keytext" onclick="nextKey()" type="button"> <div id="ivtext"></p>
+     <p>IV: <textarea name="iv" cols="50" rows="1" readonly="readonly" id="iv"></textarea>   <input name="changeIV" value="Next IV" onclick="nextIV()" type="button"> </div> <div id="ctrtext"></p>
+       <p>CTR: <textarea name="ctr" cols="50" rows="1" readonly="readonly" id="ctr"></textarea>   <input name="changeCTR" value="Next CTR" onclick="nextCTR()" type="button"></p> </div> </pre>
 <div id="calculateXor">
-<p>Calculate XOR:</p><br><pre>   <textarea name="num1" cols="50" rows="1" id="num1"></textarea>
-     <textarea name="num2" cols="50" rows="1" id="num2"></textarea> <p><input name="calculateXOR" value="Calculate XOR" onclick="displayXOR()" type="button"></p>
-XOR: <textarea name="xor" cols="50" rows="1" readonly="readonly" id="xor"></textarea> <br></pre> </div>
+<pre>Calculate XOR:<textarea name="num1" cols="50" rows="1" id="num1"></textarea>
+     <textarea name="num2" cols="50" rows="1" id="num2"></textarea> <input name="calculateXOR" value="Calculate XOR" onclick="displayXOR()" type="button">
+XOR: <textarea name="xor" cols="50" rows="1" readonly="readonly" id="xor"></textarea></pre> </div>
 
 			<table><tbody>
 			<tr>
