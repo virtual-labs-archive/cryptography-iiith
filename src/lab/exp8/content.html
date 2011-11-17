@@ -122,8 +122,11 @@ edit -->
         element, we can also include images with <img> tag -->
         <div id="experiment-article-section-2-content" 
         class="content">
-          <p>For a very brief theory of Advanced Encryption Standard  and their analysis, click <a href="media/AES.pdf">here</a><br></p>
-			<img src="../images/image7.png" alt="here"/
+          <p>For a very brief theory of Advanced Encryption Standard  and their analysis, click <a href="media/modes of operation.pdf">here</a></p>
+			<p><img src="../images/ecbm.png" alt="here"/></p>
+			<p><img src="../images/cdbm.png" alt="here"/></p>
+			<p><img src="../images/ctr.png" alt="here"/></p>
+			<p><img src="../images/ofbm.png" alt="here"/></p>
 
         </div>
       </section>
@@ -197,7 +200,7 @@ edit -->
 
 
 <div id="calculateXor">
-<pre>Calculate XOR:<textarea name="num1" cols="50" rows="1" id="num1"></textarea>
+<pre>Calculate XOR:<br><textarea name="num1" cols="50" rows="1" id="num1"></textarea>
      <textarea name="num2" cols="50" rows="1" id="num2"></textarea> <input name="calculateXOR" value="Calculate XOR" onclick="displayXOR()" type="button">
 XOR: <textarea name="xor" cols="50" rows="1" readonly="readonly" id="xor"></textarea></pre> </div>
 
@@ -230,6 +233,7 @@ XOR: <textarea name="xor" cols="50" rows="1" readonly="readonly" id="xor"></text
 			</tbody></table>
 			</form>
 			<hr>
+<h3>PART V</h3>
 			 <p> Enter your answer here:</p>
 			 <p> <input id="userans" size="65" type="text"></p> <p><input value="Check Answer!" onclick="checkAnswer();" type="button"> </p><br>
 			  <div id="notification" style="width: 300px; height: 10px; padding-top: 20px;"></div>
@@ -254,9 +258,15 @@ XOR: <textarea name="xor" cols="50" rows="1" readonly="readonly" id="xor"></text
 
         <div id="experiment-article-section-5-content" 
         class="content">
-        
-
-          </div>
+		<ol>
+			<li>Firstly,choose a mode of operation from PART I </li>
+			<li>Secondly,select KeySize,Plaintext,KeyText,Intialization vector(IV)(for ECB and OFB modes only) and CTR(forctr mode only) in PART II</li>
+			<li>Whenever necessay use XOR opeartion in PART III,according to mode choosen mode of operation</li>
+			<li>PART IV provides fuction F<sub>K</sub> where K is KeyText generated in step 2 and "Key in hex:" field in PART IV should be filled keytext generated in step2</li>
+			
+			<li>    Fill "Plaintext in hex:" field with approriate value based on mode of operation. and click on encrypt button</li>
+			<li>PART V provides a field to check your answer,after performing required steps based on choosen mode of operation</li> 
+         </div>
 
         </section>
 
