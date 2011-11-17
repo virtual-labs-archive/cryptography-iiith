@@ -170,7 +170,7 @@ edit -->
         <div id="experiment-article-section-4-content" 
         class="content">
          <h2>AES (Rijndael) Encryption</h2>
-	<p>		<form name="aestest">
+			<form name="aestest">
 			<p>Choose your mode of operation:</p>
 			<p>
 			<select id="select_mode" name="select_mode" size="1" onchange="selectMode();">
@@ -188,7 +188,7 @@ edit -->
         IV: <textarea name="iv" cols="50" rows="1" readonly="readonly" id="iv"></textarea>   <input name="changeIV" value="Next IV" onclick="nextIV()" type="button"> </div> <div id="ctrtext">
        CTR: <textarea name="ctr" cols="50" rows="1" readonly="readonly" id="ctr"></textarea>   <input name="changeCTR" value="Next CTR" onclick="nextCTR()" type="button"> </div> </pre>
 <div id="calculateXor">
-<p>Calculate XOR:</p><br><pre>     <textarea name="num1" cols="50" rows="1" id="num1"></textarea>
+<center><p>Calculate XOR:</p></center><br><pre>     <textarea name="num1" cols="50" rows="1" id="num1"></textarea>
      <textarea name="num2" cols="50" rows="1" id="num2"></textarea> <p><input name="calculateXOR" value="Calculate XOR" onclick="displayXOR()" type="button"></p>
 XOR: <textarea name="xor" cols="50" rows="1" readonly="readonly" id="xor"></textarea> <br></pre> </div>
 
@@ -215,7 +215,7 @@ XOR: <textarea name="xor" cols="50" rows="1" readonly="readonly" id="xor"></text
 			</tbody></table>
 			</form>
 			<hr><br>
-			 <p> Enter your answer here:</p> <br>
+			 <center><p> Enter your answer here:</p></center> <br>
 			 <p> <input id="userans" size="65" type="text"></p> <p><input value="Check Answer!" onclick="checkAnswer();" type="button"> </p><br>
 			  <div id="notification" style="width: 300px; height: 10px; padding-top: 20px;"></div>
 		</p>

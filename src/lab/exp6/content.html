@@ -181,12 +181,10 @@ edit -->
 
           <h1 style="text-align: center; text-decoration: underline;">A simulator for SHA-1</h1>
 
- <p>Plaintext (string): 
-<input name="user_input" value="test" id="input" size="40" type="text"> </p>
-<p>
-<input onclick="document.getElementById('hash_value').value = hex_sha1(document.getElementById('input').value)" value="SHA-1" type="button"></p><br>
+ <p>Plaintext (string): </p><p><input name="user_input" value="test" id="input" size="40" type="text"> </p>
+<p><input onclick="document.getElementById('hash_value').value = hex_sha1(document.getElementById('input').value)" value="SHA-1" type="button"></p><br>
 
-<p>Hash output(hex): <input id="hash_value" value="" size="40" readonly="true" type="text"></p><br>
+<p>Hash output(hex):</p><p> <input id="hash_value" value="" size="40" readonly="true" type="text"></p><br>
 <br>
 <br>
 <h1 style="text-align: center; font-weight: bold; text-decoration: underline;">HMAC Construction using a "Dummy" Hash Function<br>
