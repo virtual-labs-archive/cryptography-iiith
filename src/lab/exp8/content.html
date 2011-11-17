@@ -171,6 +171,7 @@ edit -->
         class="content">
          <h2>AES (Rijndael) Encryption</h2>
 			<form name="aestest">
+			<h3>PART I</h3>
 			<p>Choose your mode of operation:</p>
 			<p>
 			<select id="select_mode" name="select_mode" size="1" onchange="selectMode();">
@@ -181,16 +182,30 @@ edit -->
                         </select>
 			</p>
 			<hr>
+			<h3>PART II</h3>
 			<pre>Key size in bits: <select name="keySize" id="keySize"><option value="128" selected="selected">128</option><option value="192">192</option><option value="256">256</option></select>
 
  <p>Plaintext: <textarea name="plainarea" cols="50" rows="6" readonly="readonly" id="plainarea"></textarea>   <input name="changePlainText" value="Next Plaintext" onclick="nextPlainText()" type="button"></p>
       <p>Key: <textarea name="keyarea" cols="50" rows="1" readonly="readonly" id="keyarea"></textarea>   <input name="changeKey" value="Next Keytext" onclick="nextKey()" type="button"> <div id="ivtext"></p>
      <p>IV: <textarea name="iv" cols="50" rows="1" readonly="readonly" id="iv"></textarea>   <input name="changeIV" value="Next IV" onclick="nextIV()" type="button"> </div> <div id="ctrtext"></p>
        <p>CTR: <textarea name="ctr" cols="50" rows="1" readonly="readonly" id="ctr"></textarea>   <input name="changeCTR" value="Next CTR" onclick="nextCTR()" type="button"></p> </div> </pre>
+
+
+
+<hr>
+<h3>PART III</h3>
+
+
 <div id="calculateXor">
 <pre>Calculate XOR:<textarea name="num1" cols="50" rows="1" id="num1"></textarea>
      <textarea name="num2" cols="50" rows="1" id="num2"></textarea> <input name="calculateXOR" value="Calculate XOR" onclick="displayXOR()" type="button">
 XOR: <textarea name="xor" cols="50" rows="1" readonly="readonly" id="xor"></textarea></pre> </div>
+
+
+
+
+<hr>
+<h3>PART IV</h3>
 
 			<table><tbody>
 			<tr>
@@ -214,7 +229,7 @@ XOR: <textarea name="xor" cols="50" rows="1" readonly="readonly" id="xor"></text
 			</tr>
 			</tbody></table>
 			</form>
-			<hr><br>
+			<hr>
 			 <p> Enter your answer here:</p>
 			 <p> <input id="userans" size="65" type="text"></p> <p><input value="Check Answer!" onclick="checkAnswer();" type="button"> </p><br>
 			  <div id="notification" style="width: 300px; height: 10px; padding-top: 20px;"></div>
