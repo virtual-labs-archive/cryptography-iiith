@@ -233,10 +233,10 @@ be using SHA-1 instead</li>
 	 <li>For simplicity fix l=8 which is default,but it should be l &lt; (length of plaintext)/4.</li>
          <li>Select an Initialization Vector, IV of length l.by clicking on "Next IV" button)</li>
 	 <li>Use the ipad and opad as described in theory part to compute the ciphertext with the help of the hash function provided to you.</li>
-	 <li>Divide generated plaintext 'm' into say 'k' chunks of 8 bits and last chunk will have bits less than 8,to make it 8 pad zero at end</li> 
+	 <li>Divide generated plaintext 'm' into say 'k' chunks of 8 bits and kth chunk will have bits less than 8,to make it 8-bits by padding zeros at end</li> 
 	 <li>Compute z0="IV||(k XOR ipad)" manually where || impies concatenation and enter z0 in "Your text" field to get z1</li>
 	 <li>Compute z1="z0||m1" manually where || impies concatenation and enter z1 in "Your text" field to get z2</li>
-	 <li>Repeat above step and finally compute z(k+1)="zk||L" where L=|m|,make L,8-bits by padding zeros to left of it</li>
+	 <li>Repeat above step and finally compute z(k+1)="zk||L" where L=|m|,make L 8-bits by padding zeros to left of it</li>
 	 <li>Compute p="IV||(k XOR opad)" manually where || impies concatenation and enter p in "Your text" field to get q</li>
 	 <li>Compute r="q||z(k+1)" manually where || impies concatenation and enter 'r' in "Your text" field to get final HMAC tag 't'</li>
 	 <li>Notice that z0,z1,z2,.............zk,z(k+1),p,r are all of size '2l'(=16 in our case as l=8).</li>                             		 <li>Write the final cipher text 't' in 'Final Output' field and check your answer</li>
@@ -265,9 +265,9 @@ be using SHA-1 instead</li>
           class="content">
             
             <ul>
-		<li>Try to understand HMAC scheme and find a break in it using availble source code</li>
+		<li>Understand HMAC scheme and find a break in it using availble source code</li>
 		<li>Understand Merkel-Damgard transform and Explain,how we are using it for HMAC? </li>
-		<li>Try to understand and explain analogy between SHA1 and our dummy HMAC function</li> 
+		<li>Understand and explain analogy between SHA1 and our dummy HMAC function</li> 
 		<li>Explain why HMAC is secure and on what assumptions this security is based?</li>
 	    </ul>		
               
