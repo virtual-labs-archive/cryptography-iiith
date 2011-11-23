@@ -272,4 +272,11 @@ color: #444 !important; text-shadow: none; }
   html { -webkit-text-size-adjust:none; 
           -ms-text-size-adjust:none; } 
 }
+#lab-footer, .footer {
+    float:left;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    text-align: center;
+    width: 90%;
+}
 
