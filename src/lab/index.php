@@ -42,7 +42,7 @@ $html = file_get_html('./content.html');
         //print_r($nav);
 
 $vlab_url = "http://virtual-labs.ac.in/"; 
-$css_js   = "http://deploy.virtual-labs.ac.in/labs/cse29/src/lab/"; 
+$css_js   = "http://deploy.virtual-labs.ac.in/labs/cse29/"; 
 $lab_url  = "http://deploy.virtual-labs.ac.in/labs/cse29/src/lab/index.php";
 $exp_url  = "http://deploy.virtual-labs.ac.in/labs/cse29/src/lab/exp/index.php";
 $base_url = $lab_url;
