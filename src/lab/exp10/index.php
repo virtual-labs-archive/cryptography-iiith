@@ -6,8 +6,7 @@
   <script language="JavaScript" type="text/javascript" src="../js/exp10/rsa.js"></script>
   <script language="JavaScript" type="text/javascript" src="../js/exp10/rsa2.js"></script>
   <script language="JavaScript" type="text/javascript" src="../js/exp10/pkcs.js"></script>
-  <script language="JavaScript" type="text/javascript" src="../js/exp10/rss.dss.js"></script>  
-<?php
+  <script language="JavaScript" type="text/javascript" src="../js/exp10/rss.dss.js"></script>
 
 include('../simple_html_dom.php');
 
