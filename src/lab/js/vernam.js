@@ -190,7 +190,7 @@ function check_key() {
         document.getElementById("key_notify").value = "Wrong Key!";
     }
 }
-
+ 
 function Encrypt_p() {
     var k = document.getElementById("keyarea").value;
     if (k == "") {
