@@ -1,4 +1,4 @@
-  
+<script type="application/javascript" src="../js/des.js"></script>  
 <?php
 
 include('../simple_html_dom.php');

@@ -1,4 +1,12 @@
-  
+<script language="JavaScript" type="text/javascript" src="../js/exp10/base64.js"></script>
+  <script language="JavaScript" type="text/javascript" src="../js/exp10/jsbn.js"></script>
+  <script language="JavaScript" type="text/javascript" src="../js/exp10/jsbn2.js"></script>
+  <script language="JavaScript" type="text/javascript" src="../js/exp10/prng4.js"></script>
+  <script language="JavaScript" type="text/javascript" src="../js/exp10/rng.js"></script>
+  <script language="JavaScript" type="text/javascript" src="../js/exp10/rsa.js"></script>
+  <script language="JavaScript" type="text/javascript" src="../js/exp10/rsa2.js"></script>
+  <script language="JavaScript" type="text/javascript" src="../js/exp10/pkcs.js"></script>
+  <script language="JavaScript" type="text/javascript" src="../js/exp10/rss.dss.js"></script>  
 <?php
 
 include('../simple_html_dom.php');
