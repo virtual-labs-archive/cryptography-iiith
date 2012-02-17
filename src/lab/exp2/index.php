@@ -1,3 +1,4 @@
+<script type="text/javascript" src="../js/exp2.js"></script>
   
 <?php
 
