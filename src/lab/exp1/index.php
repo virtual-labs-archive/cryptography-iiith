@@ -1,4 +1,4 @@
-<script type="text/javascript" src="../js/exp1.js"> 
+<script type="text/javascript" src="../js/exp1.js"></script> 
 <?php
 
 include('../simple_html_dom.php');
