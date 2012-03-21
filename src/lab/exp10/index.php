@@ -46,10 +46,10 @@ $data['nav'] = $nav;
 
 
 $vlab_url = "http://virtual-labs.ac.in/"; 
-$css_js   = "http://deploy.virtual-labs.ac.in/labs/cse29/"; 
-$lab_url  = "http://deploy.virtual-labs.ac.in/labs/cse29/index.php";
-$exp_url  =  "http://deploy.virtual-labs.ac.in/labs/cse29/exp10/index.php";
-$base_url = $exp_url;
+$css_js   = "../";
+ $lab_url  = "http://".$_SERVER['HTTP_HOST'] . "/labs/cse29/index.php";
+$exp_url  = "http://".$_SERVER['HTTP_HOST'] . "/labs/cse29/exp10/index.php";
+$base_url = "http://".$_SERVER['HTTP_HOST'] . $_SERVER['SCRIPT_NAME']; 
 
 include('../exp_template.php');
 
