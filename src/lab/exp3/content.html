@@ -207,13 +207,14 @@ edit -->
 			Is the following encryption scheme perfectly secure?
 			You can observe as many encrypted text and key pairs as you wish.
 			Press "Next Ciphertext" method to get more pairs.</p>
-			<pre> Plaintext: <textarea name="plainarea" cols="50" rows="1" readonly="readonly" id="plainarea">11101010</textarea>   <input name="changePlainText" value="Next Plaintext" onclick="next_plain_text()" type="button">
-       Key: <textarea name="keyarea_gen" cols="50" rows="1" readonly="readonly" id="keyarea_gen">01010100</textarea>   <input name="changeKey" value="Next Keytext" onclick="next_key()" type="button"> <br>
-Derive another key such that p=0.5:
+		<pre> Plaintext: <textarea name="plainarea" cols="50" rows="1" readonly="readonly" id="plainarea">11101010</textarea>   <input name="changePlainText" value="Next Plaintext" onclick="next_plain_text()" type="button"></pre>
+
+	    <pre> Key: <textarea name="keyarea_gen" cols="50" rows="1" readonly="readonly" id="keyarea_gen">01010100</textarea>   <input name="changeKey" value="Next Keytext" onclick="next_key()" type="button"></pre>
+		<pre>Derive another key such that p=0.5:
           <textarea name="keyarea" cols="50" rows="1" id="keyarea"></textarea>  
 	 <input name="checkKey" value="Check Key" onclick="check_key()" type="button">
-	 <textarea id="key_notify" rows="1" cols="50" readonly="readonly" style="border: 0pt none ;"></textarea>
-			</pre>
+	 <textarea name="message" id="key_notify" rows="1" cols="50" readonly="readonly"></textarea>
+		</pre>
 			<p>
 		            <input name="btnEn" value="v Encrypt v" onclick="Encrypt_p()" type="button">
 			</p>
