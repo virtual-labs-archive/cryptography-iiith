@@ -38,6 +38,18 @@ function EQV(a, b) {
     return "1";
 }
 
+function AND(a, b) {
+    if((a == "0" && b == "0"))
+        return "0";
+    else if((a == "0" && b == "1"))
+        return "0";
+    else if((a == "1" && b == "0"))
+        return "0";
+    else if((a == "1" && b == "1"))
+        return "1";
+    return "0";
+}
+
 function Vernam_Encrypt() {
     plaintext = document.getElementById("p").value;
     key = document.getElementById("key").value;
@@ -146,7 +158,7 @@ function encrypt(plaintext, key) {
 	    cipher_text += XOR(plaintext.charAt(i), key.charAt(i));
 	}
 	else {
-	    cipher_text += EQV(plaintext.charAt(i), key.charAt(i));
+	    cipher_text += AND(plaintext.charAt(i), key.charAt(i));
 	}
     }
     return cipher_text;
@@ -167,7 +179,7 @@ function next_key() {
 }
 
 function check_key() {
-    var key = document.getElementById("keyarea").value;
+    var key = document.getElementById("keyarea_gen").value;
     var zero = 0;
     var one = 0;
     if (key == "") {
@@ -181,7 +193,7 @@ function check_key() {
 	    one ++;
 	} else {
 	    alert("Invalid Key. Please enter a binary key.");
-    	    document.getElementById("keyarea").value = "";
+    	    document.getElementById("keyarea_gen").value = "";
 	}
     }
     if (zero == one) {
@@ -192,7 +204,7 @@ function check_key() {
 }
  
 function Encrypt_p() {
-    var k = document.getElementById("keyarea").value;
+    var k = document.getElementById("keyarea_gen").value;
     if (k == "") {
 	alert("Please calculate the new key with p=0.5");
 	return;
@@ -203,7 +215,7 @@ function Encrypt_p() {
 function Next_Vernam_Test() {
     document.getElementById("plainarea").value = Vernam_RandSequence(PLAIN_TEXT_LEN);
     key_len = (Math.random()*100000)%7 + 6;
-    document.getElementById("keyarea").value = Vernam_RandSequence(key_len);
+    document.getElementById("keyarea_gen").value = Vernam_RandSequence(key_len);
     Next_Encryption();
 }
 
@@ -261,19 +273,24 @@ function generate_all_pairs() {
 }
 
 function checkAnswer() {
-	var m1 = document.getElementById("m1").value;
-	var m2 = document.getElementById("m2").value;
-	if (m1.length == 0 || m2.length == 0) {
-		alert("Please enter values for m1 and m2");
-		return;
-	}
+    if (document.getElementById("yesno").value == 'yes')
+    {
+        document.getElementById("notification").value = "This is not correct, Please try again!";
+	return;
+    }
+    var m1 = document.getElementById("m1").value;
+    var m2 = document.getElementById("m2").value;
+    if (m1.length == 0 || m2.length == 0) {
+	alert("Please enter values for m1 and m2");
+	return;
+    }
     var key = document.getElementById("user_key").value;
     key = resize_key(key);
-	var c1 = encrypt(m1, key);
-	var c2 = encrypt(m2, key);
-	if(c1 == c2) {
-	        document.getElementById("notification").value = "CORRECT!!";
-        } else {
-            document.getElementById("notification").value = "This is not correct, Please try again!";
-		}
+    var c1 = encrypt(m1, key);
+    var c2 = encrypt(m2, key);
+    if(c1 == c2) {
+	document.getElementById("notification").value = "CORRECT!!";
+    } else {
+        document.getElementById("notification").value = "This is not correct, Please try again!";
+    }
 }

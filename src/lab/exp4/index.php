@@ -1,4 +1,4 @@
-  
+<script type="application/javascript" src="../js/rsa.js"></script> 
 <?php
 
 include('../simple_html_dom.php');
