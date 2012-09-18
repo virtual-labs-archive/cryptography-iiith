@@ -173,7 +173,58 @@ edit -->
 
         <div id="experiment-article-section-4-content" 
         class="content">
-         <h2>AES (Rijndael) Encryption</h2>
+			<h2>AES (Rijndael) Encryption</h2>
+			<form name="aestest">
+			Choose your mode of operation:<p></p>
+			<select id="select_mode" name="select_mode" size="1" onchange="selectMode();">
+                            <option value="ecb" selected="selected">Electronic Code Book (ECB)</option>
+                            <option value="cbc">Cipher Block Chaining</option>
+                            <option value="ofb">Output Feedback</option>
+                            <option value="ctr">Counter mode</option>
+                        </select>
+
+			<hr>
+			<pre>Key size in bits: <select name="keySize" id="keySize"><option value="128" selected="selected">128</option><option value="192">192</option><option value="256">256</option></select>
+
+ Plaintext: <textarea name="plainarea" cols="50" rows="6" readonly="readonly" id="plainarea"></textarea>   <input name="changePlainText" value="Next Plaintext" onclick="nextPlainText()" type="button">
+       Key: <textarea name="keyarea" cols="50" rows="1" readonly="readonly" id="keyarea"></textarea>   <input name="changeKey" value="Next Keytext" onclick="nextKey()" type="button"> <div id="ivtext">
+        IV: <textarea name="iv" cols="50" rows="1" readonly="readonly" id="iv"></textarea>   <input name="changeIV" value="Next IV" onclick="nextIV()" type="button"> </div> <div id="ctrtext">
+       CTR: <textarea name="ctr" cols="50" rows="1" readonly="readonly" id="ctr"></textarea>   <input name="changeCTR" value="Next CTR" onclick="nextCTR()" type="button"> </div> </pre>
+<div id="calculateXor">
+Calculate XOR:<br><pre>     <textarea name="num1" cols="50" rows="1" id="num1"></textarea>
+     <textarea name="num2" cols="50" rows="1" id="num2"></textarea> <input name="calculateXOR" value="Calculate XOR" onclick="displayXOR()" type="button">
+XOR: <textarea name="xor" cols="50" rows="1" readonly="readonly" id="xor"></textarea> <br></pre> </div>
+
+			<table><tbody>
+			<tr>
+			<td>Key in hex: </td>
+			<td><input size="66" name="key" type="text"></td></tr>
+			<tr><td>Plaintext in hex: </td>
+			<td><input size="66" name="plaintext" type="text"></td>
+			</tr>
+
+			<tr>
+			<td>Ciphertext in hex: </td>
+			<td><input size="66" name="ciphertext" type="text"></td>
+			</tr>
+
+			<tr>
+			<td>&nbsp;</td>
+			<td>
+			<input value="Encrypt" onclick="doEncryption()" type="button"> &nbsp; &nbsp; 
+			<input value="Decrypt" onclick="doDecryption()" type="button"> &nbsp; &nbsp; 
+			<input value="Clear" type="reset"></td>
+			</tr>
+			</tbody></table>
+			</form>
+			<hr><br>
+			  Enter your answer here: <br>
+			  <input id="userans" size="65" type="text"> <input value="Check Answer!" onclick="checkAnswer();" type="button"> <br>
+			  <div id="notification" style="width: 300px; height: 10px; padding-top: 20px;"></div>
+
+                </div>
+
+<!----       <h2>AES (Rijndael) Encryption</h2>
 			<form name="aestest">
 			<h3>PART I</h3>
 			<p>Choose your mode of operation:</p>
@@ -190,8 +241,9 @@ edit -->
 			<pre>Key size in bits: <select name="keySize" id="keySize"><option value="128" selected="selected">128</ption><option value="192">192</option><option value="256">256</option></select>
 
  <p>Plaintext: <textarea name="plainarea" cols="50" rows="6" readonly="readonly" id="plainarea"></textarea>   <input name="changePlainText" value="Next Plaintext" onclick="nextPlainText()" type="button"></p>
-      <p>Key: <textarea name="keyarea" cols="50" rows="1" readonly="readonly" id="keyarea"></textarea>   <input name="changeKey" value="Next Keytext" onclick="nextKey()" type="button"> <div id="ivtext"></p>
-     <p>IV: <textarea name="iv" cols="50" rows="1" readonly="readonly" id="iv"></textarea>   <input name="changeIV" value="Next IV" onclick="nextIV()" type="button"> </div> <div id="ctrtext"></p>
+      <p>Key: <textarea name="keyarea" cols="50" rows="1" readonly="readonly" id="keyarea"></textarea>   <input name="changeKey" value="Next Keytext" onclick="nextKey()" type="button">
+ <div id="ivtext"></p>
+	<p>IV: <textarea name="iv" cols="50" rows="1" readonly="readonly" id="iv"></textarea>   <input name="changeIV" value="Next IV" onclick="nextIV()" type="button"> </div> <div id="ctrtext"></p>
        <p>CTR: <textarea name="ctr" cols="50" rows="1" readonly="readonly" id="ctr"></textarea>   <input name="changeCTR" value="Next CTR" onclick="nextCTR()" type="button"></p> </pre>
 <hr>
 <h3>PART III</h3>
@@ -236,7 +288,7 @@ XOR: <textarea name="xor" cols="50" rows="1" readonly="readonly" id="xor"></text
 		</p>
 
         </div>
-
+-------->
       </section>
 
       <section id="experiment-article-section-5">
