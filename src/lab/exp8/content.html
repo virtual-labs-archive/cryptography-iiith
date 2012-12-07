@@ -175,13 +175,13 @@ edit -->
         class="content">
 			<h2>AES (Rijndael) Encryption</h2>
 			<form name="aestest">
-			Choose your mode of operation:<p></p>
+			<p>Choose your mode of operation:
 			<select id="select_mode" name="select_mode" size="1" onchange="selectMode();">
                             <option value="ecb" selected="selected">Electronic Code Book (ECB)</option>
                             <option value="cbc">Cipher Block Chaining</option>
                             <option value="ofb">Output Feedback</option>
                             <option value="ctr">Counter mode</option>
-                        </select>
+                        </select></p>
 
 			<hr>
 			<pre>Key size in bits: <select name="keySize" id="keySize"><option value="128" selected="selected">128</option><option value="192">192</option><option value="256">256</option></select>
