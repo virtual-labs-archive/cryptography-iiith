@@ -8,7 +8,7 @@ edit -->
 
 <!DOCTYPE html>
 <html>
-<head></head>
+<head><link rel="stylesheet" type="text/css" href="expstyle.css"></head>
 <body>
 
 <div id="experiment"> <!-- The Experiment Document Container-->
@@ -174,6 +174,7 @@ edit -->
         <div id="experiment-article-section-4-content" 
         class="content">
 			<h2>AES (Rijndael) Encryption</h2>
+			<h3>PART I</h3>
 			<form name="aestest">
 			<p>Choose your mode of operation:
 			<select id="select_mode" name="select_mode" size="1" onchange="selectMode();">
@@ -184,16 +185,20 @@ edit -->
                         </select></p>
 
 			<hr>
+			<h3>PART II</h3>
 			<p><pre>Key size in bits: <select name="keySize" id="keySize"><option value="128" selected="selected">128</option><option value="192">192</option><option value="256">256</option></select></p>
  </p>Plaintext: <textarea name="plainarea" cols="50" rows="6" readonly="readonly" id="plainarea"></textarea>   <input name="changePlainText" value="Next Plaintext" onclick="nextPlainText()" type="button"></p>
        Key: <textarea name="keyarea" cols="50" rows="1" readonly="readonly" id="keyarea"></textarea>   <input name="changeKey" value="Next Keytext" onclick="nextKey()" type="button"> <div id="ivtext">
         IV: <textarea name="iv" cols="50" rows="1" readonly="readonly" id="iv"></textarea>   <input name="changeIV" value="Next IV" onclick="nextIV()" type="button"> </div> <div id="ctrtext">
        CTR: <textarea name="ctr" cols="50" rows="1" readonly="readonly" id="ctr"></textarea>   <input name="changeCTR" value="Next CTR" onclick="nextCTR()" type="button"> </div> </pre>
 <div id="calculateXor">
+<hr><h3>PART III</h3>
 <p>Calculate XOR:</p><br><pre>     <textarea name="num1" cols="50" rows="1" id="num1"></textarea>
      <textarea name="num2" cols="50" rows="1" id="num2"></textarea> <input name="calculateXOR" value="Calculate XOR" onclick="displayXOR()" type="button">
-XOR: <textarea name="xor" cols="50" rows="1" readonly="readonly" id="xor"></textarea> <br></pre> </div>
+<p>XOR: <textarea name="xor" cols="50" rows="1" readonly="readonly" id="xor"></textarea></p> <br></pre> </div>
 
+
+<hr><h3>PART IV</h3>
 			<table><tbody>
 			<tr>
 			<td>Key in hex: </td>
@@ -216,9 +221,9 @@ XOR: <textarea name="xor" cols="50" rows="1" readonly="readonly" id="xor"></text
 			</tr>
 			</tbody></table>
 			</form>
-			<hr><br>
+			<hr><h3>PART V</h3>
 			  <p>Enter your answer here:</p>
-			 </p> <input id="userans" size="65" type="text"> <input value="Check Answer!" onclick="checkAnswer();" type="button"></p>
+			 <input id="userans" size="65" type="text"> <input value="Check Answer!" onclick="checkAnswer();" type="button">
 			  <div id="notification" style="width: 300px; height: 10px; padding-top: 20px;"></div>
 
                 </div>
@@ -307,7 +312,8 @@ XOR: <textarea name="xor" cols="50" rows="1" readonly="readonly" id="xor"></text
         class="content">
 		<ol>
 			<li>Firstly,choose a mode of operation from PART I </li>
-			<li>Secondly,select KeySize,Plaintext,KeyText,Intialization vector(IV)(for ECB and OFB modes only) and CTR(forctr mode only) in PART II</li>
+			<li>Secondly select KeySize, Plaintext, KeyText, Intialization vector(IV)(for ECB and OFB modes only) 
+                             and CTR(forctr mode only) in PART II</li>
 			<li>Whenever necessay use XOR opeartion in PART III,according to mode choosen mode of operation</li>
 			<li>PART IV provides fuction F<sub>K</sub> where K is KeyText generated in step 2 and "Key in hex:" field in PART IV should be filled keytext generated in step2</li>
 			
