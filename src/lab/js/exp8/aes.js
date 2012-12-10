@@ -97,6 +97,7 @@ function selectMode() {
     var chosen_option=selectmenu.options[selectmenu.selectedIndex].value;
     resetDisplay();
     if (chosen_option == "ecb") {
+	document.getElementById("ecbm_image").style.display = "block";
     } else if (chosen_option == "cbc") {
         document.getElementById("ivtext").style.display = "block";
         document.getElementById("calculateXor").style.display = "block";
