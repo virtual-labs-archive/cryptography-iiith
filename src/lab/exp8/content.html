@@ -123,10 +123,10 @@ edit -->
         <div id="experiment-article-section-2-content" 
         class="content">
           <p>For a very brief theory of Advanced Encryption Standard  and their analysis, click <a href="media/modes of operation.pdf">here</a></p>
-			<p><img src="../images/ecbm.png" alt="here"/></p><center><b>Electronic Code Book(ECB) mode</b></center>
-			<p><img src="../images/cdbm.png" alt="here"/></p><center><b>Cipher Block Chaining(CBC) mode</b> </center>
-			<p><img src="../images/ctr.png" alt="here"/></p><center><b>Contur mode</b></center>
-			<p><img src="../images/ofbm.png" alt="here"/></p><center><b>Output FeedBack mode</b></center>
+			<p><img  id="ecbm_image" src="../images/ecbm.png" alt="here"/></p><center><b>Electronic Code Book(ECB) mode</b></center>
+			<p><img id="cdbm_image" src="../images/cdbm.png" alt="here"/></p><center><b>Cipher Block Chaining(CBC) mode</b> </center>
+			<p><img id="ctr_image" src="../images/ctr.png" alt="here"/></p><center><b>Contur mode</b></center>
+			<p><img id="ofbm_imgae" src="../images/ofbm.png" alt="here"/></p><center><b>Output FeedBack mode</b></center>
 
 
         </div>
@@ -193,7 +193,7 @@ edit -->
        CTR: <textarea name="ctr" cols="50" rows="1" readonly="readonly" id="ctr"></textarea>   <input name="changeCTR" value="Next CTR" onclick="nextCTR()" type="button"> </div> </pre>
 <div id="calculateXor">
 <hr><h3>PART III</h3>
-<p>Calculate XOR:</p><br><pre>     <textarea name="num1" cols="50" rows="1" id="num1"></textarea>
+<p>Calculate XOR:<pre><textarea name="num1" cols="50" rows="1" id="num1"></textarea>
      <textarea name="num2" cols="50" rows="1" id="num2"></textarea> <input name="calculateXOR" value="Calculate XOR" onclick="displayXOR()" type="button">
 <p>XOR: <textarea name="xor" cols="50" rows="1" readonly="readonly" id="xor"></textarea></p> <br></pre> </div>
 
