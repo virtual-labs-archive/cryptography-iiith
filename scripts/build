@@ -1,0 +1,17 @@
+#!/bin/bash
+#Build script for NIT Suratkal Labs
+
+#runs the makefile and copies the build folder to localhost  
+
+#the script is invoked by init
+
+#runs the makefile
+cd src
+make all
+cd ..
+
+#changing the permissions for the build folder 
+chmod 777 build/ -R
+
+#copies the build folder to localhost
+cp -r build/ /var/www/
