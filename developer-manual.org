@@ -1,0 +1,60 @@
+#+TITLE: How to write the Scripts?
+
+* Introduction
+
+Hello Developer! 
+
+On the road to integrating the labs with the cloud infrastructure, we
+in the VLEAD team have created a few scripts which would make it easy
+to build and deploy the lab as well as install the dependencies and
+take the backup and restore the data, if being stored by the lab.
+
+This document is intended to give you an overview of the specific
+scripts you should develop. We are providing a template of these
+scripts in the scripts folder. Please tweak them to suit your lab.
+
+
+* Scripts
+
+** Build
+ 
+Build script handles building the lab by running the makefile,
+copying the build folder to the localhost and changing the
+permissions of the build folder. 
+ 
+
+** Initialize
+
+Initialize script installs the server-side dependencies by reading
+them from a text file. After installing the dependencies, it invokes
+the build script. 
+
+ 
+*** dependencies list
+
+It is a text file which contains the list of all the server side
+dependencies of a lab. 
+
+
+** Startup
+
+Startup script starts all the services required to run the lab like
+apache and mysql server. 
+
+
+** Shutdown
+
+Shutdown script stops all the services mentioned in the startup
+script. This is necessary if there is a requirement to stop the lab VM or
+the container for maintenance issues. 
+
+
+** Backup
+
+Backup script is used if the lab is using any database. The backup of
+the database is taken using this script. 
+
+
+** Restore
+
+Restore script reverses the process and restores the database. 

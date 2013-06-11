@@ -1,16 +1,16 @@
-#/bin/bash
-# init Script creates the initial environment for the Cryptography
-# Lab, the script installs the server side dependencies of the lab,
-# runs the makefile, creates the build directory and copies the build
-# folder to /var/www
+#!/bin/bash
+# initialize script for Cryptography Lab
+
+# initialize script creates the initial environment for the Cryptography
+# Lab by installing the server side dependencies for the lab and invokes the build script.
 # Mention all the server-side dependencies of the lab in
 # dependencies.txt
 
 # Usage of the Script 
 
-# To use init.sh, run the command
-# ./scripts/init.sh scripts/dependencies.txt 
-# init script takes dependencies.txt as an argument and installs the
+# To use initialize script, run the command
+# initialize scripts/dependencies.txt 
+# initialize script takes dependencies.txt as an argument and installs the
 # packages mentioned in the dependencies.txt file. 
 
 
@@ -25,8 +25,5 @@ do
 	apt-get install -y $LINE
 done
 
-# invokes build script
-build
-
-# change the permissions of build folder in localhost
-chmod 777 /var/www/build -R 
+# invoke the build script
+./scripts/build
