@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 # Restore Script for Cryptography Lab
 
 # Restore Script restores the backup of the database used by the lab.

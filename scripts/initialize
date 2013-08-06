@@ -13,6 +13,11 @@
 # initialize script takes dependencies.txt as an argument and installs the
 # packages mentioned in the dependencies.txt file. 
 
+# exporting the proxy server
+export http_proxy=http://proxy.iiit.ac.in:8080/
+
+# updating the packages
+apt-get update
 
 # $1 is the shell variable for command-line argument. 
 FILENAME=$1
