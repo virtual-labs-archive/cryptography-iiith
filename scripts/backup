@@ -1,8 +1,12 @@
 #/bin/bash
-# Backup Script for Cryptography Lab
+# backup Script for cryptography-Lab
 
-# Backup Script takes the backup of the database used by the lab.
-# Since there is no database being used for Cryptography Lab, 
+# backup Script takes the backup of the data used by the lab.
+# Since there is no data being used by Cryptography Lab, 
 # the script does nothing. 
+# Usage of the script
 
-echo "There is no database used for the lab."
+# To use backup script, run the command
+# ./scripts/backup
+ 
+echo -e "There is no data used by this lab. \nHence, nothing needs to be backed up."

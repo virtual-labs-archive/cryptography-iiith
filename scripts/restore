@@ -1,8 +1,14 @@
 #!/bin/bash
-# Restore Script for Cryptography Lab
+# Restore Script for cryptography Lab
 
-# Restore Script restores the backup of the database used by the lab.
-# Since there is no database being used for Cryptography Lab, 
+# Restore Script restores the backup of the data used by the lab.
+# Since there is no data being used by Cryptography Lab, 
 # the script does nothing. 
 
-echo "There is no database used for the lab."
+# Usage of the script
+
+# To use restore script, run the command
+# ./scripts/restore
+ 
+
+echo -e "There is no data used by this lab.\nHence, nothing needs to be restored."
