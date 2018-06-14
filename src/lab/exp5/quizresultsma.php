@@ -26,15 +26,15 @@ echo "<body class=\"page_bg\">";
 echo "<br>Total number of correct answers : ".$total."/3";
 echo '	<h2>Correct Answers</h2>
 <br>
-<b>Q5.</b>
+<b>Q1.</b>
                 <b>If a MAC tag is K-bits long, how much work is needed to find a collision to that specific value.</b><br>
                 K^K<br>
                 <br>
-<b>Q6.</b>                
+<b>Q2.</b>                
                 <b>The out put length of SHA â I is _____________ bits</b><br>
                 160<br>
                 <br>
-<b>Q7.</b>                
+<b>Q3.</b>                
                 <b>3. Best way to achieve both privacy and message integrity</b><br>
                 Encrypt then Authenticate<br>
                 <br>
