@@ -98,40 +98,44 @@
 						<div class="col-md-10 lab-list-col-10">
 							
 							<!--edit -->
+<form action="results.php" method="post" name="quiz" onsubmit='return window.confirm("You are submitting information to an external page. \nAre you sure?");' target="_blank">
 <h1 class="text-h2-lightblue">Cryptographic Hash Functions and Applications(HMAC)</h1><div class="content" id="experiment-article-section-6-content">
 <ol> <li><p>Which criterion ensures that we canât find two messages that hash to the same digest?</p>
 <ol class="d">
-<li><input name="quest_590" type="radio" value="One-wayness"/>One-wayness</li>
-<li><input name="quest_590" type="radio" value="Weak-collision-resistance"/>Weak-collision-resistance</li>
-<li><input name="quest_590" type="radio" value="Strong-collision-resistance "/>Strong-collision-resistance </li>
-<li><input name="quest_590" type="radio" value="None"/>None</li>
+<li><input id="quest_590" name="quest_590" type="radio" value="One-wayness"/>One-wayness</li>
+<li><input id="quest_590" name="quest_590" type="radio" value="Weak-collision-resistance"/>Weak-collision-resistance</li>
+<li><input id="quest_590" name="quest_590" type="radio" value="Strong-collision-resistance "/>Strong-collision-resistance </li>
+<li><input id="quest_590" name="quest_590" type="radio" value="None"/>None</li>
 </ol></li>
-<li><p>Which criterion Ensures that it must be extremely difficult or impossible to create the message if the message digest is given.</p>
+<li><p>Which criterion Ensures that it must be extremely difficult or impossible to create the message if the message digest is given?</p>
 <ol class="d">
-<li><input name="quest_591" type="radio" value="One-wayness"/>One-wayness</li>
-<li><input name="quest_591" type="radio" value="Weak-collision-resistance"/>Weak-collision-resistance</li>
-<li><input name="quest_591" type="radio" value="Strong-collision resistance"/>Strong-collision resistance</li>
-<li><input name="quest_591" type="radio" value="None"/>None</li>
+<li><input id="quest_591" name="quest_591" type="radio" value="One-wayness"/>One-wayness</li>
+<li><input id="quest_591" name="quest_591" type="radio" value="Weak-collision-resistance"/>Weak-collision-resistance</li>
+<li><input id="quest_591" name="quest_591" type="radio" value="Strong-collision resistance"/>Strong-collision resistance</li>
+<li><input id="quest_591" name="quest_591" type="radio" value="None"/>None</li>
 </ol></li>
 <li><p>Consider the function h: {0,1}<sup>8</sup> -&gt; {0,1}<sup>4</sup>. Suppose h(x) = x <sup>xmod 5</sup> mod 16, x in [0, 255]. The collision in h occurs for.</p>
 <ol class="d">
-<li><input name="quest_594" type="radio" value="(1, 17)"/>(1, 17)</li>
-<li><input name="quest_594" type="radio" value="(2, 16)"/>(2, 16)</li>
-<li><input name="quest_594" type="radio" value="(1, 16)"/>(1, 16)</li>
-<li><input name="quest_594" type="radio" value="(2, 17)"/>(2, 17)</li>
+<li><input id="quest_594" name="quest_594" type="radio" value="(1, 17)"/>(1, 17)</li>
+<li><input id="quest_594" name="quest_594" type="radio" value="(2, 16)"/>(2, 16)</li>
+<li><input id="quest_594" name="quest_594" type="radio" value="(1, 16)"/>(1, 16)</li>
+<li><input id="quest_594" name="quest_594" type="radio" value="(2, 17)"/>(2, 17)</li>
 </ol></li>
 <li><p>The Merkle-Damgard Transform is mainly useful for</p>
 <ol class="d">
-<li><input name="quest_582" type="radio" value="Converting any fixed-length collision resistant hash function to an arbitrary length collision resistant hash function "/>Converting any fixed-length collision resistant hash function to an arbitrary length collision resistant hash function </li>
-<li><input name="quest_582" type="radio" value="Converting arbitrary length hash function to a fixed length hash function "/>Converting arbitrary length hash function to a fixed length hash function </li>
-<li><input name="quest_582" type="radio" value="Constructing hash function from random function "/>Constructing hash function from random function </li>
-<li><input name="quest_582" type="radio" value="None"/>None</li>
+<li><input id="quest_582" name="quest_582" type="radio" value="Converting any fixed-length collision resistant hash function to an arbitrary length collision resistant hash function "/>Converting any fixed-length collision resistant hash function to an arbitrary length collision resistant hash function </li>
+<li><input id="quest_582" name="quest_582" type="radio" value="Converting arbitrary length hash function to a fixed length hash function "/>Converting arbitrary length hash function to a fixed length hash function </li>
+<li><input id="quest_582" name="quest_582" type="radio" value="Constructing hash function from random function "/>Constructing hash function from random function </li>
+<li><input id="quest_582" name="quest_582" type="radio" value="None"/>None</li>
 </ol></li>
 <li>Understand HMAC scheme and find a break it using availble source code</li>
 <li>Understand Merkel-Damgard transform and Explain,how we are using it for HMAC? </li>
 <li>Understand and explain analogy between SHA1 and our dummy HMAC function</li>
 <li>Explain why HMAC is secure and on what assumptions this security is based?</li>
 </ol>
+<input class="button" id="b1" type="submit" value="Submit Answers"/>
+</input>
+</form>
 </div>						</div>
 					</div>
 			</div>
