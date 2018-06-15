@@ -98,38 +98,39 @@
 						<div class="col-md-10 lab-list-col-10">
 							
 							<!--edit -->
+<form action="results.php" method="post" name="quiz" onsubmit='return window.confirm("You are submitting information to an external page. \nAre you sure?");' target="_blank">
 <h1 class="text-h2-lightblue">Digital Signatures Scheme</h1><div class="content" id="experiment-article-section-6-content">
 <ol>
-<li>Digital signature canât provide ______ for the message
+<li>Digital signature cannot provide ______ for the message
 				<ol class="d">
-<li><input name="quest_644" type="radio" value="Integrity "/>Integrity </li>
-<li><input name="quest_644" type="radio" value="Confidentiality"/>Confidentiality</li>
-<li><input name="quest_644" type="radio" value="Non repudiation "/>Non repudiation </li>
-<li><input name="quest_644" type="radio" value="Authentication "/>Authentication </li>
+<li><input id = "q1" name="q1" type="radio" value="Integrity "/>Integrity </li>
+<li><input id = "q1" name="q1" type="radio" value="Confidentiality"/>Confidentiality</li>
+<li><input id = "q1" name="q1" type="radio" value="Non repudiation "/>Non repudiation </li>
+<li><input id = "q1" name="q1" type="radio" value="Authentication "/>Authentication </li>
 </ol>
 </li>
 <li>Digital signature uses ______  for generating valid signature
 				<ol class="d">
-<li>Private key </li>
-<li>Public key</li>
-<li>Secret key</li>
-<li>None of the aboove</li>
+<li><input id = "q2" name="q2" type="radio" value="Private key "/>Private key </li>
+<li><input id = "q2" name="q2" type="radio" value="Public key "/>Public key</li>
+<li><input id = "q2" name="q2" type="radio" value="Secret key "/>Secret key</li>
+<li><input id = "q2" name="q2" type="radio" value="None of the above "/>None of the aboove</li>
 </ol>
 </li>
 <li>Verification Algorithm uses ______  for  validating digital signature
 				<ol class="d">
-<li>Private key </li>
-<li>Public key</li>
-<li>Secret key</li>
-<li>None of the aboove</li>
+<li><input id = "q3" name="q3" type="radio" value="Private key "/>Private key </li>
+<li><input id = "q3" name="q3" type="radio" value="Public key "/>Public key</li>
+<li><input id = "q3" name="q3" type="radio" value="Secret key "/>Secret key</li>
+<li><input id = "q3" name="q3" type="radio" value="None of the above "/>None of the aboove</li>
 </ol>
 </li>
 <li>Is digital signature scheme possible without public key cryptography
 				<ol type="d">
-<li>Yes </li>
-<li>No</li>
-<li>May be exist </li>
-<li>None of the aboove</li>
+<li><input id = "q4" name="q4" type="radio" value="Yes "/>Yes </li>
+<li><input id = "q4" name="q4" type="radio" value="No"/>No</li>
+<li><input id = "q4" name="q4" type="radio" value="May be exist "/>May be exist </li>
+<li><input id = "q4" name="q4" type="radio" value="None of the above "/>None of the above</li>
 </ol>
 </li>
 <li>
@@ -141,6 +142,9 @@
 					Explain why digital signature schemes works ?
 				</li>
 </li></ol>
+<input class="button" id="b1" type="submit" value="Submit Answers"/>
+</input>
+</form>
 </div>						</div>
 					</div>
 			</div>
