@@ -1,0 +1,412 @@
+<!-- This file needs to be edited by the lab developer to suit
+the requirements of their lab in particular.-->
+
+<!-- Add class="default" to include any element as it is
+specified in default.html. 
+Do not include class="default" to the elements that you want to
+edit -->
+
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+
+<div id="experiment"> <!-- The Experiment Document Container-->
+
+  <!-- The lab Header contains the logo and the name of the lab,
+  usually displayed on the top of the page-->
+
+  <header id="experiment-header">
+  
+    <div id="experiment-header-logo" class="logo">
+      <!-- Enclose the logo image of your lab or write it in 
+      text-->
+      <img src="../images/logo.jpg" />
+    </div>
+
+    <div id="experiment-header-heading" class="heading">
+      <!-- Write the name of your lab and link it to the home 
+      page of your lab (h1 tag is preferred while writing your 
+      lab name)-->
+      <a href="../index.php">Cyptography Lab</a>	
+    </div>
+
+    <!-- Add any additional element you want to add to the lab 
+    header, For example : Help (Enclosing them with suitable 
+    div is recommended)-->
+
+  </header>
+
+
+  <!-- The lab article is the main content area where all the 
+  experiment content sits-->
+  <article id="experiment-article">
+  
+    <!-- The lab article has an header, optional navigational 
+    menu, number of sections, an optional sidebar and a closing 
+    footer-->
+     <div id="experiment-article-breadcrumb" class="breadcrumb">
+     </div>
+    
+      <header id="experiment-article-heading" class="heading">
+        <!-- You can add a welcome message or title of the 
+        experiment here -->
+        Diffie-Hellman Key Establishment
+        <!-- Add any additional element if required with proper 
+        enclosing-->
+      </header>
+
+      <!-- Navigation menu is useful to organize the view of 
+      multiple sections inside the article-->
+      <nav id="experiment-article-navigation" class="default">
+        <ul id="experiment-article-navigation-menu">
+          <!-- The menu can be dynamically generated to contain 
+          the headings of your sections or instead write the 
+          menu items of your choice individually enclosedu in 
+          <li> tag as shown below-->
+        </ul>
+      </nav>
+
+      <!-- All the sections of your lab or experiment can be 
+      enclosed together with a div element as shown below-->
+      <div id="experiment-article-sections">
+
+        <!-- First section of the article-->
+        <section id="experiment-article-section-1">
+          
+          <div id="experiment-article-section-1-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab -->
+	    <img src="../images/introduction.jpg" />
+	  </div>	
+          
+          <!-- The heading for the section can be enclosed in a 
+          div tag. -->
+          <div id="experiment-article-section-1-heading" 
+          class="heading">
+            Introduction
+          </div>
+
+          <!-- Write the section content inside a paragraph 
+          element, You can also include images with <img> tag -->
+          <div id="experiment-article-section-1-content" 
+          class="content">	
+            <p>
+            In this experiment, we simulate certain "toy" versions of the popular Diffie-Hellman secure key exchange protocol
+            </p>
+
+         
+        </div>
+
+
+      </section>
+
+      <!-- Second section of the article-->
+      <section id="experiment-article-section-2">
+        
+        <div id="experiment-article-section-2-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab. -->
+	  <img src="../images/theory.jpg" />
+	</div>
+				
+        <!-- The heading for the section can be enclosed in a 
+        div tag. -->
+        <div id="experiment-article-section-2-heading" 
+        class="heading">
+          Theory
+        </div>
+
+
+        <!-- Write the section content inside a paragraph 
+        element, we can also include images with <img> tag -->
+        <div id="experiment-article-section-2-content" 
+        class="content">
+          <p>For a very brief theory of shift ciphers and their analysis, click <a href="media/DHKE1.pdf">here</a><br></p>
+			<p><a href="media/DHKE1.pdf"><img src="../images/image9.png" alt="here"/></a></p>
+        </div>
+      </section>
+
+
+      <section id="experiment-article-section-3">
+        
+        <div id="experiment-article-section-3-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab. -->
+	  <img src="../images/objective.jpg" />
+	</div>
+     
+        <div id="experiment-article-section-3-heading" 
+        class="heading">
+          Objective
+        </div>
+
+        <div id="experiment-article-section-3-content" 
+        class="content">
+          <p>
+            To understand the DH-key exchange protocol
+          </p> 
+       
+         
+        </div>
+
+      </section>
+
+
+      <section id="experiment-article-section-4">
+
+        <div id="experiment-article-section-4-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab.-->
+	  <img src="../images/simulation.jpg" />
+	</div>
+
+        <div id="experiment-article-section-4-heading" 
+        class="heading">
+          Experiment
+        </div>
+
+        <div id="experiment-article-section-4-content" 
+        class="content">
+          
+		<form name="stuff">
+			<p>Public Information:</p> <br>
+			<p>Prime Number: </p>
+			<p><input id="prime" value="" size="20" readonly="readonly" type="text">
+			    <input value="Generate Prime" onclick="nextPrime();" type="button"></p> <br>
+			<p>Generator G:</p> <p><input id="generator" value="" size="20" readonly="readonly" type="text">
+			    <input value="Another Generator" onclick="nextGenerator();" type="button"></p> <br>
+		     <table style="float: left;">
+			    <tbody>
+				<tr><td><center><font color="red">Alice</font></center></td>
+			      </tr>
+			      <tr>
+				<td valign="top">Key: <input id="keyA" value="" size="20" readonly="readonly" type="text">
+				    <input value="Generate A" onclick="nextKeyA();" type="button"></td>
+			      </tr>
+			      <tr>
+				<td><input id="encryptA" value="" size="20" readonly="readonly" type="text">
+				    <input value="Calculate Ga" onclick="calculateGA();" type="button"></td>
+			      </tr>
+			      <tr>
+				    <td><input value="Send Ga to B" onclick="sendA();" type="button"></td>
+			      </tr>
+			      <tr>
+				<td>Received: <input id="receivedA" value="" size="20" readonly="readonly" type="text"></td>
+			      </tr>
+			      <tr>
+				    <td><input value="Calculate Gab" onclick="calculateGAB();" type="button">
+				    <input id="encryptAB" value="" size="20" readonly="readonly" type="text"></td>
+			      </tr>
+			    </tbody>
+		       </table> 
+		    
+		   	
+		       <table style="float: right;">
+			    <tbody>
+				<tr><td><center><font color="red">Bob</font></center></td>
+			      </tr>
+			      <tr>
+				<td valign="top">Key: <input id="keyB" value="" size="20" readonly="readonly" type="text">
+				    <input value="Generate B" onclick="nextKeyB();" type="button"></td>
+			      </tr>
+			      <tr>
+				<td><input id="encryptB" value="" size="20" readonly="readonly" type="text">
+				    <input value="Calculate Gb" onclick="calculateGB();" type="button"></td>
+			      </tr>
+			      <tr>
+				    <td><input value="Send Gb to A" onclick="sendB();" type="button"></td>
+			      </tr>
+			      <tr>
+				<td>Received: <input id="receivedB" value="" size="20" readonly="readonly" type="text"></td>
+			      </tr>
+			      <tr>
+				    <td><input value="Calculate Gba" onclick="calculateGBA();" type="button">
+				    <input id="encryptBA" value="" size="20" readonly="readonly" type="text"></td>
+			      </tr>
+			    </tbody>
+		        </table>
+			<p style="clear:both;">
+		    
+		</form>
+          
+        </div>
+
+      </section>
+
+      <section id="experiment-article-section-5">
+   
+        <div id="experiment-article-section-5-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab.-->
+	  <img src="../images/manual.jpg" />
+	</div>
+
+        <div id="experiment-article-section-5-heading" 
+        class="heading">
+          Manual
+        </div>
+
+        <div id="experiment-article-section-5-content" 
+        class="content">
+         <p>
+				<b>STEP1:</b> Firslty,choose a large prime number <b>p</b> and a generator <b>g</b> for that prime.<br/><br/>
+				<b>STEP 2:</b> Secondly,both Alice and Bob generate their respective keys <b>A</b> and <b>B</b>. 
+                                     And (<b>ga</b>,<b>gb</b>) for their keys respectively.<br/><br/>	 
+				<b>STEP 3:</b> Both Alice and bob send exchange their  <b>ga</b>,<b>gb</b>.<br/><br/>
+				<b>STEP 4:</b> Finally,both calculate their public keys <b>gab</b> and <b>gba</b> repectively.<br/><br/>
+				<b>STEP 5:</b> If both <b>gab</b> and <b>gba</b> are equal then Deffie-Hellman key exchange is verified.
+
+	</p>
+	  </div>
+	
+        </section>
+	
+	  <section id="experiment-article-section-6">
+      
+          <div id="experiment-article-section-6-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab.-->
+	    <img src="../images/quizzes.jpg" />
+	  </div>
+
+          <div id="experiment-article-section-6-heading" 
+          class="heading">
+            Quizzes
+          </div>
+
+          <div id="experiment-article-section-6-content" 
+          class="content">
+
+	<ol>
+		<li><p>101 <sup>4,800,000,023</sup> mod 35.</p>
+			<ul class="multichoice">
+			  <li><input name="quest_647" type="radio" value="36" />36</li>
+			  <li><input name="quest_647" type="radio" value="9" />9</li>
+			  <li><input name="quest_647" type="radio" value="26" />26</li>
+			  <li><input name="quest_647" type="radio" value="17" />17</li>
+			</ul>
+		</li>
+		<li><p>Which among these is a generator of Z<sup>*</sup><sub>13</sub></p>
+			<ul class="multichoice">
+			  <li><input name="quest_649" type="radio" value="3" />3</li>
+			  <li><input name="quest_649" type="radio" value="4" />4</li>
+			  <li><input name="quest_649" type="radio" value="7" />7</li>
+			  <li><input name="quest_649" type="radio" value="2" />2</li>
+			</ul>
+		</li>
+		<li><p>The set of quadratic residues modulo 211 has cardinality of</p>
+			<ul class="multichoice">
+			  <li><input name="quest_650" type="radio" value="210" />210</li>
+			  <li><input name="quest_650" type="radio" value="106" />106</li>
+			  <li><input name="quest_650" type="radio" value="212" />212</li>
+			  <li><input name="quest_650" type="radio" value="105" />105</li>
+			</ul>
+		</li>
+		<li><p>N=90 then Ø(n) =? Where Ø(n) is the number of elements co-prime to ‘n’ [Ø(n) is also called Euler Totient function]</p>
+			<ul class="multichoice">
+			  <li><input name="quest_639" type="radio" value="8" />8</li>
+			  <li><input name="quest_639" type="radio" value="24" />24</li>
+			  <li><input name="quest_639" type="radio" value="48" />48</li>
+			  <li><input name="quest_639" type="radio" value="14" />14</li>
+			</ul>
+		</li>
+            
+		 
+			  <li>Run experiment with different prime numbers and check whether you can exhange same public key at both ends</li>
+			  <li>Run with different combinations of Primes numbers and generators</li>
+			  <li>Try to understand Discrete log Problem using experiment</li> 	
+		     
+	</ol>
+
+          </div>
+
+        </section>
+
+        <section id="experiment-article-section-7">
+	  
+          <div id="experiment-article-section-7-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab. -->
+	    <img src="../images/procedure.jpg" />
+	  </div>
+	
+          <div id="experiment-article-section-7-heading" 
+          class="heading">
+	    Procedure
+	  </div>
+	
+          <div id="experiment-article-section-7-content" 246f3d60049c32f4b3a816ad86529cf52e2c1de5
+          class="content">
+	    <p>
+	      For </b>Procedure</b> of the experiment refer <b>Theory</b> and <b>Manual</b>.
+	    </p>
+	  </div>
+	
+        </section>
+			
+		
+        <section id="experiment-article-section-8">
+   
+          <div id="experiment-article-section-8-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab.-->
+	    <img src="../images/readings.jpg" />
+	  </div>
+
+          <div id="experiment-article-section-8-heading" 
+          class="heading">
+            Further Readings
+          </div>
+
+          <div id="experiment-article-section-8-content" 
+          class="content">
+            <ul>	
+              <li>
+                <a href=http://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange>Wikipedia</a>
+              </li>
+              <li>
+                <a href=http://www.cs.berkeley.edu/~luca/cs276/lecture17.pdf>Notes on Diffie Hellman Key Exchange</a>
+              </li> 
+              <li>
+               Introduction to Modern Cryptography by Jonathan Katz and Yehuda Lindell.
+              </li> 
+              
+            </ul>
+          </div>
+
+        </section>
+
+	
+
+      </div>
+
+
+    <!-- An article can have a sidebar that contain related 
+    links and additional material (however it is kept optional 
+    at this moment) -->
+    <aside id="lab-article-sidebar" class="default">
+      <!-- put the content that you want to appear in the 
+      sidebar -->	
+    </aside>
+
+
+    <!-- Article footer can display related content and 
+    additional links -->						
+    <footer id="lab-article-footer" class="default">
+      <!-- Put the content that you want to appear here -->
+    </footer>
+
+  </article>
+
+
+  <!-- Links to other labs, about us page can be kept the lab 
+  footer-->
+ <footer id="lab-footer" class="footer">
+   <!-- Put the content here-->
+<a href="http://virtual-labs.ac.in/nmeict/" >Sponsored by MHRD (NME-ICT) </a> | <a href="http://virtual-labs.ac.in/licensing/" target="_blank"> Licensing Terms </a>
+</footer>
+</div>		
+
+</body>
+</html>

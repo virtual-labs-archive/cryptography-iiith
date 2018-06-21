@@ -1,0 +1,468 @@
+<!-- This file needs to be edited by the lab developer to suit
+the requirements of their lab in particular.-->
+
+<!-- Add class="default" to include any element as it is
+specified in default.html. 
+Do not include class="default" to the elements that you want to
+edit -->
+
+<!DOCTYPE html>
+<html>
+<head><link rel="stylesheet" type="text/css" href="expstyle.css"></head>
+<body>
+
+<div id="experiment"> <!-- The Experiment Document Container-->
+
+  <!-- The lab Header contains the logo and the name of the lab,
+  usually displayed on the top of the page-->
+
+  <header id="experiment-header" >
+  
+    <div id="experiment-header-logo" class="logo">
+      <!-- Enclose the logo image of your lab or write it in 
+      text-->
+      <img src="../images/logo.jpg" />
+    </div>
+
+    <div id="experiment-header-heading" class="heading">
+      <!-- Write the name of your lab and link it to the home 
+      page of your lab (h1 tag is preferred while writing your 
+      lab name)-->
+      <a href="../index.php">Cryptography Lab</a>	
+    </div>
+
+    <!-- Add any additional element you want to add to the lab 
+    header, For example : Help (Enclosing them with suitable 
+    div is recommended)-->
+
+  </header>
+
+
+  <!-- The lab article is the main content area where all the 
+  experiment content sits-->
+  <article id="experiment-article">
+  
+    <!-- The lab article has an header, optional navigational 
+    menu, number of sections, an optional sidebar and a closing 
+    footer-->
+     <div id="experiment-article-breadcrumb" class="breadcrumb">
+     </div>
+    
+      <header id="experiment-article-heading" class="heading">
+        <!-- You can add a welcome message or title of the 
+        experiment here -->
+        AES and Modes of Operation
+        <!-- Add any additional element if required with proper 
+        enclosing-->
+      </header>
+
+      <!-- Navigation menu is useful to organize the view of 
+      multiple sections inside the article-->
+      <nav id="experiment-article-navigation" class="default">
+        <ul id="experiment-article-navigation-menu">
+          <!-- The menu can be dynamically generated to contain 
+          the headings of your sections or instead write the 
+          menu items of your choice individually enclosedu in 
+          <li> tag as shown below-->
+        </ul>
+      </nav>
+
+      <!-- All the sections of your lab or experiment can be 
+      enclosed together with a div element as shown below-->
+      <div id="experiment-article-sections">
+
+        <!-- First section of the article-->
+        <section id="experiment-article-section-1">
+          
+          <div id="experiment-article-section-1-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab -->
+	    <img src="../images/introduction.jpg" />
+	  </div>	
+          
+          <!-- The heading for the section can be enclosed in a 
+          div tag. -->
+          <div id="experiment-article-section-1-heading" 
+          class="heading">
+            Introduction
+          </div>
+
+          <!-- Write the section content inside a paragraph 
+          element, You can also include images with <img> tag -->
+          <div id="experiment-article-section-1-content" 
+          class="content">	
+            <p>
+		   In this experiment, you are asked to encrypt long messages using various modes of operation wherein a block cipher (in this case, AES) is provided to you
+            </p>
+
+        
+        </div>
+
+
+      </section>
+
+      <!-- Second section of the article-->
+      <section id="experiment-article-section-2">
+        
+        <div id="experiment-article-section-2-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab. -->
+	  <img src="../images/theory.jpg" />
+	</div>
+				
+        <!-- The heading for the section can be enclosed in a 
+        div tag. -->
+        <div id="experiment-article-section-2-heading" 
+        class="heading">
+          Theory
+        </div>
+
+
+        <!-- Write the section content inside a paragraph 
+        element, we can also include images with <img> tag -->
+        <div id="experiment-article-section-2-content" 
+        class="content">
+<p>For a very brief theory of "Advanced Encryption Standard" and their analysis, click <a href="media/16_AES.pdf">here</a></p>
+          <p>For a very brief theory of "Modes of Encryption"  and their analysis, click <a href="media/Modes of operation.pdf">here</a></p>
+			<p><img  id="ecbm_image" src="../images/ecbm.png" alt="here"/></p><center><b>Electronic Code Book(ECB) mode</b></center>
+			<p><img id="cdbm_image" src="../images/cdbm.png" alt="here"/></p><center><b>Cipher Block Chaining(CBC) mode</b> </center>
+			<p><img id="ctr_image" src="../images/ctr.png" alt="here"/></p><center><b>Contur mode</b></center>
+			<p><img id="ofbm_imgae" src="../images/ofbm.png" alt="here"/></p><center><b>Output FeedBack mode</b></center>
+
+
+        </div>
+      </section>
+
+
+      <section id="experiment-article-section-3">
+        
+        <div id="experiment-article-section-3-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab. -->
+	  <img src="../images/objective.jpg" />
+	</div>
+     
+        <div id="experiment-article-section-3-heading" 
+        class="heading">
+          Objective
+        </div>
+
+        <div id="experiment-article-section-3-content" 
+        class="content">
+          <p>
+             To understand the need, strenghts and weaknesses of various modes of operation of block ciphers
+          </p> 
+       
+         
+        </div>
+
+      </section>
+
+
+      <section id="experiment-article-section-4">
+
+        <div id="experiment-article-section-4-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab.-->
+	  <img src="../images/simulation.jpg" />
+	</div>
+
+        <div id="experiment-article-section-4-heading" 
+        class="heading">
+          Experiment
+        </div>
+
+        <div id="experiment-article-section-4-content" 
+        class="content">
+			<h2>AES (Rijndael) Encryption</h2>
+			<h3>PART I</h3>
+			<form name="aestest">
+			<p>Choose your mode of operation:
+			<select id="select_mode" name="select_mode" size="1" onchange="selectMode();">
+                            <option value="ecb" selected="selected">Electronic Code Book (ECB)</option>
+                            <option value="cbc">Cipher Block Chaining</option>
+                            <option value="ofb">Output Feedback</option>
+                            <option value="ctr">Counter mode</option>
+                        </select></p>
+
+			<hr>
+			<h3>PART II</h3>
+			<p><pre>Key size in bits: <select name="keySize" id="keySize"><option value="128" selected="selected">128</option><option value="192">192</option><option value="256">256</option></select></p>
+ </p>Plaintext: <textarea name="plainarea" cols="50" rows="6" readonly="readonly" id="plainarea"></textarea>   <input name="changePlainText" value="Next Plaintext" onclick="nextPlainText()" type="button"></p>
+       Key: <textarea name="keyarea" cols="50" rows="1" readonly="readonly" id="keyarea"></textarea>   <input name="changeKey" value="Next Keytext" onclick="nextKey()" type="button"> <div id="ivtext">
+        IV: <textarea name="iv" cols="50" rows="1" readonly="readonly" id="iv"></textarea>   <input name="changeIV" value="Next IV" onclick="nextIV()" type="button"> </div> <div id="ctrtext">
+       CTR: <textarea name="ctr" cols="50" rows="1" readonly="readonly" id="ctr"></textarea>   <input name="changeCTR" value="Next CTR" onclick="nextCTR()" type="button"> </div> </pre>
+<div id="calculateXor">
+<hr><h3>PART III</h3>
+<p>Calculate XOR:<pre><textarea name="num1" cols="50" rows="1" id="num1"></textarea>
+     <textarea name="num2" cols="50" rows="1" id="num2"></textarea> <input name="calculateXOR" value="Calculate XOR" onclick="displayXOR()" type="button">
+<p>XOR: <textarea name="xor" cols="50" rows="1" readonly="readonly" id="xor"></textarea></p></p></pre> </div>
+
+
+<hr><h3>PART IV</h3>
+			<table><tbody>
+			<tr>
+			<td>Key in hex: </td>
+			<td><input size="66" name="key" type="text"></td></tr>
+			<tr><td>Plaintext in hex: </td>
+			<td><input size="66" name="plaintext" type="text"></td>
+			</tr>
+
+			<tr>
+			<td>Ciphertext in hex: </td>
+			<td><input size="66" name="ciphertext" type="text"></td>
+			</tr>
+
+			<tr>
+			<td>&nbsp;</td>
+			<td>
+			<input value="Encrypt" onclick="doEncryption()" type="button"> &nbsp; &nbsp; 
+			<input value="Decrypt" onclick="doDecryption()" type="button"> &nbsp; &nbsp; 
+			<input value="Clear" type="reset"></td>
+			</tr>
+			</tbody></table>
+			</form>
+			<hr><h3>PART V</h3>
+			  <p>Enter your answer here:</p>
+			 <p><input id="userans" size="65" type="text"> <input value="Check Answer!" onclick="checkAnswer();" type="button"></p>
+			  <div id="notification" style="width: 300px; height: 10px; padding-top: 20px;"></div>
+
+                </div>
+
+<!----       <h2>AES (Rijndael) Encryption</h2>
+			<form name="aestest">
+			<h3>PART I</h3>
+			<p>Choose your mode of operation:</p>
+			<p>
+			<select id="select_mode" name="select_mode" size="1" onchange="selectMode();">
+                            <option value="ecb" selected="selected">Electronic Code Book (ECB)</option>
+                            <option value="cbc">Cipher Block Chaining</option>
+                            <option value="ofb">Output Feedback</option>
+                            <option value="ctr">Counter mode</option>
+                        </select>
+			</p>
+			<hr>
+			<h3>PART II</h3>
+			<pre>Key size in bits: <select name="keySize" id="keySize"><option value="128" selected="selected">128</ption><option value="192">192</option><option value="256">256</option></select>
+
+ <p>Plaintext: <textarea name="plainarea" cols="50" rows="6" readonly="readonly" id="plainarea"></textarea>   <input name="changePlainText" value="Next Plaintext" onclick="nextPlainText()" type="button"></p>
+      <p>Key: <textarea name="keyarea" cols="50" rows="1" readonly="readonly" id="keyarea"></textarea>   <input name="changeKey" value="Next Keytext" onclick="nextKey()" type="button">
+ <div id="ivtext"></p>
+	<p>IV: <textarea name="iv" cols="50" rows="1" readonly="readonly" id="iv"></textarea>   <input name="changeIV" value="Next IV" onclick="nextIV()" type="button"> </div> <div id="ctrtext"></p>
+       <p>CTR: <textarea name="ctr" cols="50" rows="1" readonly="readonly" id="ctr"></textarea>   <input name="changeCTR" value="Next CTR" onclick="nextCTR()" type="button"></p> </pre>
+<hr>
+<h3>PART III</h3>
+<div id="calculateXor">
+<pre>Calculate XOR:<br><textarea name="num1" cols="50" rows="1" id="num1"></textarea>
+     <textarea name="num2" cols="50" rows="1" id="num2"></textarea> <input name="calculateXOR" value="Calculate XOR" onclick="displayXOR()" type="button">
+XOR: <textarea name="xor" cols="50" rows="1" readonly="readonly" id="xor"></textarea></pre> </div>
+
+
+
+
+<hr>
+<h3>PART IV</h3>
+
+			<table><tbody>
+			<tr>
+			<td>Key in hex: </td>
+			<td><input size="66" name="key" type="text"></td></tr>
+			<tr><td>Plaintext in hex: </td>
+			<td><input size="66" name="plaintext" type="text"></td>
+			</tr>
+
+			<tr>
+			<td>Ciphertext in hex: </td>
+			<td><input size="66" name="ciphertext" type="text"></td>
+			</tr>
+
+			<tr>
+			<td>&nbsp;</td>
+			<td>
+			<input value="Encrypt" onclick="doEncryption()" type="button"> &nbsp; &nbsp; 
+			<input value="Decrypt" onclick="doDecryption()" type="button"> &nbsp; &nbsp; 
+			<input value="Clear" type="reset"></td>
+			</tr>
+			</tbody></table>
+			</form>
+			<hr>
+<h3>PART V</h3>
+			 <p> Enter your answer here:</p>
+			 <p> <input id="userans" size="65" type="text"></p> <p><input value="Check Answer!" onclick="checkAnswer();" type="button"> </p><br>
+			  <div id="notification" style="width: 300px; height: 10px; padding-top: 20px;"></div>
+		</p>
+
+        </div>
+-------->
+      </section>
+
+      <section id="experiment-article-section-5">
+   
+        <div id="experiment-article-section-5-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab.-->
+	  <img src="../images/manual.jpg" />
+	</div>
+
+        <div id="experiment-article-section-5-heading" 
+        class="heading">
+          Manual
+        </div>
+
+        <div id="experiment-article-section-5-content" 
+        class="content">
+		<ul>
+			<li><b>Step I :</b> Choose a mode of operation from <i>PART I</i> </li>
+			<li><b>Step II :</b> Select KeySize, Plaintext, KeyText, Intialization vector(IV)(for ECB and OFB modes only) 
+                             and CTR(forctr mode only) in <i>PART II</i></li>
+			<li><b>Step III :</b> Whenever necessay use XOR opeartion in <i>PART III</i> in accordance with choosen mode of operation</li>
+			<li><b>Step IV : </b> Use fuction <b>F<sub>K</sub></b> and "Key in hex:" field in <i>PART IV</i> should be filled keytext generated in <b>Step2</b></li>
+			
+			<li><b>Step V : </b> Fill "Plaintext in hex:" field with approriate value in accordance with choosen mode of operation and click on encrypt button</li>
+			<li><b>Step VI :</b> Enter your answer in <i>PART V</i> to check your ciphertext</li> 
+         </div>
+
+        </section>
+
+        <section id="experiment-article-section-6">
+      
+          <div id="experiment-article-section-6-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab.-->
+	    <img src="../images/quizzes.jpg" />
+	  </div>
+
+          <div id="experiment-article-section-6-heading" 
+          class="heading">
+            Quizzes
+          </div>
+
+          <div id="experiment-article-section-6-content" 
+          class="content">
+	<ol>
+
+		<li><p>ECB stands for</p>
+		<ul class="multichoice">
+		  <li><input name="quest_581" type="radio" value="Electronic cipher Block" />Electronic cipher Block</li>
+		  <li><input name="quest_581" type="radio" value="Electronic code Block" />Electronic code Block</li>
+		  <li><input name="quest_581" type="radio" value="Electronic code Book" />Electronic code Book</li>
+		  <li><input name="quest_581" type="radio" value="Electronic cipher Book" />Electronic cipher Book</li>
+		</ul></li>
+
+		<li><p>Which among the following is not CPA secure?</p>
+		<ul class="multichoice">
+		  <li><input name="quest_593" type="radio" value="ECB" />ECB</li>
+		  <li><input name="quest_593" type="radio" value="CBC" />CBC</li>
+		  <li><input name="quest_593" type="radio" value="CFB" />CFB</li>
+		  <li><input name="quest_593" type="radio" value="None" />None</li>
+		</ul></li>
+
+		<li><p>Which of the following are block ciphers?</p>
+		<ul class="multichoice">
+		  <li><input name="quest_589" type="radio" value="ECB" />ECB</li>
+		  <li><input name="quest_589" type="radio" value="CBC" />CBC</li>
+		  <li><input name="quest_589" type="radio" value="CFB" />CFB</li>
+		  <li><input name="quest_589" type="radio" value="All" />All</li>
+		</ul></li>
+
+          
+		<li>Which is the fastest mode of operation among four mode of operation?</li>
+		<li>Which mode of operation is more secure?</li>
+		<li>What is importance of Intialiczation Vector(IV) and CTR ?</li>
+		<li>Why ECB is not CPA-secure and Why CBC is CPA-secure?</li>
+		<li>Suppose IV is not random.Then is CBC and OFB mode both secure</li> 
+         
+	</ol>
+       </div>
+
+        </section>
+
+        <section id="experiment-article-section-7">
+	  
+          <div id="experiment-article-section-7-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab. -->
+	    <img src="../images/procedure.jpg" />
+	  </div>
+	
+          <div id="experiment-article-section-7-heading" 
+          class="heading">
+	    Procedure
+	  </div>
+	
+          <div id="experiment-article-section-7-content" 
+          class="content">
+	    <p>
+	      For </b>Procedure</b> of the experiment refer <b>Theory</b> and <b>Manual</b>.
+	    </p>
+	  </div>
+	
+        </section>
+			
+		
+        <section id="experiment-article-section-8">
+   
+          <div id="experiment-article-section-8-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab.-->
+	    <img src="../images/readings.jpg" />
+	  </div>
+
+          <div id="experiment-article-section-8-heading" 
+          class="heading">
+            Further Readings
+          </div>
+
+          <div id="experiment-article-section-8-content" 
+          class="content">
+            <ul>	
+              <li>
+                <a href=http://en.wikipedia.org/wiki/Advanced_Encryption_Standard>Wikipedia on Advanced Encryption Standard</a>
+              </li>
+              <li>
+                <a href=http://en.wikipedia.org/wiki/Block_cipher_modes_of_operation>Wikipedia on Block Cipher Modes Of Operation</a>
+              </li> 
+              <li>
+                <a href=http://www.cs.berkeley.edu/~luca/cs276/lecture06.pdf>Notes on Modes of operation</a>
+              </li> 
+              <li>
+                Introduction To Modern Cryptography by Jonathan Katz and Yehuda Lindell.
+              </li>
+            </ul>
+          </div>
+
+        </section>
+
+	
+      </div>
+
+
+    <!-- An article can have a sidebar that contain related 
+    links and additional material (however it is kept optional 
+    at this moment) -->
+    <aside id="lab-article-sidebar" class="default">
+      <!-- put the content that you want to appear in the 
+      sidebar -->	
+    </aside>
+
+
+    <!-- Article footer can display related content and 
+    additional links -->						
+    <footer id="lab-article-footer" class="default">
+      <!-- Put the content that you want to appear here -->
+    </footer>
+
+  </article>
+
+
+  <!-- Links to other labs, about us page can be kept the lab 
+  footer-->
+ <footer id="lab-footer" class="footer">
+   <!-- Put the content here-->
+<a href="http://virtual-labs.ac.in/nmeict/" >Sponsored by MHRD (NME-ICT) </a> | <a href="http://virtual-labs.ac.in/licensing/" target="_blank"> Licensing Terms </a>
+</footer>
+
+</div>		
+
+</body>
+</html>

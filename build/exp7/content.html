@@ -1,0 +1,405 @@
+<!-- This file needs to be edited by the lab developer to suit
+the requirements of their lab in particular.-->
+
+<!-- Add class="default" to include any element as it is
+specified in default.html. 
+Do not include class="default" to the elements that you want to
+edit -->
+
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+
+<div id="experiment"> <!-- The Experiment Document Container-->
+
+  <!-- The lab Header contains the logo and the name of the lab,
+  usually displayed on the top of the page-->
+
+  <header id="experiment-header" >
+  
+    <div id="experiment-header-logo" class="logo">
+      <!-- Enclose the logo image of your lab or write it in 
+      text-->
+      <img src="../images/logo.jpg" />
+    </div>
+
+    <div id="experiment-header-heading" class="heading">
+      <!-- Write the name of your lab and link it to the home 
+      page of your lab (h1 tag is preferred while writing your 
+      lab name)-->
+      <a href="../index.php">Cryptography Lab</a>	
+    </div>
+
+    <!-- Add any additional element you want to add to the lab 
+    header, For example : Help (Enclosing them with suitable 
+    div is recommended)-->
+
+  </header>
+
+
+  <!-- The lab article is the main content area where all the 
+  experiment content sits-->
+  <article id="experiment-article">
+  
+    <!-- The lab article has an header, optional navigational 
+    menu, number of sections, an optional sidebar and a closing 
+    footer-->
+     <div id="experiment-article-breadcrumb" class="breadcrumb">
+     </div>
+    
+      <header id="experiment-article-heading" class="heading">
+        <!-- You can add a welcome message or title of the 
+        experiment here -->
+        From DES to 3-DES
+        <!-- Add any additional element if required with proper 
+        enclosing-->
+      </header>
+
+      <!-- Navigation menu is useful to organize the view of 
+      multiple sections inside the article-->
+      <nav id="experiment-article-navigation" class="default">
+        <ul id="experiment-article-navigation-menu">
+          <!-- The menu can be dynamically generated to contain 
+          the headings of your sections or instead write the 
+          menu items of your choice individually enclosedu in 
+          <li> tag as shown below-->
+        </ul>
+      </nav>
+
+      <!-- All the sections of your lab or experiment can be 
+      enclosed together with a div element as shown below-->
+      <div id="experiment-article-sections">
+
+        <!-- First section of the article-->
+        <section id="experiment-article-section-1">
+          
+          <div id="experiment-article-section-1-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab -->
+	    <img src="../images/introduction.jpg" />
+	  </div>	
+          
+          <!-- The heading for the section can be enclosed in a 
+          div tag. -->
+          <div id="experiment-article-section-1-heading" 
+          class="heading">
+            Introduction
+          </div>
+
+          <!-- Write the section content inside a paragraph 
+          element, You can also include images with <img> tag -->
+          <div id="experiment-article-section-1-content" 
+          class="content">	
+            <p>
+           	In this experiment, you are asked to design the triple DES cryptosystem provided that you are given an implementation of DES
+            </p>
+
+          
+        </div>
+
+
+      </section>
+
+      <!-- Second section of the article-->
+      <section id="experiment-article-section-2">
+        
+        <div id="experiment-article-section-2-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab. -->
+	  <img src="../images/theory.jpg" />
+	</div>
+				
+        <!-- The heading for the section can be enclosed in a 
+        div tag. -->
+        <div id="experiment-article-section-2-heading" 
+        class="heading">
+          Theory
+        </div>
+
+
+        <!-- Write the section content inside a paragraph 
+        element, we can also include images with <img> tag -->
+        <div id="experiment-article-section-2-content" 
+        class="content">
+         <p>For a very brief theory of Digital encryption Standard and their analysis, click <a href="media/DES1.pdf">here</a></p><br>
+			<a href="media/DES1.pdf"><img src="../images/image7.png" alt="here"/></a>
+
+        </div>
+      </section>
+
+
+      <section id="experiment-article-section-3">
+        
+        <div id="experiment-article-section-3-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab. -->
+	  <img src="../images/objective.jpg" />
+	</div>
+     
+        <div id="experiment-article-section-3-heading" 
+        class="heading">
+          Objective
+        </div>
+
+        <div id="experiment-article-section-3-content" 
+        class="content">
+          <p>
+           To understand how to convert a DES implementation to a triple-DES implementation
+          </p> 
+              
+        </div>
+
+      </section>
+
+
+      <section id="experiment-article-section-4">
+
+        <div id="experiment-article-section-4-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab.-->
+	  <img src="../images/simulation.jpg" />
+	</div>
+
+        <div id="experiment-article-section-4-heading" 
+        class="heading">
+          Experiment
+        </div>
+
+        <div id="experiment-article-section-4-content" 
+        class="content">
+          <p><br/><hr><br/><p><b>PART I</b></p>
+	
+	<p>		<form name="stuff">
+<table>
+    <tbody>
+      <tr>
+        <td valign="top">Message</td>
+        <td><input id="plaintext" value=" 00010100 11010111 01001001 00010010 01111100 10011110 00011011 1000001" size="65" readonly="readonly" type="text">
+            <input value="Change plaintext" onclick="changePlaintext();" type="button"><br>
+      </td></tr>
+      <tr>
+        <td>Key Part A</td>
+        <td><input id="keya" value="3b3898371520f75e" size="25" readonly="readonly" type="text">
+            <input value="Change Key A" onclick="changeKeyA();" type="button"></td>
+      </tr>
+      <tr>
+        <td>Key Part B</td>
+        <td><input name="keyb" id="keyb" value="922fb510c71f436e" size="25" readonly="readonly" type="text">
+            <input value="Change Key B" onclick="changeKeyB();" type="button"></td>
+      </tr>
+    </tbody>
+  </table>
+
+ <br/><hr><br/><p><b>PART II</b></p>	
+ 
+
+  <table>
+    <tbody>
+      <tr>
+        <td valign="top">Your text to be encrypted/decrypted:</td>
+        <td><input name="indata" id="plaintext" size="65" type="text">
+      </td></tr>
+      <tr>
+        <td>Key to be used:</td>
+        <td><input name="key" id="key" size="25" type="text">
+      </td></tr>
+      <tr>
+        <td colspan="2" align="center">
+            <input value="DES Encrypt" onclick="do_des(true);" type="button">
+            <input value="DES Decrypt" onclick="do_des(false);" type="button"><br>
+	</td>
+      </tr>
+      <tr>
+        <td valign="top">Output:</td>
+        <td><input name="outdata" size="65" type="text"><br>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</form>
+<hr><br/><p><b>PART III</b></p>	
+  <p>Enter your answer here: </p>
+  <p><input id="userans" size="65" type="text"></p> <p><input value="Check Answer!" onclick="checkAnswer();" type="button"> </p>
+  <div id="notification" style="width: 300px; height: 10px; padding-top: 20px;"></div>
+
+	        
+            
+          </p>
+        </div>
+
+      </section>
+
+      <section id="experiment-article-section-5">
+   
+        <div id="experiment-article-section-5-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab.-->
+	  <img src="../images/manual.jpg" />
+	</div>
+
+        <div id="experiment-article-section-5-heading" 
+        class="heading">
+          Manual
+        </div>
+
+        <div id="experiment-article-section-5-content" 
+        class="content">
+          <p> 
+           <b>Step 1:</b> Generate Plaintext <b>m</b>, <b>keyA</b> and <b>keyB</b> by clicking on rexpective buttons <b>PART I</b> of the simulation page.  <br><br>
+				<b>Step 2:</b> Enter generated Plaintext <b>m</b> from <b>PART I</b> to <b>PART II</b> in "Your text to be encrypted/decrypted:" block. <br><br>
+				<b>Step 3:</b> Enter generated <b>keyA</b> from <b>PART I</b> to <b>PART II</b>  "Key to be used:" block and click on DES encrpt button to output ciphertext <b>c1</b>.This is First Encryption. <br><br>
+				<b>Step 4:</b> Enter generated ciphertext <b>c1</b> from <b>PART II</b>  "Output:" Block to <b>PART II</b> in "Your text to be encrypted/decrypted:" block.  <br><br>
+				<b>Step 5:</b> Enter generated <b>keyB</b> from <b>PART I</b> to <b>PART II</b> in "Key to be used:" block and click on DES decrypt button to output ciphertect <b>c2</b>.This is Second Encryption. <br><br>
+				<b>Step 6:</b> Enter generated  ciphertext <b>c2</b> from <b>PART II</b>  "Output:" block to <b>PART II</b> in "Your text to be encrypted/decrypted:" block. <br><br>
+				<b>Step 7:</b> Enter generated <b>keyA</b> from <b>PART I</b> to <b>PART II</b>  "Key to be used:" block and click on DES encrpt button to output ciphertext <b>c3</b>.This is Third Encryption. As Encryption is done thrice.This Scheme is called triple DES.<br><br>
+				<b>Step 7:</b> Enter generated ciphertext <b>c3</b> from <b>PART II</b> "Output:" Block to  <b>PART III</b> "Enter your answer here:" block inorder to verify your Triple DES.<br><br> 
+            </p>
+
+          </div>
+
+        </section>
+
+	<section id="experiment-article-section-6">
+      
+          <div id="experiment-article-section-6-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab.-->
+	    <img src="../images/quizzes.jpg" />
+	  </div>
+
+          <div id="experiment-article-section-6-heading" 
+          class="heading">
+            Quizzes
+          </div>
+
+          <div id="experiment-article-section-6-content" 
+          class="content">
+	<ol>
+		<li><p>In DES input, key length ___ bits and plaintext length ____ bits.</p>
+<ol class="d">
+  <li><input name="quest_585" type="radio" value="56 bit key length, 64 bit plaintext " />56 bit key length, 64 bit plaintext </li>
+  <li><input name="quest_585" type="radio" value="56 bit key length, 120 bit plaintext " />56 bit key length, 120 bit plaintext </li>
+  <li><input name="quest_585" type="radio" value="64 bit key length, 120 bit plaintext " />64 bit key length, 120 bit plaintext </li>
+  <li><input name="quest_585" type="radio" value="64 bit key length, 64 bit plaintext " />64 bit key length, 64 bit plaintext </li>
+</ol></li>
+
+		<li><p>DES stands for _________ and AES stands for __________</p>
+<ol class="d">
+  <li><input name="quest_586" type="radio" value="Data Encryption software, Advanced Encryption Software" />Data Encryption software, Advanced Encryption Software</li>
+  <li><input name="quest_586" type="radio" value="Data Encryption Standard, Advanced Encryption Standard" />Data Encryption Standard, Advanced Encryption Standard</li>
+  <li><input name="quest_586" type="radio" value="Data Encryption System, Advanced Encryption System" />Data Encryption System, Advanced Encryption System</li>
+  <li><input name="quest_586" type="radio" value="None" />None</li>
+</ol></li>
+
+		<li><p>DES has an initial and final permutation block and ____ rounds</p>
+<ol class="d">
+  <li><input name="quest_587" type="radio" value="14" />14</li>
+  <li><input name="quest_587" type="radio" value="16" />16</li>
+  <li><input name="quest_587" type="radio" value="8" />8</li>
+  <li><input name="quest_587" type="radio" value="12" />12</li>
+</ol></li>
+
+		<li><p>In DES the length of each round key?</p>
+<ol class="d">
+  <li><input name="quest_588" type="radio" value="16 bit" />16 bit</li>
+  <li><input name="quest_588" type="radio" value="32 bit" />32 bit</li>
+  <li><input name="quest_588" type="radio" value="54 bit" />54 bit</li>
+  <li><input name="quest_588" type="radio" value="48 bit" />48 bit</li>
+</ol></li>
+
+	</ol>
+	   </div>
+	</section>
+	
+
+        <section id="experiment-article-section-7">
+	  
+          <div id="experiment-article-section-7-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab. -->
+	    <img src="../images/procedure.jpg" />
+	  </div>
+	
+          <div id="experiment-article-section-7-heading" 
+          class="heading">
+	    Procedure
+	  </div>
+	
+          <div id="experiment-article-section-7-content" 
+          class="content">
+	    <p>
+	     For </b>Procedure</b> of the experiment refer <b>Theory</b> and <b>Manual</b>.
+	    </p>
+	  </div>
+	
+        </section>
+			
+		
+        <section id="experiment-article-section-8">
+   
+          <div id="experiment-article-section-8-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab.-->
+	    <img src="../images/readings.jpg" />
+	  </div>
+
+          <div id="experiment-article-section-8-heading" 
+          class="heading">
+            Further Readings
+          </div>
+
+          <div id="experiment-article-section-8-content" 
+          class="content">
+            <ul>	
+              <li>
+                <a href=http://en.wikipedia.org/wiki/Triple_DES>Wikipedia On Triple DES</a>
+              </li>
+              <li>
+               <a href=http://en.wikipedia.org/wiki/Data_Encryption_Standard>Wikipedia On DES</a>
+              </li> 
+              <li>
+               Introduction to Modern Cryptography by Jonathan Katz and Yehuda Lindell.
+              </li> 
+              <li>
+                <a href=http://www.cs.berkeley.edu/~luca/cs276/lecture10draft.pdf>Notes on AES</a>
+              </li>
+            </ul>
+          </div>
+
+        </section>
+
+	
+
+      </div>
+
+
+    <!-- An article can have a sidebar that contain related 
+    links and additional material (however it is kept optional 
+    at this moment) -->
+    <aside id="lab-article-sidebar" class="default">
+      <!-- put the content that you want to appear in the 
+      sidebar -->	
+    </aside>
+
+
+    <!-- Article footer can display related content and 
+    additional links -->						
+    <footer id="lab-article-footer" class="default">
+      <!-- Put the content that you want to appear here -->
+    </footer>
+
+  </article>
+
+
+  <!-- Links to other labs, about us page can be kept the lab 
+  footer-->
+ <footer id="lab-footer" class="footer">
+   <!-- Put the content here-->
+<a href="http://virtual-labs.ac.in/nmeict/" >Sponsored by MHRD (NME-ICT) </a> | <a href="http://virtual-labs.ac.in/licensing/" target="_blank"> Licensing Terms </a>
+</footer>
+
+</div>		
+
+</body>
+</html>
