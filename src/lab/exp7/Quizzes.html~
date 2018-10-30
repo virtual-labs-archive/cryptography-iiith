@@ -135,7 +135,7 @@
 <div class="col-md-10 lab-list-col-10">
 							
 							<!--edit -->
-							<form action="quizresults.php" method="post" name="quiz" onsubmit='return window.confirm("You are submitting information to an external page. \nAre you sure?");' target="_blank">
+							<form action="quizresultsdes.php" method="post" name="quiz" onsubmit='return window.confirm("You are submitting information to an external page. \nAre you sure?");' target="_blank">
 <h1 class="text-h2-lightblue">From DES to 3-DES</h1><div class="content" id="experiment-article-section-6-content">
 <ol>
 <li><p>In DES input, key length ___ bits and plaintext length ____ bits.</p>
