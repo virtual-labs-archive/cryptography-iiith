@@ -95,9 +95,9 @@
 						<!--edit1-->
 <a href="Introduction.html?domain=Computer Science&lab=Cryptography Lab" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;">Introduction</h3></a><a href="Theory.html?domain=Computer Science&lab=Cryptography Lab" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;">Theory</h3></a><a href="Objective.html?domain=Computer Science&lab=Cryptography Lab" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;">Objective</h3></a><a href="Experiment.html?domain=Computer Science&lab=Cryptography Lab" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;">Experiment</h3></a><a href="Manual.html?domain=Computer Science&lab=Cryptography Lab" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;">Manual</h3></a><a href="Quizzes.html?domain=Computer Science&lab=Cryptography Lab" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;">Quizzes</h3></a><a href="Procedure.html?domain=Computer Science&lab=Cryptography Lab" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;">Procedure</h3></a><a href="Further Readings.html?domain=Computer Science&lab=Cryptography Lab" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;">Further Readings</h3></a><a href="Feedback.html?domain=Computer Science&lab=Cryptography Lab" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;">Feedback</h3></a>						</div>
 						
-						<!--<div class="col-md-10 lab-list-col-10">
+						<div class="col-md-10 lab-list-col-10">
 							
-							
+							<!--edit -->
 <h1 class="text-h2-lightblue">Message Authentication Code (CBC-MAC)</h1><div class="content" id="experiment-article-section-6-content">
 <p>1. If a MAC tag is K-bits long, how much work is needed to find a collision to that specific value.</p>
 <ul class="multichoice">
@@ -120,36 +120,6 @@
 <li><input name="quest_584" type="radio" value="Encrypt then Authenticate"/>Encrypt then Authenticate</li>
 <li><input name="quest_584" type="radio" value="All "/>All </li>
 </ul>
-</div>						</div>
-					</div>
-			</div>-->
-<div class="col-md-10 lab-list-col-10">
-							
-							<!--edit -->
-							<form action="quizresultsma.php" method="post" name="quiz" onsubmit='return window.confirm("You are submitting information to an external page. \nAre you sure?");' target="_blank">
-<h1 class="text-h2-lightblue">Message Authentication Code (CBC-MAC)</h1><div class="content" id="experiment-article-section-6-content">
-<p>1. If a MAC tag is K-bits long, how much work is needed to find a collision to that specific value.</p>
-<ul class="multichoice">
-<li><input id="q1" name="q1" type="radio" value="1"/> 2^{k/2} </li>
-<li><input id="q1" name="q1" type="radio" value="2"/> K^2</li>
-<li><input id="q1" name="q1" type="radio" value="3"/>K!</li>
-<li><input id="q1" name="q1" type="radio" value="4"/> K^K</li>
-</ul>
-<p>2. The out put length of SHA â I is _____________ bits</p>
-<ul class="multichoice">
-<li><input id="q2" name="q2" type="radio" value="1"/>128</li>
-<li><input id="q2" name="q2" type="radio" value="2"/>160</li>
-<li><input id="q2" name="q2" type="radio" value="3"/>64</li>
-<li><input id="q2" name="q2" type="radio" value="4"/>256</li>
-</ul>
-<p>3. Best way to achieve both privacy and message integrity</p>
-<ul class="multichoice">
-<li><input id="q3" name="q3" type="radio" value="1"/>Encrypt and Authenticate</li>
-<li><input id="q3" name="q3" type="radio" value="2"/>Authenticate then Encrypt</li>
-<li><input id="q3"name="q3" type="radio" value="3"/>Encrypt then Authenticate</li>
-<li><input id="q3" name="q3" type="radio" value="4"/>All </li>
-</ul>
-<p> <input target="_blank" type="submit" value="Submit answers for evaluation"/></p>
 </div>						</div>
 					</div>
 			</div>
