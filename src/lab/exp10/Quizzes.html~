@@ -135,7 +135,7 @@
 						<div class="col-md-10 lab-list-col-10">
 							
 							<!--edit -->
-							<form action="quizresults.php" method="post" name="quiz" onsubmit='return window.confirm("You are submitting information to an external page. \nAre you sure?");' target="_blank">
+							<form action="quizresultspub.php" method="post" name="quiz" onsubmit='return window.confirm("You are submitting information to an external page. \nAre you sure?");' target="_blank">
 <h1 class="text-h2-lightblue">Public-Key Cryptosystems (PKCSv1.5)</h1><div class="content" id="experiment-article-section-6-content">
 <ol>
 <li>Let p = 17, q = 11 and N = pq. If (in the public-key) e= 7, then a possible value for the trap-door d (in the private-key) in an RAS cryptosystem is
