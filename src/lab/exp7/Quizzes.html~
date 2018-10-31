@@ -88,82 +88,84 @@
 			
 			<!-- =================================================================================================================================== -->
 			<div class="container-fluid"  style="margin-left: 35px; margin-right: 35px;">
-				<h2 class="text-h2-lightblue" style=" margin-bottom: 20px; margin-top: 10px; "><a href="http://vlabs.ac.in/computer-science-and-engineering-labs.html" class="sidebar-a" >Computer Science & Engineering</a> &rarr;<a href="../Introduction.html" class="sidebar-a" >Cyptography Lab</a>&nbsp&rarr;<a href="../Experiments.html" class="sidebar-a" >List Of Experiments</a><br/></h2>
+				<h2 class="text-h2-lightblue" style=" margin-bottom: 20px; margin-top: 10px; "><a href="http://vlabs.ac.in/computer-science-and-engineering-labs.html" class="sidebar-a" >Computer Science & Engineering</a> &rarr;<a href="../Introduction.html" class="sidebar-a" >Cryptography Lab</a>&nbsp&rarr;<a href="../Experiments.html" class="sidebar-a" >List Of Experiments</a><br/></h2>
 					
 					<div class="row">
 						<div class="col-md-2 sidebar-col-2">
 						<!--edit1-->
-<a href="Introduction.html?domain=Computer Science&lab=Cyptography Lab" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;">Introduction</h3></a><a href="Theory.html?domain=Computer Science&lab=Cyptography Lab" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;">Theory</h3></a><a href="Objective.html?domain=Computer Science&lab=Cyptography Lab" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;">Objective</h3></a><a href="Experiment.html?domain=Computer Science&lab=Cyptography Lab" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;">Experiment</h3></a><a href="Manual.html?domain=Computer Science&lab=Cyptography Lab" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;">Manual</h3></a><a href="Quizzes.html?domain=Computer Science&lab=Cyptography Lab" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;">Quizzes</h3></a><a href="Procedure.html?domain=Computer Science&lab=Cyptography Lab" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;">Procedure</h3></a><a href="Further Readings.html?domain=Computer Science&lab=Cyptography Lab" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;">Further Readings</h3></a><a href="Feedback.html?domain=Computer Science&lab=Cyptography Lab" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;">Feedback</h3></a>						</div>
+<a href="Introduction.html?domain=Computer Science&lab=Cryptography Lab" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;">Introduction</h3></a><a href="Theory.html?domain=Computer Science&lab=Cryptography Lab" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;">Theory</h3></a><a href="Objective.html?domain=Computer Science&lab=Cryptography Lab" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;">Objective</h3></a><a href="Experiment.html?domain=Computer Science&lab=Cryptography Lab" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;">Experiment</h3></a><a href="Manual.html?domain=Computer Science&lab=Cryptography Lab" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;">Manual</h3></a><a href="Quizzes.html?domain=Computer Science&lab=Cryptography Lab" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;">Quizzes</h3></a><a href="Procedure.html?domain=Computer Science&lab=Cryptography Lab" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;">Procedure</h3></a><a href="Further Readings.html?domain=Computer Science&lab=Cryptography Lab" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;">Further Readings</h3></a><a href="Feedback.html?domain=Computer Science&lab=Cryptography Lab" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;">Feedback</h3></a>						</div>
 						
 						<!--<div class="col-md-10 lab-list-col-10">
 							
-						
-<h1 class="text-h2-lightblue">Public-Key Cryptosystems (PKCSv1.5)</h1><div class="content" id="experiment-article-section-6-content">
+		
+<h1 class="text-h2-lightblue">From DES to 3-DES</h1><div class="content" id="experiment-article-section-6-content">
 <ol>
-<li>Let p = 17, q = 11 and N = pq. If (in the public-key) e= 7, then a possible value for the trap-door d (in the private-key) in an RAS cryptosystem is
-			<ol list-style-type="lower-latin">
-<li><input name="quest_651" type="radio" value="22"/>22</li>
-<li><input name="quest_651" type="radio" value="153"/>153</li>
-<li><input name="quest_651" type="radio" value="7"/>7</li>
-<li><input name="quest_651" type="radio" value="23"/>23</li>
-</ol>
-</li>
-<li>Encrypt the message m = 57 with the textbook RSA with the public key pk = N= 253, e = 3
-			<ol list-style-type="lower-latin">
-<li><input name="quest_652" type="radio" value="240"/>240</li>
-<li><input name="quest_652" type="radio" value="250"/>250</li>
-<li><input name="quest_652" type="radio" value="257"/>257</li>
-<li><input name="quest_652" type="radio" value="196"/>196</li>
-</ol>
-</li>
-<li>In Asymmetric-Key cipher, the sender uses the _____ key
-			<ol class="multichoice" type="a">
-<li><input name="quest_642" type="radio" value="Private"/>Private</li>
-<li><input name="quest_642" type="radio" value="Public"/>Public</li>
-<li><input name="quest_642" type="radio" value="Either Private or Public"/>Either Private or Public</li>
-<li><input name="quest_642" type="radio" value="None"/>None</li>
-</ol>
-</li>
-<li>Understand PKCSv1.5 scheme(using experimetn) and try to break above scheme.</li>
-<li>Why PKCSv1.5 is more Secure</li>
+<li><p>In DES input, key length ___ bits and plaintext length ____ bits.</p>
+<ol class="d">
+<li><input name="quest_585" type="radio" value="56 bit key length, 64 bit plaintext "/>56 bit key length, 64 bit plaintext </li>
+<li><input name="quest_585" type="radio" value="56 bit key length, 120 bit plaintext "/>56 bit key length, 120 bit plaintext </li>
+<li><input name="quest_585" type="radio" value="64 bit key length, 120 bit plaintext "/>64 bit key length, 120 bit plaintext </li>
+<li><input name="quest_585" type="radio" value="64 bit key length, 64 bit plaintext "/>64 bit key length, 64 bit plaintext </li>
+</ol></li>
+<li><p>DES stands for _________ and AES stands for __________</p>
+<ol class="d">
+<li><input name="quest_586" type="radio" value="Data Encryption software, Advanced Encryption Software"/>Data Encryption software, Advanced Encryption Software</li>
+<li><input name="quest_586" type="radio" value="Data Encryption Standard, Advanced Encryption Standard"/>Data Encryption Standard, Advanced Encryption Standard</li>
+<li><input name="quest_586" type="radio" value="Data Encryption System, Advanced Encryption System"/>Data Encryption System, Advanced Encryption System</li>
+<li><input name="quest_586" type="radio" value="None"/>None</li>
+</ol></li>
+<li><p>DES has an initial and final permutation block and ____ rounds</p>
+<ol class="d">
+<li><input name="quest_587" type="radio" value="14"/>14</li>
+<li><input name="quest_587" type="radio" value="16"/>16</li>
+<li><input name="quest_587" type="radio" value="8"/>8</li>
+<li><input name="quest_587" type="radio" value="12"/>12</li>
+</ol></li>
+<li><p>In DES the length of each round key?</p>
+<ol class="d">
+<li><input name="quest_588" type="radio" value="16 bit"/>16 bit</li>
+<li><input name="quest_588" type="radio" value="32 bit"/>32 bit</li>
+<li><input name="quest_588" type="radio" value="54 bit"/>54 bit</li>
+<li><input name="quest_588" type="radio" value="48 bit"/>48 bit</li>
+</ol></li>
 </ol>
 </div>						</div>
 					</div>
-			</div>
-						</div>-->
-						
-						<div class="col-md-10 lab-list-col-10">
+			</div>-->
+<div class="col-md-10 lab-list-col-10">
 							
 							<!--edit -->
-							<form action="quizresults.php" method="post" name="quiz" onsubmit='return window.confirm("You are submitting information to an external page. \nAre you sure?");' target="_blank">
-<h1 class="text-h2-lightblue">Public-Key Cryptosystems (PKCSv1.5)</h1><div class="content" id="experiment-article-section-6-content">
+							<form action="quizresultsdes.php" method="post" name="quiz" onsubmit='return window.confirm("You are submitting information to an external page. \nAre you sure?");' target="_blank">
+<h1 class="text-h2-lightblue">From DES to 3-DES</h1><div class="content" id="experiment-article-section-6-content">
 <ol>
-<li>Let p = 17, q = 11 and N = pq. If (in the public-key) e= 7, then a possible value for the trap-door d (in the private-key) in an RAS cryptosystem is
-			<ol list-style-type="lower-latin">
-<li><input name="q1" type="radio" value="1"/>22</li>
-<li><input name="q1" type="radio" value="2"/>153</li>
-<li><input name="q1" type="radio" value="3"/>7</li>
-<li><input name="q1" type="radio" value="4"/>23</li>
-</ol>
-</li>
-<li>Encrypt the message m = 57 with the textbook RSA with the public key pk = N= 253, e = 3
-			<ol list-style-type="lower-latin">
-<li><input name="q2" type="radio" value="1"/>240</li>
-<li><input name="q2" type="radio" value="2"/>250</li>
-<li><input name="q2" type="radio" value="3"/>257</li>
-<li><input name="q2" type="radio" value="4"/>196</li>
-</ol>
-</li>
-<li>In Asymmetric-Key cipher, the sender uses the _____ key
-			<ol class="multichoice" type="a">
-<li><input name="q3" type="radio" value="1"/>Private</li>
-<li><input name="q3" type="radio" value="2"/>Public</li>
-<li><input name="q3" type="radio" value="3"/>Either Private or Public</li>
-<li><input name="q3" type="radio" value="4"/>None</li>
-</ol>
-</li>
-<li>Understand PKCSv1.5 scheme(using experimetn) and try to break above scheme.</li>
-<li>Why PKCSv1.5 is more Secure</li>
+<li><p>In DES input, key length ___ bits and plaintext length ____ bits.</p>
+<ol class="d">
+<li><input id="q1" name="q1" type="radio" value="1"/>56 bit key length, 64 bit plaintext </li>
+<li><input id="q1" name="q1" type="radio" value="2"/>56 bit key length, 120 bit plaintext </li>
+<li><input id="q1" name="q1" type="radio" value="3"/>64 bit key length, 120 bit plaintext </li>
+<li><input id="q1" name="q1" type="radio" value="4"/>64 bit key length, 64 bit plaintext </li>
+</ol></li>
+<li><p>DES stands for _________ and AES stands for __________</p>
+<ol class="d">
+<li><input id="q2" name="q2" type="radio" value="1"/>Data Encryption software, Advanced Encryption Software</li>
+<li><input id="q2" name="q2" type="radio" value="2"/>Data Encryption Standard, Advanced Encryption Standard</li>
+<li><input id="q2" name="q2" type="radio" value="3"/>Data Encryption System, Advanced Encryption System</li>
+<li><input id="q2" name="q2" type="radio" value="4"/>None</li>
+</ol></li>
+<li><p>DES has an initial and final permutation block and ____ rounds</p>
+<ol class="d">
+<li><input id="q3" name="q3" type="radio" value="1"/>14</li>
+<li><input id="q3" name="q3" type="radio" value="2"/>16</li>
+<li><input id="q3" name="q3" type="radio" value="3"/>8</li>
+<li><input id="q3" name="q3" type="radio" value="4"/>12</li>
+</ol></li>
+<li><p>In DES the length of each round key?</p>
+<ol class="d">
+<li><input id="q4" name="q4" type="radio" value="1"/>16 bit</li>
+<li><input id="q4"name="q4" type="radio" value="2"/>32 bit</li>
+<li><input id="q4"name="q4" type="radio" value="3"/>54 bit</li>
+<li><input id="q4" name="q4" type="radio" value="4"/>48 bit</li>
+</ol></li>
 </ol>
 <p> <input target="_blank" type="submit" value="Submit answers for evaluation"/></p>
 </div>						</div>
