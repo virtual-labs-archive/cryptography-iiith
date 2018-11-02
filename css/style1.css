@@ -105,7 +105,7 @@ a.active {
 	height: auto;
 	overflow: visible;
 	margin-left: 0px !important;
-	padding-top: 10px auto 10px auto !important;
+	padding: 10px auto 10px auto !important;
 }
 
 .menu-a
@@ -113,7 +113,7 @@ a.active {
 	font-size: 18px !important;
 	font-family: Calibri !important;
   color: #2C99CD !important;
-  padding-top: 5px 10px 5px 10px !important;
+  padding: 5px 10px 5px 10px !important;
   
 }
 
@@ -404,8 +404,7 @@ a.active {
 
 .featured-labs-div
 {
-	margin-left: 0px !important;
-	margin-right: 0px !important;
+	margin:auto 0px auto 0px !important;
 	padding-left: 15px !important;
 }
 .border-bottom-img
