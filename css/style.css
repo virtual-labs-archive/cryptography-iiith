@@ -355,8 +355,7 @@ margin-top:120px;
 	height: auto;
 	overflow: visible;
 	margin-left: 0px !important;
-	padding-bottom: 10px !important;
-	padding-top: 10px !important;
+	padding-top: 10px auto 10px auto !important;
 }
 
 .menu-a
@@ -364,10 +363,7 @@ margin-top:120px;
 	font-size: 18px !important;
 	font-family: Calibri !important;
   color: #2C99CD !important;
-  padding-left: 10px !important;
-  padding-bottom: 5px !important;
-  padding-top: 5px !important;
-  padding-right: 10px !important;
+  padding:5px 10px 5px 10px !important;
   
 }
 
@@ -652,8 +648,7 @@ margin-top:120px;
 
 .col-md-2-5-2
 {
-	  padding-right: 15px;
-  padding-left: 15px;
+	  padding-right:auto 15px auto 15px;
 }
 /*************************************************************/
 
