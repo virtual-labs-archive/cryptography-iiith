@@ -76,8 +76,8 @@ function hex2s(hex)
 
   if(hex.length%2) hex+='0';
 
-  for(var i = 0; i<hex.length; i += 2)
-    r += String.fromCharCode(parseInt(hex.slice(i, i+2), 16));
+  for(var j = 0; j<hex.length; j += 2)
+    r += String.fromCharCode(parseInt(hex.slice(j, j+2), 16));
   return r;
 }
 
@@ -90,17 +90,17 @@ function hex2s(hex)
 
 function formatPlaintext(plaintext) {
   var bpb = blockSizeInBits / 8;               // bytes per block
-  var i;
+  var k;
 
   // if primitive string or String instance
   if (typeof plaintext == "string" || plaintext.indexOf) {
     plaintext = plaintext.split("");
     // Unicode issues here (ignoring high byte)
-    for (i=0; i<plaintext.length; i++)
-      plaintext[i] = plaintext[i].charCodeAt(0) & 0xFF;
+    for (k=0; k<plaintext.length; k++)
+      plaintext[k] = plaintext[k].charCodeAt(0) & 0xFF;
   } 
 
-  for (i = bpb - (plaintext.length % bpb); i > 0 && i < bpb; i--) 
+  for (k = bpb - (plaintext.length % bpb); k > 0 && k < bpb; k--) 
     plaintext[plaintext.length] = 0;
   
   return plaintext;
@@ -111,10 +111,10 @@ function formatPlaintext(plaintext) {
 // APPLICATION.
 
 function getRandomBytes(howMany) {
-  var i;
+  var l;
   var bytes = new Array();
-  for (i=0; i<howMany; i++)
-    bytes[i] = Math.round(Math.random()*255);
+  for (l=0; l<howMany; l++)
+    bytes[l] = Math.round(Math.random()*255);
   return bytes;
 }
 
@@ -133,7 +133,7 @@ function getRandomBytes(howMany) {
 // something that returns truly random bits.
 
 function rijndaelEncrypt(plaintext, key, mode) {
-  var i, aBlock;
+  var m, aBlock;
   var bpb = blockSizeInBits / 8;          // bytes per block
   var ct;                                 // ciphertext
 
@@ -156,8 +156,8 @@ function rijndaelEncrypt(plaintext, key, mode) {
   for (var block=0; block<plaintext.length / bpb; block++) {
     aBlock = plaintext.slice(block*bpb, (block+1)*bpb);
     if (mode == "CBC")
-      for (var i=0; i<bpb; i++) 
-        aBlock[i] ^= ct[block*bpb + i];
+      for (var n=0; n<bpb; n++) 
+        aBlock[n] ^= ct[block*bpb + n];
     ct = ct.concat(AESencrypt(aBlock, expandedKey));
   }
 
@@ -185,8 +185,8 @@ function rijndaelDecrypt(ciphertext, key, mode) {
   if(typeof ciphertext == "string")
   {
     ciphertext = ciphertext.split("");
-    for (i=0; i<ciphertext.length; i++)
-      ciphertext[i] = ciphertext[i].charCodeAt(0) & 0xFF;
+    for (p=0; p<ciphertext.length; p++)
+      ciphertext[p] = ciphertext[p].charCodeAt(0) & 0xFF;
   }
 
  if (key.length*8 != keySizeInBits)
@@ -201,8 +201,8 @@ function rijndaelDecrypt(ciphertext, key, mode) {
     aBlock = 
      AESdecrypt(ciphertext.slice(block*bpb,(block+1)*bpb), expandedKey);
     if (mode == "CBC") 
-      for (var i=0; i<bpb; i++) 
-        pt[(block-1)*bpb + i] = aBlock[i] ^ ciphertext[(block-1)*bpb + i];
+      for (var q=0; q<bpb; q++) 
+        pt[(block-1)*bpb + q] = aBlock[q] ^ ciphertext[(block-1)*bpb + q];
     else 
       pt = aBlock.concat(pt);
   }
