@@ -355,7 +355,7 @@ margin-top:120px;
 	height: auto;
 	overflow: visible;
 	margin-left: 0px !important;
-	padding-top: 10px auto 10px auto !important;
+	padding: 10px auto 10px auto !important;
 }
 
 .menu-a
@@ -648,7 +648,7 @@ margin-top:120px;
 
 .col-md-2-5-2
 {
-	  padding-right:auto 15px auto 15px;
+	  padding:auto 15px auto 15px;
 }
 /*************************************************************/
 
