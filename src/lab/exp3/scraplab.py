@@ -103,7 +103,7 @@ f.write(content)
 #print content
 f.seek(0)
 content=f.read()
-1=content.index('<!--edit1-->')
+t1=content.index('<!--edit1-->')
 print t1
 f.seek(t1+13)
 st=st+f.read()
