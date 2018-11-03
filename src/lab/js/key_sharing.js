@@ -21,6 +21,8 @@ function powAndMod(G, a, p) {
 
 function nextPrime() {
 	currentPrimeIndex ++;
+	if(currentPrimeIndex == 5)
+		currentPrimeIndex = 0;
 	currentPrime = primes[currentPrimeIndex];
 	document.getElementById("prime").value = currentPrime;
 	currentGeneratorIndex = generators[currentPrimeIndex].length;
