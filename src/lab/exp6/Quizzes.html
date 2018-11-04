@@ -99,39 +99,49 @@
 							
 							<!--edit -->
 <h1 class="text-h2-lightblue">Cryptographic Hash Functions and Applications(HMAC)</h1><div class="content" id="experiment-article-section-6-content">
-<ol> <li><p>Which criterion ensures that we canât find two messages that hash to the same digest?</p>
-<ol class="d">
-<li><input name="quest_590" type="radio" value="One-wayness"/>One-wayness</li>
-<li><input name="quest_590" type="radio" value="Weak-collision-resistance"/>Weak-collision-resistance</li>
-<li><input name="quest_590" type="radio" value="Strong-collision-resistance "/>Strong-collision-resistance </li>
-<li><input name="quest_590" type="radio" value="None"/>None</li>
-</ol></li>
-<li><p>Which criterion Ensures that it must be extremely difficult or impossible to create the message if the message digest is given.</p>
-<ol class="d">
-<li><input name="quest_591" type="radio" value="One-wayness"/>One-wayness</li>
-<li><input name="quest_591" type="radio" value="Weak-collision-resistance"/>Weak-collision-resistance</li>
-<li><input name="quest_591" type="radio" value="Strong-collision resistance"/>Strong-collision resistance</li>
-<li><input name="quest_591" type="radio" value="None"/>None</li>
-</ol></li>
-<li><p>Consider the function h: {0,1}<sup>8</sup> -&gt; {0,1}<sup>4</sup>. Suppose h(x) = x <sup>xmod 5</sup> mod 16, x in [0, 255]. The collision in h occurs for.</p>
-<ol class="d">
-<li><input name="quest_594" type="radio" value="(1, 17)"/>(1, 17)</li>
-<li><input name="quest_594" type="radio" value="(2, 16)"/>(2, 16)</li>
-<li><input name="quest_594" type="radio" value="(1, 16)"/>(1, 16)</li>
-<li><input name="quest_594" type="radio" value="(2, 17)"/>(2, 17)</li>
-</ol></li>
-<li><p>The Merkle-Damgard Transform is mainly useful for</p>
-<ol class="d">
-<li><input name="quest_582" type="radio" value="Converting any fixed-length collision resistant hash function to an arbitrary length collision resistant hash function "/>Converting any fixed-length collision resistant hash function to an arbitrary length collision resistant hash function </li>
-<li><input name="quest_582" type="radio" value="Converting arbitrary length hash function to a fixed length hash function "/>Converting arbitrary length hash function to a fixed length hash function </li>
-<li><input name="quest_582" type="radio" value="Constructing hash function from random function "/>Constructing hash function from random function </li>
-<li><input name="quest_582" type="radio" value="None"/>None</li>
-</ol></li>
-<li>Understand HMAC scheme and find a break it using availble source code</li>
-<li>Understand Merkel-Damgard transform and Explain,how we are using it for HMAC? </li>
-<li>Understand and explain analogy between SHA1 and our dummy HMAC function</li>
-<li>Explain why HMAC is secure and on what assumptions this security is based?</li>
+<script src="evaluation.js" type="text/javascript"></script>
+<form method="post" name="quiz"> 
+<ol> <li>The _______criterion ensures that we cannot find two messages that hash to the same digest.
+				<ol class="d">
+<input id="q1" name="q1" type="radio" value="1">one-wayness<br> 
+<input id="q1" name="q1" type="radio" value="2">weak-collision-resistance<br>
+<input id="q1" name="q1" type="radio" value="3">strong-collision-resistance <br>
+<input id="q1" name="q1" type="radio" value="4">none of the above <br>
 </ol>
+</li>
+<li>The _______ criterion states that it must be extremely difficult or impossible to create the message if the message digest is given.
+				<ol class="d">
+
+<input id="q2" name="q2" type="radio" value="1">one-wayness<br> 
+<input id="q2" name="q2" type="radio" value="2">weak-collision-resistance<br>
+<input id="q2" name="q2" type="radio" value="3">strong-collision-resistance<br>
+<input id="q2" name="q2" type="radio" value="4">None of the above<br>
+
+</ol>
+</li>
+<li>Message _______ means that the receiver is ensured that the message is coming from the intended sender, not an imposter.
+				<ol class="d">
+
+<input id="q3" name="q3" type="radio" value="1">confidentiality<br> 
+<input id="q3" name="q3" type="radio" value="2">integrity<br>
+<input id="q3" name="q3" type="radio" value="3">authentication <br>
+<input id="q3" name="q3" type="radio" value="4">None of the above<br>
+
+</ol>
+</li>
+<li>	A ________ signature is included in the document; a _______ signature is a separate entity.
+				<ol type="d">
+
+<input id="q4" name="q4" type="radio" value="1">conventional; digital<br> 
+<input id="q4" name="q4" type="radio" value="2">digital; digital<br>
+<input id="q4" name="q4" type="radio" value="3">either (a) or (b)<br>
+<input id="q4" name="q4" type="radio" value="4">neither (a) nor (b)<br>
+<input class="button" onclick="checkAnswers()" type="submit" value="Submit"/>
+   <input class="button" onclick="document.quiz.reset();" type="button" value="Reset"/><br/><br/>
+</ol></li>
+
+</ol>
+</form>
 </div>						</div>
 					</div>
 			</div>
