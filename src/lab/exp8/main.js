@@ -4,14 +4,14 @@ function check(){
 	var Q3=document.quiz.q3.value;
 
 	var c=0;
-	if(Q1=="1"){
+	if(Q1==="1"){
 		c++;
 	}
-	if (Q2=="2") {
+	if (Q2==="2") {
 		c++;
 	}
-	if(Q3=="2"){
+	if(Q3==="2"){
 		c++;
 	}
-	window.alert("You got "+c+" correct!")
+	window.alert("You got "+c+" correct!");
 }
