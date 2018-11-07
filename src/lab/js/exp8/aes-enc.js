@@ -310,8 +310,8 @@ function B3(x) { return ((x>>24)&255); }
 
 function F1(x0, x1, x2, x3)
 {
-  return B1(T1[x0&255]) | (B1(T1[(x1>>8)&255])<<8)
-      | (B1(T1[(x2>>16)&255])<<16) | (B1(T1[x3>>>24])<<24);
+  return b1(T1[x0&255]) | (b1(T1[(x1>>8)&255])<<8)
+      | (b1(T1[(x2>>16)&255])<<16) | (b1(T1[x3>>>24])<<24);
 }
 
 function packBytes(octets)
@@ -336,10 +336,10 @@ function unpackBytes(packed)
 
   for (j=0; j<l; j++)
   {
-    r[i++] = B0(packed[j]);
-    r[i++] = B1(packed[j]);
-    r[i++] = B2(packed[j]);
-    r[i++] = B3(packed[j]);
+    r[i++] = b0(packed[j]);
+    r[i++] = b1(packed[j]);
+    r[i++] = b2(packed[j]);
+    r[i++] = b3(packed[j]);
   }
   return r;
 }
@@ -419,7 +419,7 @@ function keyExpansion(key)
       for(j=1; j<kc/2; j++) tk[j] ^= tk[j-1];
  
       temp = tk[kc/2-1];
-      tk[kc/2] ^= S[B0(temp)] | (S[B1(temp)]<<8) | (S[B2(temp)]<<16) | (S[B3(temp)]<<24);
+      tk[kc/2] ^= s[B0(temp)] | (s[B1(temp)]<<8) | (s[B2(temp)]<<16) | (s[B3(temp)]<<24);
 
       for(j=kc/2+1; j<kc; j++) tk[j] ^= tk[j-1];
     }
@@ -475,7 +475,7 @@ function AESencrypt(block, ctx)
   t2 = b2 ^ ctx.rk[r][2];
   t3 = b3 ^ ctx.rk[r][3];
 
-  b[0] = F1(t0, t1, t2, t3) ^ ctx.rk[rounds][0];
+  b[0] = f1(t0, t1, t2, t3) ^ ctx.rk[rounds][0];
   b[1] = F1(t1, t2, t3, t0) ^ ctx.rk[rounds][1];
   b[2] = F1(t2, t3, t0, t1) ^ ctx.rk[rounds][2];
   b[3] = F1(t3, t0, t1, t2) ^ ctx.rk[rounds][3];
