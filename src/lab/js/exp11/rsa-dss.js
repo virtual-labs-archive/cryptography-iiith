@@ -16,14 +16,14 @@ function set_1024f4() {
 }
 
 function hex2a_mine(hex) {
-    var str = '';
+    var str = "";
     for (var i = 0; i < hex.length; i += 2)
         str += String.fromCharCode(parseInt(hex.substr(i, 2), 16));
     return str;
 }
 
 function do_encrypt() {
-  if(document.getElementById('hash_value').value != document.rsatest.plaintext.value) {
+  if(document.getElementById("hash_value").value != document.rsatest.plaintext.value) {
     alert("Hash output and input to RSA should be same!");
     return;
   }
