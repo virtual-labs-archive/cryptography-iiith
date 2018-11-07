@@ -86,7 +86,7 @@ function rstr2hex(input)
  */
 function rstr2b64(input)
 {
-  try { b64pad_sha1; } catch(e) { b64pad_sha1=''; }
+  try { b64pad_sha1; } catch(e) { b64pad_sha1=""; }
   var tab = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
   var output = "";
   var len = input.length;
