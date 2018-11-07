@@ -584,8 +584,8 @@ function prepare_decryption(key)
 
   for(r=1; r<rounds; r++)
   {
-    w=rk2[r][0]; rk2[r][0] = U1[B0(w)] ^ U2[B1(w)] ^ U3[B2(w)] ^ U4[B3(w)];
-    w=rk2[r][1]; rk2[r][1] = U1[B0(w)] ^ U2[B1(w)] ^ U3[B2(w)] ^ U4[B3(w)];
+    w=rk2[r][0]; rk2[r][0] = u1[B0(w)] ^ u2[B1(w)] ^ u3[B2(w)] ^ u4[B3(w)];
+    w=rk2[r][1]; rk2[r][1] = u1[B0(w)] ^ u2[B1(w)] ^ u3[B2(w)] ^ u4[B3(w)];
     w=rk2[r][2]; rk2[r][2] = U1[B0(w)] ^ U2[B1(w)] ^ U3[B2(w)] ^ U4[B3(w)];
     w=rk2[r][3]; rk2[r][3] = U1[B0(w)] ^ U2[B1(w)] ^ U3[B2(w)] ^ U4[B3(w)];
   }
@@ -610,9 +610,9 @@ function AESdecrypt(block, ctx)
     t3 = b[3] ^ ctx.rk[r][3];
 
     b[0] = T5[B0(t0)] ^ T6[B1(t3)] ^ T7[B2(t2)] ^ T8[B3(t1)];
-    b[1] = T5[B0(t1)] ^ T6[B1(t0)] ^ T7[B2(t3)] ^ T8[B3(t2)];
+    b[1] = t5[B0(t1)] ^ t6[B1(t0)] ^ t7[B2(t3)] ^ t8[B3(t2)];
     b[2] = T5[B0(t2)] ^ T6[B1(t1)] ^ T7[B2(t0)] ^ T8[B3(t3)];
-    b[3] = T5[B0(t3)] ^ T6[B1(t2)] ^ T7[B2(t1)] ^ T8[B3(t0)];
+    b[3] = t5[B0(t3)] ^ t6[B1(t2)] ^ t7[B2(t1)] ^ t8[B3(t0)];
   }
 
   // last round is special
@@ -623,8 +623,8 @@ function AESdecrypt(block, ctx)
 
   b[0] = S5[B0(t0)] | (S5[B1(t3)]<<8) | (S5[B2(t2)]<<16) | (S5[B3(t1)]<<24);
   b[1] = S5[B0(t1)] | (S5[B1(t0)]<<8) | (S5[B2(t3)]<<16) | (S5[B3(t2)]<<24);
-  b[2] = S5[B0(t2)] | (S5[B1(t1)]<<8) | (S5[B2(t0)]<<16) | (S5[B3(t3)]<<24);
-  b[3] = S5[B0(t3)] | (S5[B1(t2)]<<8) | (S5[B2(t1)]<<16) | (S5[B3(t0)]<<24);
+  b[2] = s5[B0(t2)] | (s5[B1(t1)]<<8) | (s5[B2(t0)]<<16) | (s5[B3(t3)]<<24);
+  b[3] = s5[B0(t3)] | (s5[B1(t2)]<<8) | (s5[B2(t1)]<<16) | (s5[B3(t0)]<<24);
   
   b[0] ^= ctx.rk[0][0];
   b[1] ^= ctx.rk[0][1];
