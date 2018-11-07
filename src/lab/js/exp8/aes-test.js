@@ -151,14 +151,14 @@ function rijndaelEncrypt(plaintext, key, mode) {
   // convert plaintext to byte array and pad with zeros if necessary. 
   plaintext = formatPlaintext(plaintext);
 
-  var expandedKey = new keyExpansion(key);
+  var expandedKey =new KeyExpansion(key);
 
   for (var block=0; block<plaintext.length / bpb; block++) {
     aBlock = plaintext.slice(block*bpb, (block+1)*bpb);
     if (mode == "CBC")
       for (var i=0; i<bpb; i++) 
         aBlock[i] ^= ct[block*bpb + i];
-    ct = ct.concat(AESencrypt(aBlock, expandedKey));
+    ct = ct.concat(aESencrypt(aBlock, expandedKey));
   }
 
   return ct;
@@ -194,7 +194,7 @@ function rijndaelDecrypt(ciphertext, key, mode) {
   if (!mode)
     mode = "ECB";                         // assume ECB if mode omitted
 
-  var expandedKey = new prepare_decryption(key);
+  var expandedKey = new Prepare_decryption(key);
  
   // work backwards to accomodate CBC mode 
   for (block=(ciphertext.length / bpb)-1; block>0; block--) {
