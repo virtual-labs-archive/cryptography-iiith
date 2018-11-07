@@ -104,7 +104,7 @@ function hash_function(input) {
     var l = input.length;
     var output = "";
     for(var i=0;i<l/2;i++) {
-	output += XOR(input.charAt(2*i), input.charAt(2*i+1));
+	output += xor(input.charAt(2*i), input.charAt(2*i+1));
     }
 	return output;
 }
