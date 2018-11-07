@@ -199,7 +199,7 @@ function rijndaelDecrypt(ciphertext, key, mode) {
   // work backwards to accomodate CBC mode 
   for (block=(ciphertext.length / bpb)-1; block>0; block--) {
     aBlock = 
-     AESdecrypt(ciphertext.slice(block*bpb,(block+1)*bpb), expandedKey);
+     aesdecrypt(ciphertext.slice(block*bpb,(block+1)*bpb), expandedKey);
     if (mode == "CBC") 
       for (var i=0; i<bpb; i++) 
         pt[(block-1)*bpb + i] = aBlock[i] ^ ciphertext[(block-1)*bpb + i];
@@ -209,7 +209,7 @@ function rijndaelDecrypt(ciphertext, key, mode) {
 
   // do last block if ECB (skips the IV in CBC)
   if (mode == "ECB")
-    pt = AESdecrypt(ciphertext.slice(0, bpb), expandedKey).concat(pt);
+    pt = aesdecrypt(ciphertext.slice(0, bpb), expandedKey).concat(pt);
 
   return pt;
 }
