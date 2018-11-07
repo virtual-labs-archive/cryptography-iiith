@@ -181,7 +181,7 @@ function get_value( bitarray, str, isASCII )
       {
          window.alert("Message and key must be 64 bits (8 ASCII characters)");
          bitarray[0] = ERROR_VAL;
-         return
+         return;
       }
 
       // have ASCII data
