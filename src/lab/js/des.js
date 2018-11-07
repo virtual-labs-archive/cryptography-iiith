@@ -274,6 +274,7 @@ function do_S( SBox, index, inbits )
 // do one round of DES encryption
 function des_round( L, R, KeyR )
 {
+   var i;
    var E_result = new Array( 49 );
    var S_out = new Array( 33 );
 
