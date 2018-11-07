@@ -3,6 +3,10 @@
 // Version 1.1: support utf-8 encoding in pkcs1pad2
 
 // convert a (hex) string to a bignum object
+function BigInteger(str,r)
+{
+  return;
+}
 function parseBigInt(str,r) {
   return new BigInteger(str,r);
 }
