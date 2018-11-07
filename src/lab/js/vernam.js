@@ -57,7 +57,7 @@ function Vernam_Encrypt() {
     if(key.length < plaintext.length){ alert("key must be atleast the length of plaintext"); return; }
     ciphertext = "";
     for(i=0; i<plaintext.length; i++){
-        ciphertext += XOR(plaintext.charAt(i), key.charAt(i));
+        ciphertext += xor(plaintext.charAt(i), key.charAt(i));
     }
     document.getElementById("c").value = ciphertext;
 }
@@ -69,7 +69,7 @@ function Vernam_Decrypt(f){
     if(key.length < ciphertext.length){ alert("key must be atleast the length of ciphertext"); return; }
     plaintext = "";
     for(i=0; i<ciphertext.length; i++){
-        plaintext += XOR(ciphertext.charAt(i), key.charAt(i));
+        plaintext += xor(ciphertext.charAt(i), key.charAt(i));
     }
     document.getElementById("p").value = plaintext;
 }
