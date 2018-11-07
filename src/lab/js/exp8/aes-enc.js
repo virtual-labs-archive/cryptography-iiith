@@ -407,7 +407,7 @@ function keyExpansion(key)
   {
     var temp = tk[kc-1];
 
-    tk[0] ^= S[B1(temp)] | (S[B2(temp)]<<8) | (S[B3(temp)]<<16) | (S[B0(temp)]<<24);
+    tk[0] ^= s[B1(temp)] | (s[B2(temp)]<<8) | (s[B3(temp)]<<16) | (s[B0(temp)]<<24);
     tk[0] ^= Rcon[rconpointer++];
 
     if(kc != 8)
@@ -476,9 +476,9 @@ function AESencrypt(block, ctx)
   t3 = b3 ^ ctx.rk[r][3];
 
   b[0] = f1(t0, t1, t2, t3) ^ ctx.rk[rounds][0];
-  b[1] = F1(t1, t2, t3, t0) ^ ctx.rk[rounds][1];
-  b[2] = F1(t2, t3, t0, t1) ^ ctx.rk[rounds][2];
-  b[3] = F1(t3, t0, t1, t2) ^ ctx.rk[rounds][3];
+  b[1] = f1(t1, t2, t3, t0) ^ ctx.rk[rounds][1];
+  b[2] = f1(t2, t3, t0, t1) ^ ctx.rk[rounds][2];
+  b[3] = f1(t3, t0, t1, t2) ^ ctx.rk[rounds][3];
 
   return unpackBytes(b);
 }
