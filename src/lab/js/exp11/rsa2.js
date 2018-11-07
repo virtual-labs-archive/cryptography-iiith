@@ -58,6 +58,10 @@ function RSASetPrivateEx(N,E,D,P,Q,DP,DQ,C) {
 }
 
 // Generate a new random private key B bits long, using public expt E
+function SecureRandom()
+{
+  return;
+}
 function RSAGenerate(B,E) {
   var rng = new SecureRandom();
   var qs = B>>1;
