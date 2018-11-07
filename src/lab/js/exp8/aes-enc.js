@@ -376,7 +376,7 @@ function keyExpansion(key)
   }
   else
   {
-   alert('Invalid key length '+keylen);
+   alert("Invalid key length "+keylen);
    return;
   }
 
