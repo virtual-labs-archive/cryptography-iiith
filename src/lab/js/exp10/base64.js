@@ -23,6 +23,7 @@ function hex2b64(h) {
 
 // convert a base64 string to hex
 function b64tohex(s) {
+  var int2char;
   var ret = "";
   var i;
   var k = 0; // b64 state, 0-3
