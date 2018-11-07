@@ -367,12 +367,12 @@ function keyExpansion(key)
   else if(keylen==24)
   {
    rounds=12;
-   kc=6
+   kc=6;
   }
   else if(keylen==32)
   {
    rounds=14;
-   kc=8
+   kc=8;
   }
   else
   {
