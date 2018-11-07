@@ -71,10 +71,10 @@ function byteArrayToHex(byteArray) {
 
 function hex2s(hex)
 {
-  var r='';
+  var r="";
   if(hex.indexOf("0x") == 0 || hex.indexOf("0X") == 0) hex = hex.substr(2);
 
-  if(hex.length%2) hex+='0';
+  if(hex.length%2) hex+="0";
 
   for(var i = 0; i<hex.length; i += 2)
     r += String.fromCharCode(parseInt(hex.slice(i, i+2), 16));
