@@ -9,7 +9,7 @@ Version: 1.0
 
 body {
     
-    font-family:Calibri !important;
+    font-family:Calibri;
 }
 
 p {
@@ -111,13 +111,13 @@ background: #FFF1AF;
 
 .container-fluid .calender  tbody td.hilite { 
 padding: 1px 1px 1px 1px;
-background:#444 !important;
-color:#fff !important;
+background:#444;
+color:#fff;
 }
 
 .container-fluid .calender  tbody td.active { 
 color:#fff;
-background: #529214 !important;
+background: #529214;
 padding: 2px 2px 0px 2px;
 }
 
@@ -125,8 +125,8 @@ padding: 2px 2px 0px 2px;
 font-weight: bold;
 border: 1px solid #888;
 padding: 1px 1px 1px 1px;
-background: #f5f5f5 !important;
-color: #222 !important;
+background: #f5f5f5;
+color: #222;
 }
 
 .container-fluid .calender  tbody td.weekend { 
@@ -232,7 +232,7 @@ font-weight: bold;
 }
 .container-fluid form li .datepicker
 {
-	cursor:pointer !important;
+	cursor:pointer;
 	float:left;
 	height:16px;
 	margin:.1em 5px 0 0;
@@ -354,26 +354,26 @@ margin-top:120px;
 {
 	height: auto;
 	overflow: visible;
-	margin-left: 0px !important;
-	padding-bottom: 10px !important;
-	padding-top: 10px !important;
+	margin-left: 0px;
+	padding-bottom: 10px;
+	padding-top: 10px;
 }
 
 .menu-a
 {
-	font-size: 18px !important;
-	font-family: Calibri !important;
-  color: #2C99CD !important;
-  padding-left: 10px !important;
-  padding-bottom: 5px !important;
-  padding-top: 5px !important;
-  padding-right: 10px !important;
+	font-size: 18px;
+	font-family: Calibri;
+  color: #2C99CD;
+  padding-left: 10px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  padding-right: 10px;
   
 }
 
 .menu-a-active
 {
-	color: white !important;
+	color: white;
 }
 
 .menu-li
@@ -386,12 +386,12 @@ margin-top:120px;
 
 .menu-li:HOVER
 {
-	background-color: #77BB41 !important;
+	background-color: #77BB41;
 }
 
 .menu-a:HOVER
 {
-	color: white !important;	
+	color: white;	
 }
 .menu-li-active
 {
@@ -426,8 +426,8 @@ margin-top:120px;
 
 	.custom-toggle
 	{
-		margin-bottom: 0px !important;
-		margin-top: 27px !important;
+		margin-bottom: 0px;
+		margin-top: 27px;
 	}
 }
 
@@ -440,14 +440,14 @@ margin-top:120px;
 	
 	.custom-toggle
 	{
-		margin-bottom: 0px !important;
-		margin-top: 12% !important;
+		margin-bottom: 0px;
+		margin-top: 12%;
 	}
 	
 	
 /* 	.menu-div
 	{
-		margin-top: 30px !important;
+		margin-top: 30px;
 	} */
 	
 }
@@ -458,7 +458,7 @@ margin-top:120px;
    
 /*    .menu-div
 	{
-		margin-top: 30px !important;
+		margin-top: 30px;
 	} */
 }
 
@@ -466,7 +466,7 @@ margin-top:120px;
 	
 	.featured-labs-div
 	{
-		background: none !important;
+		background: none;
 	}
 }
 
@@ -477,7 +477,7 @@ margin-top:120px;
 	}
 	.border-right-green-dotted
 	{
-		margin-top: 60px !important;
+		margin-top: 60px;
 	}
 }
 
@@ -493,22 +493,22 @@ margin-top:120px;
    
    .menu-ul
 	{
-		margin-top: 0px !important;
+		margin-top: 0px;
 	}
 	
 	.menu-li-active
 	{
-		  background-color: white !important;
+		  background-color: white;
 	}
 	
 	.menu-a-active
 	{
-		color: #2C99CE !important;
+		color: #2C99CE;
 	}
 	
 	.search-ul
 	{
-		display: none !important;
+		display: none;
 	}
 	
 
@@ -518,7 +518,7 @@ margin-top:120px;
 @media only screen and (min-width: 768px) and (max-width: 991px) { 
     .menu-a
 	{
-		font-size: 1.4em !important;
+		font-size: 1.4em;
 	}
 	
 	.main-logo
@@ -528,17 +528,17 @@ margin-top:120px;
 	
 	.banner-text-small
 	 {
-		font-size: 1.2em !important;
+		font-size: 1.2em;
   	 }
 
 	.banner-text-medium
 	{
-		font-size: 1.7em !important;
+		font-size: 1.7em;
 	}
 	
 	.banner-text-big
 	{
-		font-size: 2.0em !important;
+		font-size: 2.0em;
 	}
 	
 }
@@ -562,23 +562,23 @@ margin-top:120px;
 	}
 	.aboutus-col-8
 	{
-		padding-right: 15px !important;
+		padding-right: 15px;
 	}
 	.footer-div
 	{
-	background-size: cover !important;
+	background-size: cover;
 	position:absolute; bottom:0;
 	 }
 	 
 	 .lab-list-col-10
 	 {
-	 	/* background: none !important; */
+	 	/* background: none; */
 	 	overflow:hidden;
 	 }
 	 
 	.featured-labs-main-div
 	{
-		margin-top: -35px !important;	
+		margin-top: -35px;	
 	}
 }
 
@@ -659,9 +659,9 @@ margin-top:120px;
 
 .featured-labs-div
 {
-	margin-left: 0px !important;
-	margin-right: 0px !important;
-	padding-left: 15px !important;
+	margin-left: 0px;
+	margin-right: 0px;
+	padding-left: 15px;
 }
 .border-bottom-img
 {
@@ -676,12 +676,12 @@ margin-top:120px;
 
 .broad-labs-a:HOVER
 {
-	text-decoration: none !important;
+	text-decoration: none;
 
 }
 .col-md-2-5-1-l:HOVER, .col-md-2-5-1-withbg:HOVER
 {
-		background-color: #e4e4e4 !important;	
+		background-color: #e4e4e4;	
 }
 
 .border-right-green-dotted
@@ -694,12 +694,12 @@ margin-top:120px;
 
 a:focus
 {
-	color: #72AB44 !important;
+	color: #72AB44;
 }
 
 .featured-labs
 {
-	min-height: 208px !important;
+	min-height: 208px;
 }
 /*========================font classes=======================*/
 .text-h2-lightblue
@@ -718,7 +718,7 @@ a:focus
 
 .text-a-lightgreen:HOVER
 {
-	color: #72AB44 !important;
+	color: #72AB44;
 }
 
 .text-a-white
@@ -788,7 +788,7 @@ font-size: 30px;
 
 .nounderline:HOVER
 {
-	text-decoration: none !important;
+	text-decoration: none;
 }
 .text-normal-gray-medium
 {
@@ -833,7 +833,7 @@ font-size: 30px;
   left: -45px;
   top: 55px; 
   position: absolute;
-   background: none !important;
+   background: none;
 }
  
   #owl-partner-institutions .owl-controls .owl-buttons .owl-prev
@@ -841,14 +841,14 @@ font-size: 30px;
   	left: -45px;
   top: 20px; 
   position: absolute;
-   background: none !important;
+   background: none;
   }
   
 #owl-demo .owl-controls .owl-buttons .owl-next{
   right: -45px;
   top: 55px;
   position: absolute;
-   background: none !important;
+   background: none;
 }
 
 #owl-partner-institutions .owl-controls .owl-buttons .owl-next
@@ -856,7 +856,7 @@ font-size: 30px;
 	 right: -45px;
   top: 20px;
   position: absolute;
-   background: none !important;
+   background: none;
 }
 
 #owl-demo .owl-controls .owl-pagination, #owl-partner-institutions .owl-controls .owl-pagination
@@ -903,7 +903,7 @@ font-size: 30px;
 }
 
 .sidebar-a:HOVER, .text-h3-darkblue:HOVER {
-	color: #ff6600 !important;
+	color: #ff6600;
 }
 
 .lab-list-row-div
@@ -928,7 +928,7 @@ font-size: 30px;
 {
 	position: relative;
 	top: -59px;
-	color: white !important;
+	color: white;
 }
 
 .banner-text-small
@@ -994,17 +994,17 @@ font-size: 30px;
 
 	.banner-text-small
 	 {
-		font-size: 0.8em !important;
+		font-size: 0.8em;
   	 }
 
 	.banner-text-medium
 	{
-		font-size: 0.9em !important;
+		font-size: 0.9em;
 	}
 	
 	.banner-text-big
 	{
-		font-size: 1.1em !important; 
+		font-size: 1.1em; 
 	}
 	
 	.banner-text
@@ -1038,17 +1038,17 @@ font-size: 30px;
 @media only screen and (min-width: 400px) and (max-width: 500px) {
 	.banner-text-small
 	 {
-		font-size: 0.9em !important;
+		font-size: 0.9em;
   	 }
 
 	.banner-text-medium
 	{
-		font-size: 1.1em !important;
+		font-size: 1.1em;
 	}
 	
 	.banner-text-big
 	{
-		font-size: 1.2em !important;
+		font-size: 1.2em;
 	}
 	
 	.banner-text
@@ -1076,17 +1076,17 @@ font-size: 30px;
 @media only screen and (min-width: 501px) and (max-width: 767px) {
 	.banner-text-small
 	 {
-		font-size: 0.9em !important;
+		font-size: 0.9em;
   	 }
 
 	.banner-text-medium
 	{
-		font-size: 1.2em !important;
+		font-size: 1.2em;
 	}
 	
 	.banner-text-big
 	{
-		font-size: 1.4em !important;
+		font-size: 1.4em;
 	}
 	.banner-text
 	{
@@ -1160,7 +1160,7 @@ font-size: 30px;
 @media only screen and (max-width: 767px) { 
 	.banner-caption-div
 	{
-	  position: relative !important;
+	  position: relative;
 	}		
 }
 
@@ -1233,17 +1233,17 @@ font-size: 30px;
 
 	.banner-text-small
 	 {
-		font-size: 1.2em !important;
+		font-size: 1.2em;
   	 }
 
 	.banner-text-medium
 	{
-		font-size: 1.7em !important;
+		font-size: 1.7em;
 	}
 	
 	.banner-text-big
 	{
-		font-size: 2.0em !important;
+		font-size: 2.0em;
 	}
 	
 	.banner-text
