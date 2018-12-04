@@ -93,15 +93,15 @@ function resetDisplay() {
 }
 
 function selectMode() {
-    var selectmenu = document.getElementById("select_mode");
-    var chosen_option=selectmenu.options[selectmenu.selectedIndex].value;
+    var selectmenu = document.getElementById("selectMode");
+    var chosenOption=selectmenu.options[selectmenu.selectedIndex].value;
     resetDisplay();
-    if (chosen_option == "ecb") {
-	document.getElementById("ecbm_image").style.display = "block";
-    } else if (chosen_option == "cbc") {
+    if (chosenOption == "ecb") {
+	document.getElementById("ecbmImage").style.display = "block";
+    } else if (chosenOption == "cbc") {
         document.getElementById("ivtext").style.display = "block";
         document.getElementById("calculateXor").style.display = "block";
-    } else if (chosen_option == "ofb") {
+    } else if (chosenOption == "ofb") {
         document.getElementById("ivtext").style.display = "block";
         document.getElementById("calculateXor").style.display = "block";
     } else {
@@ -124,12 +124,12 @@ function randomHexString(length) {
 }
 
 function nextPlainText() {
-    var length_plainblock = 32;
-    var num_plainblocks = 5;
+    var lengthPlainblock = 32;
+    var numPlainblocks = 5;
     var plaintext = "";
 
-    for( var i=0; i < num_plainblocks; i++ ) {
-	plaintext += randomHexString(length_plainblock);
+    for( var i=0; i < numPlainblocks; i++ ) {
+	plaintext += randomHexString(lengthPlainblock);
 	plaintext += "\n";
     }
     document.getElementById("plainarea").value = plaintext;
@@ -137,18 +137,18 @@ function nextPlainText() {
 
 function nextKey() {
     var selectmenu = document.getElementById("keySize");
-    var chosen_option=selectmenu.options[selectmenu.selectedIndex];
-    document.getElementById("keyarea").value = randomHexString(chosen_option.value/4);
+    var chosenOption=selectmenu.options[selectmenu.selectedIndex];
+    document.getElementById("keyarea").value = randomHexString(chosenOption.value/4);
 }
 
 function nextIV() {
-    var length_IV = 32;
-    document.getElementById("iv").value = randomHexString(length_IV);
+    var lengthIV = 32;
+    document.getElementById("iv").value = randomHexString(lengthIV);
 }
 
 function nextCTR() {
-    var length_CTR = 32;
-    document.getElementById("ctr").value = randomHexString(length_CTR);
+    var lengthCTR = 32;
+    document.getElementById("ctr").value = randomHexString(lengthCTR);
 }
 
 function XOR(hex1, hex2) {
@@ -177,7 +177,7 @@ function XOR(hex1, hex2) {
 	return revOutput;
 }
 
-function Add_one(hexNum) {
+function AddOne(hexNum) {
     var l = hexNum.length-1;
 	var carryOver = 1;
 
@@ -215,20 +215,20 @@ function checkAnswer() {
 		return;
 	}
     var answer = "";
-    var selectmenu = document.getElementById("select_mode");
-    var chosen_option=selectmenu.options[selectmenu.selectedIndex].value;
+    var selectmenu = document.getElementById("selectMode");
+    var chosenOption=selectmenu.options[selectmenu.selectedIndex].value;
 		
 	var plaintext = (document.getElementById("plainarea").value).split("\n");
 	var key = hex2s(trim(document.getElementById("keyarea").value));
 
-    if (chosen_option == "ecb") {
+    if (chosenOption == "ecb") {
     	for (i=0; i<plaintext.length-1; i++) { 
 	  		var pt = trim(plaintext[i]);
   			var tmp = byteArrayToHex(rijndaelEncrypt(hex2s(pt), key, "ECB"));
 			answer += tmp;
 		}
 
-    } else if (chosen_option == "cbc") {
+    } else if (chosenOption == "cbc") {
 		var ci = trim(document.getElementById("iv").value);
 		answer += ci;
     	for (i=0; i<plaintext.length-1; i++) { 
@@ -237,7 +237,7 @@ function checkAnswer() {
   			ci = byteArrayToHex(rijndaelEncrypt(hex2s(tmp), key, "ECB"));
 			answer += ci;
 		}		
-    } else if (chosen_option == "ofb") {
+    } else if (chosenOption == "ofb") {
 		var ri = trim(document.getElementById("iv").value);
 		answer += ri;
     	for (i=0; i<plaintext.length-1; i++) { 
@@ -250,7 +250,7 @@ function checkAnswer() {
 		answer += ctr;
     	for (i=0; i<plaintext.length-1; i++) {
 	  		var pt = trim(plaintext[i]);
-			var ctr = Add_one(ctr);
+			var ctr = AddOne(ctr);
 			var ri = byteArrayToHex(rijndaelEncrypt(hex2s(ctr), key, "ECB"));
 			answer += XOR(ri, pt);
 		}

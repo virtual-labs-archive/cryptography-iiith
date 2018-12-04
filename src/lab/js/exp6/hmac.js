@@ -2,9 +2,9 @@ function trim(str) {
     return str.replace(/\s+/g,"");
 }
 
-var current_l=8;
+var currentL=8;
 
-function xor_strings(a, b) {
+function xorStrings(a, b) {
         if(a.length != b.length) {
                 alert("Error calculating XOR");
                 return;
@@ -20,7 +20,7 @@ function xor_strings(a, b) {
         return output;
 }
 
-function validate_binary(input) {
+function validateBinary(input) {
     var len = input.length;
     var i;
     for(i=0;i<len;i++) {
@@ -34,20 +34,20 @@ function validate_binary(input) {
     return 1;
 }
 
-function get_num_in_binary(num) {
-	var num_in_binary = "";
+function getNumInBinary(num) {
+	var numInBinary = "";
 	while (num > 0) {
-		num_in_binary = num%2 + num_in_binary;
+		numInBinary = num%2 + numInBinary;
 		num = Math.floor(num/2);
 	}
-	return num_in_binary;
+	return numInBinary;
 }
 
 function isUnsignedInteger(s) {
   return (s.toString().search(/^[0-9]+$/) == 0);
 }
 
-function rand_sequence(len){
+function randSequence(len){
     ret="";
     for(i=0; i<len; i++) {
         ret += (Math.ceil(Math.random()*1000000))%2;
@@ -55,12 +55,12 @@ function rand_sequence(len){
     return ret;
 }
 
-function next_plain_text() {
-    var len = Math.random()*100%100+(2*current_l);
-    document.getElementById("plaintext").value = rand_sequence(len);
+function nextPlainText() {
+    var len = Math.random()*100%100+(2*currentL);
+    document.getElementById("plaintext").value = randSequence(len);
 }
 
-function next_IV() {
+function nextIV() {
     var l = document.getElementById("l").value;
     if (! isUnsignedInteger(l) ) {
 	alert("l should be a positive integer");
@@ -70,11 +70,11 @@ function next_IV() {
 	alert("Please select l >= 8");
 	return;
     }
-    current_l = l; 
-    document.getElementById("iv").value = rand_sequence(current_l);
+    currentL = l; 
+    document.getElementById("iv").value = randSequence(currentL);
 }
 
-function next_Key() {
+function nextKey() {
     var l = document.getElementById("l").value;
     if (! isUnsignedInteger(l) ) {
 	alert("l should be a positive integer");
@@ -84,8 +84,8 @@ function next_Key() {
 	alert("Please select l >= 8");
 	return;
     }
-    current_l = l; 
-    document.getElementById("key").value = rand_sequence(current_l);
+    currentL = l; 
+    document.getElementById("key").value = randSequence(currentL);
 }
 
 function XOR(a, b) {
@@ -100,7 +100,7 @@ function XOR(a, b) {
     return "0";
 }
 
-function hash_function(input) {
+function hashFunction(input) {
     var l = input.length;
     var output = "";
     for(var i=0;i<l/2;i++) {
@@ -109,39 +109,39 @@ function hash_function(input) {
 	return output;
 }
 
-function get_hash() {
+function getHash() {
     var input = document.getElementById("usertext").value;
-    if(validate_binary(input) == 0) {
-	document.getElementById("usertext").value = "Please give a binary string of size " + 2*current_l;
+    if(validateBinary(input) == 0) {
+	document.getElementById("usertext").value = "Please give a binary string of size " + 2*currentL;
 	return;
     }
     var l = input.length;
-    if(l != 2*current_l) {
+    if(l != 2*currentL) {
 	document.getElementById("usertext").value = "Please give a binary string of size 2l";
 	return;
     }
-    document.getElementById("hashvalue").value = hash_function(input);
+    document.getElementById("hashvalue").value = hashFunction(input);
 }
 
-function pad_input(input) {
-	var numZeroes = (Math.ceil((input.length)/current_l))*current_l - input.length;
+function padInput(input) {
+	var numZeroes = (Math.ceil((input.length)/currentL))*currentL - input.length;
     for( var i=0; i<numZeroes; i++ ) {
 		input += '0';
 	}
 	return input;
 }
 
-function pad_input_before(input) {
-	var numZeroes = (Math.ceil((input.length)/current_l))*current_l - input.length;
+function padInputBefore(input) {
+	var numZeroes = (Math.ceil((input.length)/currentL))*currentL - input.length;
     for( var i=0; i<numZeroes; i++ ) {
 		input = '0' + input;
 	}
 	return input;
 }
 
-function pad_iopad(pad) {
+function padIopad(pad) {
 	var output = pad;
-	var numExtras = (Math.ceil((pad.length)/current_l))*current_l - pad.length;
+	var numExtras = (Math.ceil((pad.length)/currentL))*currentL - pad.length;
 	var index = 0;
     for( var i=0; i<numExtras; i++ ) {
 		output += pad.charAt(index);
@@ -154,39 +154,39 @@ function pad_iopad(pad) {
 }
 
 function appendLength() {
-    var plaintext = pad_input(document.getElementById("plaintext").value);
-	document.getElementById('pt').value = pad_input_before(get_num_in_binary(plaintext.length));
+    var plaintext = padInput(document.getElementById("plaintext").value);
+	document.getElementById('pt').value = padInputBefore(getNumInBinary(plaintext.length));
 }
 
-function pad_plain_text() {
-	document.getElementById("plaintext").value = pad_input(document.getElementById("plaintext").value);
+function padPlainText() {
+	document.getElementById("plaintext").value = padInput(document.getElementById("plaintext").value);
 }
 
 function checkAnswer() {
-	var user_answer = document.getElementById("cipherarea").value;
-	if(user_answer.length == 0) {
+	var userAnswer = document.getElementById("cipherarea").value;
+	if(userAnswer.length == 0) {
 		alert("Please enter an answer");
 		return;
 	}
 	
     var key = document.getElementById("key").value;
-	var kxoripad = xor_strings(key, pad_iopad("01011100"));
-    var plaintext = pad_input(document.getElementById("plaintext").value);
-	plaintext += pad_input_before(get_num_in_binary(plaintext.length));
+	var kxoripad = xorStrings(key, padIopad("01011100"));
+    var plaintext = padInput(document.getElementById("plaintext").value);
+	plaintext += padInputBefore(getNumInBinary(plaintext.length));
     var iv = document.getElementById("iv").value;
-    var t = hash_function(iv + kxoripad);
-	var numChunks = (plaintext.length)/current_l;
+    var t = hashFunction(iv + kxoripad);
+	var numChunks = (plaintext.length)/currentL;
     for( var i=0; i<numChunks; i++ ) {
-		var startIndex = i*current_l;
-		var gethashfor = t + plaintext.substring(startIndex, startIndex+current_l);
-		t = hash_function(gethashfor);
+		var startIndex = i*currentL;
+		var gethashfor = t + plaintext.substring(startIndex, startIndex+currentL);
+		t = hashFunction(gethashfor);
 	}
 
-	var kxoropad = xor_strings(key, pad_iopad("00110110"));
-	var t2 = hash_function(iv + kxoropad);
-	t = hash_function(t2 + t);
+	var kxoropad = xorStrings(key, padIopad("00110110"));
+	var t2 = hashFunction(iv + kxoropad);
+	t = hashFunction(t2 + t);
 	
-	if(trim(user_answer) == trim(t)) {
+	if(trim(userAnswer) == trim(t)) {
 		document.getElementById('notification').innerHTML = "CORRECT!!";
 	} else {
 		document.getElementById('notification').innerHTML = "Something is not correct, please try again!";
