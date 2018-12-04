@@ -26,7 +26,7 @@ function isUnsignedInteger(s) {
 }
 
 function rand_sequence(len){
-    ret="";
+   var ret="";
     for(i=0; i<len; i++) {
         ret += (Math.ceil(Math.random()*1000000))%2;
     }
