@@ -4,7 +4,7 @@
 
 // convert a (hex) string to a bignum object
 function parseBigInt(str,r) {
-  return new BigInteger(str,r);
+  return new var BigInteger(str,r);
 }
 
 function linebrk(s,n) {
