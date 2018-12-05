@@ -42,7 +42,7 @@ function do_status(s) {
   document.rsatest.status.value = s;
 }
 function do_init() {
-  if(document.rsatest.n.value.length == 0) set_1024f4();
+  if(document.rsatest.n.value.length === 0) set_1024f4();
 }
 function do_encrypt() {
   var before = new Date();
@@ -62,13 +62,13 @@ function do_decrypt() {
   var rsa = new RSAKey();
   var dr = document.rsatest;
   rsa.setPrivateEx(dr.n.value, dr.e.value, dr.d.value, dr.p.value, dr.q.value, dr.dmp1.value, dr.dmq1.value, dr.coeff.value);
-  if(document.rsatest.ciphertext.value.length == 0) {
+  if(document.rsatest.ciphertext.value.length === 0) {
     do_status("No Ciphertext - encrypt something first");
     return;
   }
   var res = rsa.decrypt(document.rsatest.ciphertext.value);
   var after = new Date();
-  if(res == null) {
+  if(res === null) {
     document.rsatest.decrypted.value = "*** Invalid Ciphertext ***";
     do_status("Decryption failed");
   }
