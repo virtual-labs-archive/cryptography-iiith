@@ -52,7 +52,7 @@ function pkcs1pad2(s,n) {
   var x = new Array();
   while(n > 2) { // random non-zero pad
     x[0] = 0;
-    while(x[0] == 0) rng.nextBytes(x);
+    while(x[0] === 0) rng.nextBytes(x);
     ba[--n] = x[0];
   }
   ba[--n] = 2;
@@ -74,7 +74,7 @@ function RSAKey() {
 
 // Set the public key fields N and e from hex strings
 function RSASetPublic(N,E) {
-  if(N != null && E != null && N.length > 0 && E.length > 0) {
+  if(N !== null && E !== null && N.length > 0 && E.length > 0) {
     this.n = parseBigInt(N,16);
     this.e = parseInt(E,16);
   }
@@ -90,11 +90,11 @@ function RSADoPublic(x) {
 // Return the PKCS#1 RSA encryption of "text" as an even-length hex string
 function RSAEncrypt(text) {
   var m = pkcs1pad2(text,(this.n.bitLength()+7)>>3);
-  if(m == null) return null;
+  if(m === null) return null;
   var c = this.doPublic(m);
-  if(c == null) return null;
+  if(c === null) return null;
   var h = c.toString(16);
-  if((h.length & 1) == 0) return h; else return "0" + h;
+  if((h.length & 1) === 0) return h; else return "0" + h;
 }
 
 // Return the PKCS#1 RSA encryption of "text" as a Base64-encoded string

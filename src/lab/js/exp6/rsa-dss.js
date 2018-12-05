@@ -23,7 +23,7 @@ function hex2a_mine(hex) {
 }
 
 function do_encrypt() {
-  if(document.getElementById('hash_value').value != document.rsatest.plaintext.value) {
+  if(document.getElementById('hash_value').value !== document.rsatest.plaintext.value) {
     alert("Hash output and input to RSA should be same!");
     return;
   }
