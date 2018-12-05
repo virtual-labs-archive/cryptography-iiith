@@ -6,11 +6,11 @@
 function pkcs1unpad2(d,n) {
   var b = d.toByteArray();
   var i = 0;
-  while(i < b.length && b[i] == 0) ++i;
-  if(b.length-i != n-1 || b[i] != 2)
+  while(i < b.length && b[i] === 0) ++i;
+  if(b.length-i !== n-1 || b[i] !== 2)
     return null;
   ++i;
-  while(b[i] != 0)
+  while(b[i] !== 0)
     if(++i >= b.length) return null;
   var ret = "";
   while(++i < b.length) {
@@ -32,7 +32,7 @@ function pkcs1unpad2(d,n) {
 
 // Set the private key fields N, e, and d from hex strings
 function RSASetPrivate(N,E,D) {
-  if(N != null && E != null && N.length > 0 && E.length > 0) {
+  if(N !== null && E !== null && N.length > 0 && E.length > 0) {
     this.n = parseBigInt(N,16);
     this.e = parseInt(E,16);
     this.d = parseBigInt(D,16);
@@ -43,7 +43,7 @@ function RSASetPrivate(N,E,D) {
 
 // Set the private key fields N, e, d and CRT params from hex strings
 function RSASetPrivateEx(N,E,D,P,Q,DP,DQ,C) {
-  if(N != null && E != null && N.length > 0 && E.length > 0) {
+  if(N !== null && E !== null && N.length > 0 && E.length > 0) {
     this.n = parseBigInt(N,16);
     this.e = parseInt(E,16);
     this.d = parseBigInt(D,16);
@@ -66,11 +66,11 @@ function RSAGenerate(B,E) {
   for(;;) {
     for(;;) {
       this.p = new BigInteger(B-qs,1,rng);
-      if(this.p.subtract(BigInteger.ONE).gcd(ee).compareTo(BigInteger.ONE) == 0 && this.p.isProbablePrime(10)) break;
+      if(this.p.subtract(BigInteger.ONE).gcd(ee).compareTo(BigInteger.ONE) === 0 && this.p.isProbablePrime(10)) break;
     }
     for(;;) {
       this.q = new BigInteger(qs,1,rng);
-      if(this.q.subtract(BigInteger.ONE).gcd(ee).compareTo(BigInteger.ONE) == 0 && this.q.isProbablePrime(10)) break;
+      if(this.q.subtract(BigInteger.ONE).gcd(ee).compareTo(BigInteger.ONE) === 0 && this.q.isProbablePrime(10)) break;
     }
     if(this.p.compareTo(this.q) <= 0) {
       var t = this.p;
@@ -80,7 +80,7 @@ function RSAGenerate(B,E) {
     var p1 = this.p.subtract(BigInteger.ONE);
     var q1 = this.q.subtract(BigInteger.ONE);
     var phi = p1.multiply(q1);
-    if(phi.gcd(ee).compareTo(BigInteger.ONE) == 0) {
+    if(phi.gcd(ee).compareTo(BigInteger.ONE) === 0) {
       this.n = this.p.multiply(this.q);
       this.d = ee.modInverse(phi);
       this.dmp1 = this.d.mod(p1);
@@ -93,7 +93,7 @@ function RSAGenerate(B,E) {
 
 // Perform raw private operation on "x": return x^d (mod n)
 function RSADoPrivate(x) {
-  if(this.p == null || this.q == null)
+  if(this.p === null || this.q === null)
     return x.modPow(this.d, this.n);
 
   // TODO: re-calculate any missing CRT params
@@ -110,7 +110,7 @@ function RSADoPrivate(x) {
 function RSADecrypt(ctext) {
   var c = parseBigInt(ctext, 16);
   var m = this.doPrivate(c);
-  if(m == null) return null;
+  if(m === null) return null;
   return pkcs1unpad2(m, (this.n.bitLength()+7)>>3);
 }
 
