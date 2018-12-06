@@ -6,7 +6,7 @@ function validate_binary(input) {
     var len = input.length;
     var i;
     for(i=0;i<len;i++) {
-	if(input.charAt(i) != "0" && input.charAt(i) != "1") {
+	if(input.charAt(i) !== "0" && input.charAt(i) !== "1") {
 	    break;
 	}
     }
@@ -17,7 +17,7 @@ function validate_binary(input) {
 }
 
 function isUnsignedInteger(s) {
-  return (s.toString().search(/^[0-9]+$/) == 0);
+  return (s.toString().search(/^[0-9]+$/) === 0);
 }
 
 function rand_sequence(len){
@@ -29,25 +29,25 @@ function rand_sequence(len){
 }
 
 function XOR(a, b) {
-    if((a == "0" && b == "0"))
+    if((a === "0" && b === "0"))
         return "0";
-    else if((a == "0" && b == "1"))
+    else if((a === "0" && b === "1"))
         return "1";
-    else if((a == "1" && b == "0"))
+    else if((a === "1" && b === "0"))
         return "1";
-    else if((a == "1" && b == "1"))
+    else if((a === "1" && b === "1"))
         return "0";
     return "0";
 }
 
 function EQV(a, b) {
-    if((a == "0" && b == "0"))
+    if((a === "0" && b === "0"))
         return "1";
-    else if((a == "0" && b == "1"))
+    else if((a === "0" && b === "1"))
         return "0";
-    else if((a == "1" && b == "0"))
+    else if((a === "1" && b === "0"))
         return "0";
-    else if((a == "1" && b == "1"))
+    else if((a === "1" && b === "1"))
         return "1";
     return "1";
 }
@@ -120,7 +120,7 @@ function next_function() {
 function apply_function() {
     var input = document.getElementById("usertext").value;
     var l = input.length;
-    if(validate_binary(input) == 0 || l != current_l) {
+    if(validate_binary(input) == 0 || l !== current_l) {
 	document.getElementById("usertext").value = "Please give a binary string of size " + current_l;
 	return;
     }
@@ -130,7 +130,7 @@ function apply_function() {
     var output = "";
     var i = 0;
     for(i=0;i<l;i++) {
-        if(current_function.charAt(i) == "0") {
+        if(current_function.charAt(i) === "0") {
             output += XOR(input.charAt(i), key.charAt(i));
         }
         else {
@@ -150,9 +150,9 @@ function select(){
     var selectmenu = document.getElementById("secureOptions");
     var chosen_option=selectmenu.options[selectmenu.selectedIndex];
     reset();
-    if (chosen_option.value == "key") {
+    if (chosen_option.value === "key") {
 	document.getElementById("userKey").style.display = "block";
-    } else if (chosen_option.value == "length") {
+    } else if (chosen_option.value === "length") {
 	document.getElementById("user_message").style.display = "block";
     } else {
 	document.getElementById("key_generated2").style.display = "block";

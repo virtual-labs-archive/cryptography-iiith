@@ -5,13 +5,13 @@ function trim(str) {
 var current_l=8;
 
 function xor_strings(a, b) {
-        if(a.length != b.length) {
+        if(a.length !== b.length) {
                 alert("Error calculating XOR");
                 return;
         }
         var output = "";
         for (var i=0; i<a.length; i ++) {
-                if(a[i] == b[i]) {
+                if(a[i] === b[i]) {
                         output += "0";
                 } else {
                         output += "1";
@@ -24,7 +24,7 @@ function validate_binary(input) {
     var len = input.length;
     var i;
     for(i=0;i<len;i++) {
-	if(input.charAt(i) != "0" && input.charAt(i) != "1") {
+	if(input.charAt(i) !== "0" && input.charAt(i) !== "1") {
 	    break;
 	}
     }
@@ -44,7 +44,7 @@ function get_num_in_binary(num) {
 }
 
 function isUnsignedInteger(s) {
-  return (s.toString().search(/^[0-9]+$/) == 0);
+  return (s.toString().search(/^[0-9]+$/) === 0);
 }
 
 function rand_sequence(len){
@@ -89,13 +89,13 @@ function next_Key() {
 }
 
 function XOR(a, b) {
-    if((a == "0" && b == "0"))
+    if((a === "0" && b === "0"))
         return "0";
-    else if((a == "0" && b == "1"))
+    else if((a === "0" && b === "1"))
         return "1";
-    else if((a == "1" && b == "0"))
+    else if((a === "1" && b === "0"))
         return "1";
-    else if((a == "1" && b == "1"))
+    else if((a === "1" && b === "1"))
         return "0";
     return "0";
 }
@@ -111,12 +111,12 @@ function hash_function(input) {
 
 function get_hash() {
     var input = document.getElementById("usertext").value;
-    if(validate_binary(input) == 0) {
+    if(validate_binary(input) === 0) {
 	document.getElementById("usertext").value = "Please give a binary string of size " + 2*current_l;
 	return;
     }
     var l = input.length;
-    if(l != 2*current_l) {
+    if(l !== 2*current_l) {
 	document.getElementById("usertext").value = "Please give a binary string of size 2l";
 	return;
     }
@@ -146,7 +146,7 @@ function pad_iopad(pad) {
     for( var i=0; i<numExtras; i++ ) {
 		output += pad.charAt(index);
 		index ++;
-		if (index == pad.length) {
+		if (index === pad.length) {
 			index = 0;
 		}
 	}
@@ -164,7 +164,7 @@ function pad_plain_text() {
 
 function checkAnswer() {
 	var user_answer = document.getElementById("cipherarea").value;
-	if(user_answer.length == 0) {
+	if(user_answer.length === 0) {
 		alert("Please enter an answer");
 		return;
 	}
@@ -186,7 +186,7 @@ function checkAnswer() {
 	var t2 = hash_function(iv + kxoropad);
 	t = hash_function(t2 + t);
 	
-	if(trim(user_answer) == trim(t)) {
+	if(trim(user_answer) === trim(t)) {
 		document.getElementById('notification').innerHTML = "CORRECT!!";
 	} else {
 		document.getElementById('notification').innerHTML = "Something is not correct, please try again!";
