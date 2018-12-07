@@ -2,27 +2,27 @@ function trim(str) {
     return str.replace(/\s+/g,"");
 }
 
-function Shift_Encrypt(src, dst) {
+function ShiftEncrypt(src, dst) {
 
     var plaintext = document.getElementById(src).value.toLowerCase();  
     if(plaintext.length < 1){ alert("please enter some plaintext"); return; }    
-    var shift = parseInt(document.getElementById("shift_key").value);
-    ciphertext = "";    var re = /[a-z]/;
-    for(i=0; i<plaintext.length; i++){ 
+    var shift = parseInt(document.getElementById("shiftKey").value);
+    var ciphertext = "";    var re = /[a-z]/;
+    for(var i=0; i<plaintext.length; i++){ 
         if(re.test(plaintext.charAt(i))) ciphertext += String.fromCharCode((plaintext.charCodeAt(i) - 97 + shift)%26 + 97); 
         else ciphertext += plaintext.charAt(i); 
     } 
     document.getElementById(dst).value = ciphertext; 
 } 
  
-function Shift_Decrypt(src,dest) {
+function ShiftDecrypt(src,dest) {
 
-    ciphertext = document.getElementById(src).value.toLowerCase();  
+    var ciphertext = document.getElementById(src).value.toLowerCase();  
     // do some error checking 
     if(ciphertext.length < 1){ alert("please enter some ciphertext (letters only)"); return; }    
-    var shift = parseInt(document.getElementById("shift_key").value);
-    plaintext = "";    var re = /[a-z]/;
-    for(i=0; i<ciphertext.length; i++){ 
+    var shift = parseInt(document.getElementById("shiftKey").value);
+    var plaintext = "";    var re = /[a-z]/;
+    for(var i=0; i<ciphertext.length; i++){ 
         if(re.test(ciphertext.charAt(i))) plaintext += String.fromCharCode((ciphertext.charCodeAt(i) - 97 + 26 - shift)%26 + 97); 
         else plaintext += ciphertext.charAt(i); 
     } 
@@ -41,19 +41,19 @@ var answers = ["attack at dawn",
 		"this is the forest primeval",
 		"the quality of mercy is not strained",
 		"wethepeopleoftheunitedstates"];
-var shift_indices = [7, 3, 3, 5, 11, 18];
-var current_cipher=0;
-function Next_Shift_Test() {
-        current_cipher = current_cipher+1;
+var shiftIndices = [7, 3, 3, 5, 11, 18];
+var currentCipher=0;
+function NextShiftTest() {
+        currentCipher = currentCipher+1;
     
-    if (current_cipher > (ciphers.length-1)) {
-	current_cipher=0;
+    if (currentCipher > (ciphers.length-1)) {
+	currentCipher=0;
     }
-    document.getElementById("textarea").value = ciphers[current_cipher];
+    document.getElementById("textarea").value = ciphers[currentCipher];
 } 
 
 function CheckAnswer() {
-	if (trim(document.getElementById("textarea3").value.toLowerCase()) == trim(answers[current_cipher]) && document.getElementById("select_ans_shift").selectedIndex == shift_indices[current_cipher]) {
+	if (trim(document.getElementById("textarea3").value.toLowerCase()) === trim(answers[currentCipher]) && document.getElementById("selectAnsShift").selectedIndex === shiftIndices[currentCipher]) {
 		document.getElementById("notification").value = "CORRECT!!";
 	} else {
 		document.getElementById("notification").value = "This is not correct, Please try again!";

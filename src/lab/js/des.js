@@ -1,26 +1,26 @@
 // add a bit string to the output, inserting spaces as designated
-function format_bitstring( ary, spacing )
+function formatBitstring( ary, spacing )
 {
    var i;
 
-   var formatted_bitstring = "";
+   var formattedBitstring = "";
 
    // add bits
    for( i=1; i<ary.length; i++ )
    {
-      if ( (i%spacing) == 1 )
-         formatted_bitstring += " ";	// time to add a space
-      formatted_bitstring += ary[i];	// and the bit
+      if ( (i%spacing) === 1 )
+         formattedBitstring += " ";	// time to add a space
+      formattedBitstring += ary[i];	// and the bit
    }
-   return formatted_bitstring;
+   return formattedBitstring;
 }
 
 // special value stored in x[0] to indicate a problem
-var ERROR_VAL = -9876;
+var ERRORVAL = -9876;
 
 // initial permutation (split into left/right halves )
 // since DES numbers bits starting at 1, we will ignore x[0]
-var IP_perm = new Array( -1,
+var IPPerm = new Array( -1,
 	58, 50, 42, 34, 26, 18, 10, 2,
 	60, 52, 44, 36, 28, 20, 12, 4,
 	62, 54, 46, 38, 30, 22, 14, 6,
@@ -31,7 +31,7 @@ var IP_perm = new Array( -1,
 	63, 55, 47, 39, 31, 23, 15, 7 );
 
 // final permutation (inverse initial permutation)
-var FP_perm = new Array( -1,
+var FPPerm = new Array( -1,
 	40, 8, 48, 16, 56, 24, 64, 32,
 	39, 7, 47, 15, 55, 23, 63, 31,
 	38, 6, 46, 14, 54, 22, 62, 30,
@@ -42,7 +42,7 @@ var FP_perm = new Array( -1,
 	33, 1, 41, 9, 49, 17, 57, 25 );
 
 // per-round expansion
-var E_perm = new Array( -1,
+var EPerm = new Array( -1,
 	32, 1, 2, 3, 4, 5,
 	4, 5, 6, 7, 8, 9,
 	8, 9, 10, 11, 12, 13,
@@ -53,7 +53,7 @@ var E_perm = new Array( -1,
 	28, 29, 30, 31, 32, 1 );
 
 // per-round permutation
-var P_perm = new Array( -1,
+var PPerm = new Array( -1,
 	16, 7, 20, 21, 29, 12, 28, 17,
 	1, 15, 23, 26, 5, 18, 31, 10,
 	2, 8, 24, 14, 32, 27, 3, 9,
@@ -102,7 +102,7 @@ var S8 = new Array(
 	2, 1, 14, 7, 4, 10, 8, 13, 15, 12, 9, 0, 3, 5, 6, 11 );
 
 //, first, key, permutation
-var PC_1_perm = new Array( -1, 
+var PC1Perm = new Array( -1, 
 	// C subkey bits
 	57, 49, 41, 33, 25, 17, 9, 1, 58, 50, 42, 34, 26, 18,
 	10, 2, 59, 51, 43, 35, 27, 19, 11, 3, 60, 52, 44, 36,
@@ -111,23 +111,23 @@ var PC_1_perm = new Array( -1,
 	14, 6, 61, 53, 45, 37, 29, 21, 13, 5, 28, 20, 12, 4 );
 
 //, per-round, key, selection, permutation
-var PC_2_perm = new Array( -1, 
+var PC2Perm = new Array( -1, 
 	14, 17, 11, 24, 1, 5, 3, 28, 15, 6, 21, 10,
 	23, 19, 12, 4, 26, 8, 16, 7, 27, 20, 13, 2,
 	41, 52, 31, 37, 47, 55, 30, 40, 51, 45, 33, 48,
 	44, 49, 39, 56, 34, 53, 46, 42, 50, 36, 29, 32 );
 
 // save output in case we want to reformat it later
-var DES_output = new Array( 65 );
+var DESOutput = new Array( 65 );
 
 // remove spaces from input
-function remove_spaces( instr )
+function removeSpaces( instr )
 {
    var i;
    var outstr="";
 
    for( i=0; i<instr.length; i++ )
-      if ( instr.charAt(i) != " " )
+      if ( instr.charAt(i) !== " " )
          // not a space, include it
          outstr += instr.charAt(i);
 
@@ -139,7 +139,7 @@ function remove_spaces( instr )
 // start = starting subscript
 // bitc  = number of bits to convert
 // val   = number to convert
-function split_int( ary, start, bitc, val )
+function splitInt( ary, start, bitc, val )
 {
    var i = start;
    var j;
@@ -152,21 +152,21 @@ function split_int( ary, start, bitc, val )
    }
 }
 
-function get_plaintext( bitarray, str )
+function getPlaintext( bitarray, str )
 {
    // insert note we probably are ok
    bitarray[0] = -1;
 
    // start processing
-   str = remove_spaces(str);
-   for( i=0; i<64; i++ ) {
+   str = removeSpaces(str);
+   for(var i=0; i<64; i++ ) {
         bitarray[i+1] = str.charAt(i);
    }
    return;
 }
 
 // get the message to encrypt/decrypt
-function get_value( bitarray, str, isASCII )
+function getValue( bitarray, str, isASCII )
 {
    var i;
    var val;	// one hex digit
@@ -177,29 +177,29 @@ function get_value( bitarray, str, isASCII )
    if ( isASCII )
    {
       // check length of data
-      if ( str.length != 8 )
+      if ( str.length !== 8 )
       {
          window.alert("Message and key must be 64 bits (8 ASCII characters)");
-         bitarray[0] = ERROR_VAL;
+         bitarray[0] = ERRORVAL;
          return
       }
 
       // have ASCII data
       for( i=0; i<8; i++ )
       {
-         split_int( bitarray, i*8+1, 8, str.charCodeAt(i) );
+         splitInt( bitarray, i*8+1, 8, str.charCodeAt(i) );
       }
    }
    else
    {
       // have hex data - remove any spaces they used, then convert
-      str = remove_spaces(str);
+      str = removeSpaces(str);
 
       // check length of data
-      if ( str.length != 16 )
+      if ( str.length !== 16 )
       {
          window.alert("Message and key must be 64 bits (16 hex digits)");
-         bitarray[0] = ERROR_VAL;
+         bitarray[0] = ERRORVAL;
          return;
       }
 
@@ -222,12 +222,12 @@ function get_value( bitarray, str, isASCII )
          {
             // not 0-9 or A-F, complain
             window.alert( str.charAt(i)+" is not a valid hex digit" );
-            bitarray[0] = ERROR_VAL;
+            bitarray[0] = ERRORVAL;
             return;
          }
 
          // add this digit to the array
-         split_int( bitarray, i*4+1, 4, val-48 );
+         splitInt( bitarray, i*4+1, 4, val-48 );
       }
    }
 }
@@ -260,59 +260,60 @@ function xor( a1, a2 )
 }
 
 // process one S-Box, return integer from S-Box
-function do_S( SBox, index, inbits )
+function doS( SBox, index, inbits )
 {
    // collect the 6 bits into a single integer
-   var S_index = inbits[index  ]*32 + inbits[index+5]*16 +
+   var SIndex = inbits[index  ]*32 + inbits[index+5]*16 +
                  inbits[index+1]*8  + inbits[index+2]*4 +
                  inbits[index+3]*2  + inbits[index+4];
 
    // do lookup
-   return SBox[S_index];
+   return SBox[SIndex];
 }
 
 // do one round of DES encryption
-function des_round( L, R, KeyR )
+function desRound( L, R, KeyR )
 {
-   var E_result = new Array( 49 );
-   var S_out = new Array( 33 );
+   var EResult = new Array( 49 );
+   var SOut = new Array( 33 );
 
    // copy the existing L bits, then set new L = old R
-   var temp_L = new Array( 33 );
-   for( i=0; i<33; i++ )
+   var tempL = new Array( 33 );
+   var i;
+   for(i=0; i<33; i++ )
    {
       // copy exising L bits
-      temp_L[i] = L[i];
+      tempL[i] = L[i];
 
       // set L = R
       L[i] = R[i];
    }
 
    // expand R using E permutation
-   permute( E_result, R, E_perm );
+   permute( EResult, R, EPerm );
 
    // exclusive-or with current key
-   xor( E_result, KeyR );
+   xor( EResult, KeyR );
 
    // put through the S-Boxes
-   split_int( S_out,  1, 4, do_S( S1,  1, E_result ) );
-   split_int( S_out,  5, 4, do_S( S2,  7, E_result ) );
-   split_int( S_out,  9, 4, do_S( S3, 13, E_result ) );
-   split_int( S_out, 13, 4, do_S( S4, 19, E_result ) );
-   split_int( S_out, 17, 4, do_S( S5, 25, E_result ) );
-   split_int( S_out, 21, 4, do_S( S6, 31, E_result ) );
-   split_int( S_out, 25, 4, do_S( S7, 37, E_result ) );
-   split_int( S_out, 29, 4, do_S( S8, 43, E_result ) );
+   splitInt( SOut,  1, 4, doS( S1,  1, EResult ) );
+   splitInt( SOut,  5, 4, doS( S2,  7, EResult ) );
+   splitInt( SOut,  9, 4, doS( S3, 13, EResult ) );
+   splitInt( SOut, 13, 4, doS( S4, 19, EResult ) );
+   splitInt( SOut, 17, 4, doS( S5, 25, EResult ) );
+   splitInt( SOut, 21, 4, doS( S6, 31, EResult ) );
+   splitInt( SOut, 25, 4, doS( S7, 37, EResult ) );
+   splitInt( SOut, 29, 4, doS( S8, 43, EResult ) );
 
    // do the P permutation
-   permute( R, S_out, P_perm );
+   permute( R, SOut, PPerm );
 
    // xor this with old L to get the new R
-   xor( R, temp_L );
+   xor( R, tempL );
 }
 
 // shift the CD values left 1 bit
-function shift_CD_1( CD )
+function shiftCD1( CD )
 {
    var i;
 
@@ -327,7 +328,7 @@ function shift_CD_1( CD )
 }
 
 // shift the CD values left 2 bits
-function shift_CD_2( CD )
+function shiftCD2( CD )
 {
    var i;
    var C1 = CD[1];
@@ -346,7 +347,7 @@ function shift_CD_2( CD )
 
 
 // do the actual DES encryption/decryption
-function des_encrypt( inData, Key, do_encrypt )
+function desEncrypt( inData, Key, doEncrypt )
 {
    var tempData = new Array( 65 );	// output bits
    var CD = new Array( 57 );		// halves of current key
@@ -357,7 +358,7 @@ function des_encrypt( inData, Key, do_encrypt )
    var i;
 
    // do the initial key permutation
-   permute( CD, Key, PC_1_perm );
+   permute( CD, Key, PC1Perm );
 
    // create the subkeys
    for( i=1; i<=16; i++ )
@@ -366,17 +367,17 @@ function des_encrypt( inData, Key, do_encrypt )
       KS[i] = new Array( 49 );
 
       // how much should we shift C and D?
-      if ( i==1 || i==2 || i==9 || i == 16 )
-         shift_CD_1( CD );
+      if ( i===1 || i===2 || i===9 || i === 16 )
+         shiftCD1( CD );
       else
-         shift_CD_2( CD );
+         shiftCD2( CD );
 
       // create the actual subkey
-      permute( KS[i], CD, PC_2_perm );
+      permute( KS[i], CD, PC2Perm );
    }
 
    // handle the initial permutation
-   permute( tempData, inData, IP_perm );
+   permute( tempData, inData, IPPerm );
 
    // split data into L/R parts
    for( i=1; i<=32; i++ )
@@ -386,12 +387,12 @@ function des_encrypt( inData, Key, do_encrypt )
    }
 
    // encrypting or decrypting?
-   if ( do_encrypt )
+   if ( doEncrypt )
    {
       // encrypting
       for( i=1; i<=16; i++ )
       {
-         des_round( L, R, KS[i] );
+         desRound( L, R, KS[i] );
       }
    }
    else
@@ -399,7 +400,7 @@ function des_encrypt( inData, Key, do_encrypt )
       // decrypting
       for( i=16; i>=1; i-- )
       {
-         des_round( L, R, KS[i] );
+         desRound( L, R, KS[i] );
       }
    }
 
@@ -412,43 +413,43 @@ function des_encrypt( inData, Key, do_encrypt )
    }
 
    // do final permutation and return result
-   permute( result, tempData, FP_perm );
+   permute( result, tempData, FPPerm );
    return result;
 }
 // do encrytion/decryption
-// do_encrypt is TRUE for encrypt, FALSE for decrypt
-function do_des( do_encrypt )
+// doEncrypt is TRUE for encrypt, FALSE for decrypt
+function doDes( doEncrypt )
 {
    var inData = new Array( 65 );	// input message bits
    var Key = new Array( 65 );
 
    // get the message from the user
    // also check if it is ASCII or hex
-   get_plaintext( inData, document.stuff.indata.value );
+   getPlaintext( inData, document.stuff.indata.value );
 
    // problems??
-   if ( inData[0] == ERROR_VAL )
+   if ( inData[0] === ERRORVAL )
    {
       return;
    }
 
    // get the key from the user
-   get_value( Key, document.stuff.key.value, false );
+   getValue( Key, document.stuff.key.value, false );
    // problems??
-   if ( Key[0] == ERROR_VAL )
+   if ( Key[0] === ERRORVAL )
    {
       return;
    }
 
-   // do the encryption/decryption, put output in DES_output for display
-   DES_output = des_encrypt( inData, Key, do_encrypt )
+   // do the encryption/decryption, put output in DESOutput for display
+   DESOutput = desEncrypt( inData, Key, doEncrypt )
 
-   document.stuff.outdata.value = format_bitstring(DES_output, 8);
+   document.stuff.outdata.value = formatBitstring(DESOutput, 8);
 }
 
 // do Triple-DES encrytion/decryption
-// do_encrypt is TRUE for encrypt, FALSE for decrypt
-function do_tdes( do_encrypt )
+// doEncrypt is TRUE for encrypt, FALSE for decrypt
+function doTdes( doEncrypt )
 {
    var inData = new Array( 65 );	// input message bits
    var tempdata = new Array( 65 );	// interm result bits
@@ -457,30 +458,30 @@ function do_tdes( do_encrypt )
 
    // get the message from the user
    // also check if it is ASCII or hex
-   get_plaintext( inData, document.getElementById('plaintext').value );
+   getPlaintext( inData, document.getElementById('plaintext').value );
 
    // get the key part A from the user
-   get_value( KeyA, document.getElementById('keya').value, false );
+   getValue( KeyA, document.getElementById('keya').value, false );
 
    // get the key part B from the user
-   get_value( KeyB, document.getElementById('keyb').value, false );
+   getValue( KeyB, document.getElementById('keyb').value, false );
 
-   if ( do_encrypt )
+   if ( doEncrypt )
    {
       // TDES encrypt = DES encrypt/decrypt/encrypt
-      tempdata = des_encrypt( inData, KeyA, true );
-      tempdata = des_encrypt( tempdata, KeyB, false );
-      DES_output = des_encrypt( tempdata, KeyA, true );
+      tempdata = desEncrypt( inData, KeyA, true );
+      tempdata = desEncrypt( tempdata, KeyB, false );
+      DESOutput = desEncrypt( tempdata, KeyA, true );
    }
    else
    {
       // TDES decrypt = DES decrypt/encrypt/decrypt
-      tempdata = des_encrypt( inData, KeyA, false );
-      tempdata = des_encrypt( tempdata, KeyB, true );
-      DES_output = des_encrypt( tempdata, KeyA, false );
+      tempdata = desEncrypt( inData, KeyA, false );
+      tempdata = desEncrypt( tempdata, KeyB, true );
+      DESOutput = desEncrypt( tempdata, KeyA, false );
    }
 
-   return format_bitstring(DES_output, 8);
+   return formatBitstring(DESOutput, 8);
 }
 
 function randomKey(length) {
@@ -511,13 +512,13 @@ function changePlaintext() {
     for (var i = 0; i < length; i++) {
         str += Math.floor((Math.random() * 1000) % 2);
     }
-    document.getElementById('plaintext').value = format_bitstring(str, 8);
+    document.getElementById('plaintext').value = formatBitstring(str, 8);
 }
 
 function checkAnswer() {
-    var user_answer = remove_spaces(document.getElementById('userans').value);
-    var actual_answer = remove_spaces(do_tdes(true));
-    if (user_answer == actual_answer) {
+    var userAnswer = removeSpaces(document.getElementById('userans').value);
+    var actualAnswer = removeSpaces(doTdes(true));
+    if (userAnswer === actualAnswer) {
 	document.getElementById('notification').innerHTML = "CORRECT!";
     } else {
 	document.getElementById('notification').innerHTML = "Something is wrong .. please try again!";

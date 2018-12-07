@@ -563,7 +563,7 @@ var U4 = [
 0xa792b479,0xa999b970,0xbb84ae6b,0xb58fa362,
 0x9fbe805d,0x91b58d54,0x83a89a4f,0x8da39746 ];
 
-function prepare_decryption(key)
+function prepareDecryption(key)
 {
   var r, w;
   var rk2=new Array(maxrk+1);
