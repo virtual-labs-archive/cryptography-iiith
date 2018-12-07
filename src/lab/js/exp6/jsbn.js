@@ -9,7 +9,7 @@ var dbits;
 
 // JavaScript engine analysis
 var canary = 0xdeadbeefcafe;
-var j_lm = ((canary&0xffffff)==0xefcafe);
+var jLm = ((canary&0xffffff)==0xefcafe);
 
 // (public) Constructor
 function BigInteger(a,b,c) {
@@ -22,9 +22,9 @@ function BigInteger(a,b,c) {
 // return new, unset BigInteger
 function nbi() { return new BigInteger(null); }
 
-// am: Compute w_j += (x*this_i), propagate carries,
+// am: Compute wJ += (x*thisI), propagate carries,
 // c is initial carry, returns final carry.
-// c < 3*dvalue, x < 2*dvalue, this_i < dvalue
+// c < 3*dvalue, x < 2*dvalue, thisI < dvalue
 // We need to select the fastest one that works in this environment.
 
 // am1: use a single mult and divide to get the high bits,
@@ -67,11 +67,11 @@ function am3(i,x,w,j,c,n) {
   }
   return c;
 }
-if(j_lm && (navigator.appName === "Microsoft Internet Explorer")) {
+if(jLm && (navigator.appName === "Microsoft Internet Explorer")) {
   BigInteger.prototype.am = am2;
   dbits = 30;
 }
-else if(j_lm && (navigator.appName !== "Netscape")) {
+else if(jLm && (navigator.appName !== "Netscape")) {
   BigInteger.prototype.am = am1;
   dbits = 26;
 }
@@ -84,25 +84,25 @@ BigInteger.prototype.DB = dbits;
 BigInteger.prototype.DM = ((1<<dbits)-1);
 BigInteger.prototype.DV = (1<<dbits);
 
-var BI_FP = 52;
-BigInteger.prototype.FV = Math.pow(2,BI_FP);
-BigInteger.prototype.F1 = BI_FP-dbits;
-BigInteger.prototype.F2 = 2*dbits-BI_FP;
+var BIFP = 52;
+BigInteger.prototype.FV = Math.pow(2,BIFP);
+BigInteger.prototype.F1 = BIFP-dbits;
+BigInteger.prototype.F2 = 2*dbits-BIFP;
 
 // Digit conversions
-var BI_RM = "0123456789abcdefghijklmnopqrstuvwxyz";
-var BI_RC = new Array();
+var BIRM = "0123456789abcdefghijklmnopqrstuvwxyz";
+var BIRC = new Array();
 var rr,vv;
 rr = "0".charCodeAt(0);
-for(vv = 0; vv <= 9; ++vv) BI_RC[rr++] = vv;
+for(vv = 0; vv <= 9; ++vv) BIRC[rr++] = vv;
 rr = "a".charCodeAt(0);
-for(vv = 10; vv < 36; ++vv) BI_RC[rr++] = vv;
+for(vv = 10; vv < 36; ++vv) BIRC[rr++] = vv;
 rr = "A".charCodeAt(0);
-for(vv = 10; vv < 36; ++vv) BI_RC[rr++] = vv;
+for(vv = 10; vv < 36; ++vv) BIRC[rr++] = vv;
 
-function int2char(n) { return BI_RM.charAt(n); }
+function int2char(n) { return BIRM.charAt(n); }
 function intAt(s,i) {
-  var c = BI_RC[s.charCodeAt(i)];
+  var c = BIRC[s.charCodeAt(i)];
   return (c===null)?-1:c;
 }
 
