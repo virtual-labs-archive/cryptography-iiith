@@ -52,13 +52,15 @@ function Next_Mono_Test() {
 }
 
 function CalculateFreq() {
-    var cipherText = document.getElementById("textarea").value.toLowerCase();
-    var freq = new Array(26);
+   var cipherText = document.getElementById("textarea").value.toLowerCase();
+   var freq = new Array(26);
+    
     for (var i=0; i<26; i++) {
-	freq[i] = 0;
+	var freq[]=new Array(26);//initialisation
+        freq[i] = 0;
     }
     var astring = "a";
-    var charValOfA = astring.charCodeAt(0);
+         var charValOfA = astring.charCodeAt(0);
     for (var i=0; i<cipherText.length; i++) {
 	var index = cipherText.charCodeAt(i)-charValOfA;
         if(index>=0 && index <= 26) {
