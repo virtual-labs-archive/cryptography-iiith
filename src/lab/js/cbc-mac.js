@@ -92,6 +92,9 @@ function next_IV() {
     var text_size = document.getElementById("plaintext").value.length;
     if (text_size > 2*l) {
     	current_l = l;
+        function next_function(new) //any local variable 'new' is created
+{
+}
 	current_function = next_function(l);
     } else {
 	alert("l should not be greater than the (length of plaintext)/2");

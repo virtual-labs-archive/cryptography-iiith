@@ -188,7 +188,7 @@ else
   if(typeof ciphertext == "string")
   {
     ciphertext = ciphertext.split("");
-    for (i=0; i<ciphertext.length; i++)
+    for (var i=0; i<ciphertext.length; i++)
      {
       ciphertext[i] = ciphertext[i].charCodeAt(0) & 0xFF;
      }
