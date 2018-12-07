@@ -165,6 +165,8 @@ function XOR(hex1, hex2) {
 			output += hex1.charAt(i);
 		}
 	}
+      else
+        {
 	if(l2>-1) {
 		for(var i=l2; i>=0; i-- ) {
 			output += hex2.charAt(i);
@@ -176,7 +178,7 @@ function XOR(hex1, hex2) {
    	} 
 	return revOutput;
 }
-
+}
 function Add_one(hexNum) {
     var l = hexNum.length-1;
 	var carryOver = 1;

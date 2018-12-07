@@ -4,18 +4,18 @@ function Mono_Encrypt() {
     if(plaintext.length < 1){ alert("please enter some plaintext (letters and numbers only)"); return; }    
     if(key.length != 26){ alert("key must be 26 characters in length"); return; }
     ciphertext = ""; var re = /[a-z]/; 
-    for(i=0; i<plaintext.length; i++){ 
+    for(var i=0; i<plaintext.length; i++){ 
         if(re.test(plaintext.charAt(i))) ciphertext += key.charAt(plaintext.charCodeAt(i)-97); 
         else  ciphertext += plaintext.charAt(i); 
     } 
     if(document.getElementById("punc").checked) 
         document.getElementById("c").value = ciphertext.replace(/[^a-z]/g,"").replace(/([a-z]{5})/g,"$1 "); 
     else 
-        document.getElementById("c").value = ciphertext; 
+        document.getElementById("c").value = var ciphertext; 
 } 
  
 function Mono_Decrypt(f){ 
-    ciphertext = document.getElementById("c").value.toLowerCase();  
+   var ciphertext = document.getElementById("c").value.toLowerCase();  
     key = document.getElementById("key").value.toLowerCase().replace(/[^a-z]/g, ""); 
     if(ciphertext.length < 1){ alert("please enter some ciphertext (letters only)"); return; }    
     if(key.length != 26){ alert("key must be 26 characters in length"); return; }
@@ -52,13 +52,15 @@ function Next_Mono_Test() {
 }
 
 function CalculateFreq() {
-    var cipherText = document.getElementById("textarea").value.toLowerCase();
-    var freq = new Array(26);
+   var cipherText = document.getElementById("textarea").value.toLowerCase();
+   var freq = new Array(26);
+    
     for (var i=0; i<26; i++) {
-	freq[i] = 0;
+	var freq[]=new Array(26);//initialisation
+        freq[i] = 0;
     }
     var astring = "a";
-    var charValOfA = astring.charCodeAt(0);
+         var charValOfA = astring.charCodeAt(0);
     for (var i=0; i<cipherText.length; i++) {
 	var index = cipherText.charCodeAt(i)-charValOfA;
         if(index>=0 && index <= 26) {
