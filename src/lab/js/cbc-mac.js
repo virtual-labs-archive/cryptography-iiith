@@ -24,7 +24,7 @@ function validate_binary(input) {
 function isUnsignedInteger(s) {
   return (s.toString().search(/^[0-9]+$/) == 0);
 }
-
+var ret;
 function rand_sequence(len){
     ret="";
     for(i=0; i<len; i++) {

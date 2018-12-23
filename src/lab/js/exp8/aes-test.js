@@ -71,10 +71,10 @@ function byteArrayToHex(byteArray) {
 
 function hex2s(hex)
 {
-  var r='';
+  var r="";
   if(hex.indexOf("0x") == 0 || hex.indexOf("0X") == 0) hex = hex.substr(2);
 
-  if(hex.length%2) hex+='0';
+  if(hex.length%2) hex+="0";
 
   for(var i = 0; i<hex.length; i += 2)
     r += String.fromCharCode(parseInt(hex.slice(i, i+2), 16));
@@ -151,14 +151,14 @@ function rijndaelEncrypt(plaintext, key, mode) {
   // convert plaintext to byte array and pad with zeros if necessary. 
   plaintext = formatPlaintext(plaintext);
 
-  var expandedKey = new keyExpansion(key);
+  var expandedKey =new KeyExpansion(key);
 
   for (var block=0; block<plaintext.length / bpb; block++) {
     aBlock = plaintext.slice(block*bpb, (block+1)*bpb);
     if (mode == "CBC")
       for (var i=0; i<bpb; i++) 
         aBlock[i] ^= ct[block*bpb + i];
-    ct = ct.concat(AESencrypt(aBlock, expandedKey));
+    ct = ct.concat(aESencrypt(aBlock, expandedKey));
   }
 
   return ct;
@@ -194,12 +194,12 @@ function rijndaelDecrypt(ciphertext, key, mode) {
   if (!mode)
     mode = "ECB";                         // assume ECB if mode omitted
 
-  var expandedKey = new prepare_decryption(key);
+  var expandedKey = new Prepare_decryption(key);
  
   // work backwards to accomodate CBC mode 
   for (block=(ciphertext.length / bpb)-1; block>0; block--) {
     aBlock = 
-     AESdecrypt(ciphertext.slice(block*bpb,(block+1)*bpb), expandedKey);
+     aesdecrypt(ciphertext.slice(block*bpb,(block+1)*bpb), expandedKey);
     if (mode == "CBC") 
       for (var i=0; i<bpb; i++) 
         pt[(block-1)*bpb + i] = aBlock[i] ^ ciphertext[(block-1)*bpb + i];
@@ -209,7 +209,7 @@ function rijndaelDecrypt(ciphertext, key, mode) {
 
   // do last block if ECB (skips the IV in CBC)
   if (mode == "ECB")
-    pt = AESdecrypt(ciphertext.slice(0, bpb), expandedKey).concat(pt);
+    pt = aesdecrypt(ciphertext.slice(0, bpb), expandedKey).concat(pt);
 
   return pt;
 }

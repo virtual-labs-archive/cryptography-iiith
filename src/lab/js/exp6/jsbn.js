@@ -115,6 +115,7 @@ function bnpCopyTo(r) {
 
 // (protected) set from integer value x, -DV <= x < DV
 function bnpFromInt(x) {
+  var DV;
   this.t = 1;
   this.s = (x<0)?-1:0;
   if(x > 0) this[0] = x;

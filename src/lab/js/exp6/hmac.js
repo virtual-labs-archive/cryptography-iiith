@@ -104,7 +104,7 @@ function hash_function(input) {
     var l = input.length;
     var output = "";
     for(var i=0;i<l/2;i++) {
-	output += XOR(input.charAt(2*i), input.charAt(2*i+1));
+	output += xor(input.charAt(2*i), input.charAt(2*i+1));
     }
 	return output;
 }
@@ -126,7 +126,7 @@ function get_hash() {
 function pad_input(input) {
 	var numZeroes = (Math.ceil((input.length)/current_l))*current_l - input.length;
     for( var i=0; i<numZeroes; i++ ) {
-		input += '0';
+		input += "0";
 	}
 	return input;
 }
@@ -134,7 +134,7 @@ function pad_input(input) {
 function pad_input_before(input) {
 	var numZeroes = (Math.ceil((input.length)/current_l))*current_l - input.length;
     for( var i=0; i<numZeroes; i++ ) {
-		input = '0' + input;
+		input = "0" + input;
 	}
 	return input;
 }
@@ -155,7 +155,7 @@ function pad_iopad(pad) {
 
 function appendLength() {
     var plaintext = pad_input(document.getElementById("plaintext").value);
-	document.getElementById('pt').value = pad_input_before(get_num_in_binary(plaintext.length));
+	document.getElementById("pt").value = pad_input_before(get_num_in_binary(plaintext.length));
 }
 
 function pad_plain_text() {

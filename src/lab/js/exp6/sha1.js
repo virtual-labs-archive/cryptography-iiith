@@ -68,7 +68,7 @@ function rstr_hmac_sha1(key, data)
  */
 function rstr2hex(input)
 {
-  try { hexcase } catch(e) { hexcase=0; }
+  try { hexcase; } catch(e) { hexcase=0; }
   var hex_tab = hexcase ? "0123456789ABCDEF" : "0123456789abcdef";
   var output = "";
   var x;
@@ -86,7 +86,7 @@ function rstr2hex(input)
  */
 function rstr2b64(input)
 {
-  try { b64pad_sha1 } catch(e) { b64pad_sha1=''; }
+  try { b64pad_sha1; } catch(e) { b64pad_sha1=""; }
   var tab = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
   var output = "";
   var len = input.length;
@@ -149,7 +149,7 @@ function rstr2any(input, encoding)
 
   /* Append leading zero equivalents */
   var full_length = Math.ceil(input.length * 8 /
-                                    (Math.log(encoding.length) / Math.log(2)))
+                                    (Math.log(encoding.length) / Math.log(2)));
   for(i = output.length; i < full_length; i++)
     output = encoding[0] + output;
 

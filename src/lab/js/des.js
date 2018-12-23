@@ -181,7 +181,7 @@ function get_value( bitarray, str, isASCII )
       {
          window.alert("Message and key must be 64 bits (8 ASCII characters)");
          bitarray[0] = ERROR_VAL;
-         return
+         return;
       }
 
       // have ASCII data
@@ -274,6 +274,7 @@ function do_S( SBox, index, inbits )
 // do one round of DES encryption
 function des_round( L, R, KeyR )
 {
+   var i;
    var E_result = new Array( 49 );
    var S_out = new Array( 33 );
 

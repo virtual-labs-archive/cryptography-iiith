@@ -4,6 +4,8 @@ function Mono_Encrypt() {
     if(plaintext.length < 1){ alert("please enter some plaintext (letters and numbers only)"); return; }    
     if(key.length != 26){ alert("key must be 26 characters in length"); return; }
     ciphertext = ""; var re = /[a-z]/; 
+    var i;
+    var ciphertext;	
     for(i=0; i<plaintext.length; i++){ 
         if(re.test(plaintext.charAt(i))) ciphertext += key.charAt(plaintext.charCodeAt(i)-97); 
         else  ciphertext += plaintext.charAt(i); 
