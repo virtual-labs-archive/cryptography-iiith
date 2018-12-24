@@ -105,8 +105,7 @@ a.active {
 	height: auto;
 	overflow: visible;
 	margin-left: 0px !important;
-	padding-bottom: 10px !important;
-	padding-top: 10px !important;
+	padding: 10px auto 10px auto !important;
 }
 
 .menu-a
@@ -114,10 +113,7 @@ a.active {
 	font-size: 18px !important;
 	font-family: Calibri !important;
   color: #2C99CD !important;
-  padding-left: 10px !important;
-  padding-bottom: 5px !important;
-  padding-top: 5px !important;
-  padding-right: 10px !important;
+  padding: 5px 10px 5px 10px !important;
   
 }
 
@@ -399,8 +395,7 @@ a.active {
 
 .col-md-2-5-2
 {
-	padding-right: 15px;
-	padding-left: 15px;
+	padding: auto 15px auto 15px;
 }
 /*************************************************************/
 .row-container-height{
@@ -409,8 +404,7 @@ a.active {
 
 .featured-labs-div
 {
-	margin-left: 0px !important;
-	margin-right: 0px !important;
+	margin:auto 0px auto 0px !important;
 	padding-left: 15px !important;
 }
 .border-bottom-img
