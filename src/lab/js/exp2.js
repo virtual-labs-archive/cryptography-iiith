@@ -31,7 +31,7 @@ function Mono_GenRandKey(){
     var keychars = "abcdefghijklmnopqrstuvwxyz"; 
     var chars = keychars.split(""); 
     ret=""; lim = chars.length; 
-    for(i=0; i<lim; i++){ 
+    for(j=0; j<lim; j++){ 
         index = Math.floor(chars.length*Math.random()); 
         ret += chars[index]; 
         chars.splice(index,1); 
@@ -54,32 +54,32 @@ function Next_Mono_Test() {
 function CalculateFreq() {
     var cipherText = document.getElementById("textarea").value.toLowerCase();
     var freq = new Array(26);
-    for (var i=0; i<26; i++) {
-	freq[i] = 0;
+    for (var l=0; l<26; l++) {
+	freq[l] = 0;
     }
     var astring = "a";
     var charValOfA = astring.charCodeAt(0);
-    for (var i=0; i<cipherText.length; i++) {
-	var index = cipherText.charCodeAt(i)-charValOfA;
+    for (var k=0; k<cipherText.length; k++) {
+	var index = cipherText.charCodeAt(k)-charValOfA;
         if(index>=0 && index <= 26) {
 	    freq[index]++;
 	}
     }
     var totalChars = 0;
-    for (var i=0; i<26; i++) {
-	totalChars += freq[i];
+    for (var m=0; m<26; m++) {
+	totalChars += freq[m];
     }
    
     var output = "<table border='0'; cellspacing='1'; bgcolor='black'; cellpadding='3';><tr>";
-    for (var i=0; i<13; i++) {
+    for (var n=0; n<13; n++) {
 	output += "<td bgcolor='white'; style=\"width:20px\"><b>";
-	output += String.fromCharCode(i+charValOfA);
+	output += String.fromCharCode(n+charValOfA);
 	output += "</b></td> ";
     }
     output += "</tr><tr>";
-    for (var i=0; i<13; i++) {
+    for (var p=0; p<13; p++) {
 	output += "<td bgcolor='white'; style=\"width:20px\">";
-	var num = (freq[i]/totalChars);
+	var num = (freq[p]/totalChars);
 	output += (Math.round((num)*100000))/1000;
 	if (num == 0) {
 	    output += ".000"
@@ -87,15 +87,15 @@ function CalculateFreq() {
 	output += "</td> ";
     }
     output += "</tr><tr>";
-    for (var i=13; i<26; i++) {
+    for (var q=13; q<26; q++) {
 	output += "<td bgcolor='white'; style=\"width:20px\"><b>";
-	output += String.fromCharCode(i+charValOfA);
+	output += String.fromCharCode(q+charValOfA);
 	output += "</b></td> ";
     }
     output += "</tr><tr>";
-    for (var i=13; i<26; i++) {
+    for (var r=13; r<26; r++) {
 	output += "<td bgcolor='white'; style=\"width:20px\">";
-	var num = (freq[i]/totalChars);
+	var num = (freq[r]/totalChars);
 	output += (Math.round((num)*100000))/1000;
 	if (num == 0) {
 	    output += ".000"
@@ -133,13 +133,13 @@ function ModifyUserText2() {
     var initChar = document.getElementById("char3").value; 
     var finalChar = document.getElementById("char4").value; 
     var output = "";
-    for (var i=0; i<userText.length; i++) {
-	if(userText.charAt(i) == initChar) {
+    for (var s=0; s<userText.length; s++) {
+	if(userText.charAt(s) == initChar) {
 	    output += finalChar;
-	} else if (userText.charAt(i) == finalChar) {
+	} else if (userText.charAt(s) == finalChar) {
 	    output += initChar;
 	} else {
-	    output += userText.charAt(i);
+	    output += userText.charAt(s);
         }
     }
     var replacement_notification = "You replaced " + initChar + " by " + finalChar + "\n";
