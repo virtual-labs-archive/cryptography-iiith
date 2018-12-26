@@ -80,29 +80,41 @@ function bnpFromRadix(s,b) {
 }
 
 // (protected) alternate constructor
-function bnpFromNumber(a,b,c) {
-  if("number" == typeof b) {
+function bnpFromNumber(a, b, c) {
+  if ("number" == typeof b) {
     // new BigInteger(int,int,RNG)
-    if(a < 2) this.fromInt(1);
+    if (a < 2) {
+      this.fromInt(1)
+    };
     else {
-      this.fromNumber(a,c);
-      if(!this.testBit(a-1))	// force MSB set
-        this.bitwiseTo(BigInteger.ONE.shiftLeft(a-1),op_or,this);
-      if(this.isEven()) this.dAddOffset(1,0); // force odd
-      while(!this.isProbablePrime(b)) {
-        this.dAddOffset(2,0);
-        if(this.bitLength() > a) this.subTo(BigInteger.ONE.shiftLeft(a-1),this);
+      this.fromNumber(a, c);
+      if (!this.testBit(a - 1)) // force MSB set
+      {}
+      this.bitwiseTo(BigInteger.ONE.shiftLeft(a - 1), op_or, this);
+    }
+    if (this.isEven()) {
+      this.dAddOffset(1, 0);
+    } // force odd
+    while (!this.isProbablePrime(b)) {
+      this.dAddOffset(2, 0);
+      if (this.bitLength() > a) {
+        this.subTo(BigInteger.ONE.shiftLeft(a - 1), this);
       }
     }
   }
-  else {
-    // new BigInteger(int,RNG)
-    var x = new Array(), t = a&7;
-    x.length = (a>>3)+1;
-    b.nextBytes(x);
-    if(t > 0) x[0] &= ((1<<t)-1); else x[0] = 0;
-    this.fromString(x,256);
+} else {
+  // new BigInteger(int,RNG)
+  var x = new Array(),
+    t = a & 7;
+  x.length = (a >> 3) + 1;
+  b.nextBytes(x);
+  if (t > 0) {
+    x[0] &= ((1 << t) - 1);
+  } else {
+    x[0] = 0;
+    this.fromString(x, 256);
   }
+}
 }
 
 // (public) convert to bigendian byte array
