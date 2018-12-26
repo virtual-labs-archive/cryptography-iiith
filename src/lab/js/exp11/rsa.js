@@ -54,12 +54,11 @@ function pkcs1pad2(s,n) {
     x[0] = 0;
     while(x[0] == 0) rng.nextBytes(x);
     ba[--n] = x[0];
-  }
   ba[--n] = 2;
   ba[--n] = 0;
   return new BigInteger(ba);
+  }
 }
-
 // "empty" RSA key constructor
 function RSAKey() {
   this.n = null;
