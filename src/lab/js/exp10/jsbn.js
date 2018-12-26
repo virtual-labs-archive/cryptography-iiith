@@ -12,12 +12,18 @@ var canary = 0xdeadbeefcafe;
 var j_lm = ((canary&0xffffff)==0xefcafe);
 
 // (public) Constructor
-function BigInteger(a,b,c) {
-  if(a != null)
-    if("number" == typeof a) this.fromNumber(a,b,c);
-    else if(b == null && "string" != typeof a) this.fromString(a,256);
-    else this.fromString(a,b);
+function BigInteger(a, b, c) {
+  if (a != null) {
+    if ("number" == typeof a) {
+      this.fromNumber(a, b, c);
+    } else if (b == null && "string" != typeof a) {
+      this.fromString(a, 256);
+    } else {
+      this.fromString(a, b);
+    }
+  }
 }
+
 
 // return new, unset BigInteger
 function nbi() { return new BigInteger(null); }
@@ -172,14 +178,14 @@ function bnpClamp() {
 
 // (public) return string representation in given radix
 function bnToString(b) {
-  if(this.s < 0) return "-"+this.negate().toString(b);
+  if(this.s < 0){ return "-"+this.negate().toString(b)};
   var k;
-  if(b == 16) k = 4;
-  else if(b == 8) k = 3;
-  else if(b == 2) k = 1;
-  else if(b == 32) k = 5;
-  else if(b == 4) k = 2;
-  else return this.toRadix(b);
+  if(b == 16) {k = 4};
+  else if(b == 8) {k = 3;}
+  else if(b == 2) {k = 1;}
+  else if(b == 32) {k = 5;}
+  else if(b == 4) {k = 2;}
+  else {return this.toRadix(b);}
   var km = (1<<k)-1, d, m = false, r = "", i = this.t;
   var p = this.DB-(i*this.DB)%k;
   if(i-- > 0) {
@@ -193,8 +199,8 @@ function bnToString(b) {
         d = (this[i]>>(p-=k))&km;
         if(p <= 0) { p += this.DB; --i; }
       }
-      if(d > 0) m = true;
-      if(m) r += int2char(d);
+      if(d > 0) {m = true};
+      if(m) {r += int2char(d)};
     }
   }
   return m?r:"0";
