@@ -17,8 +17,10 @@ function hex2b64(h) {
     c = parseInt(h.substring(i,i+2),16);
     ret += b64map.charAt(c >> 2) + b64map.charAt((c & 3) << 4);
   }
-  while((ret.length & 3) > 0) ret += b64pad;
+  while((ret.length & 3) > 0) {
+  ret += b64pad;
   return ret;
+  }
 }
 
 // convert a base64 string to hex
@@ -53,9 +55,10 @@ function b64tohex(s) {
       k = 0;
     }
   }
-  if(k == 1)
+  if(k == 1){
     ret += int2char(slop << 2);
   return ret;
+  }
 }
 
 // convert a base64 string to a byte/number array
