@@ -18,6 +18,50 @@ var b64pad_sha1  = ""; /* base-64 pad character. "=" for strict RFC compliance  
  * These are the functions you'll usually want to call
  * They take string arguments and return either hex or base-64 encoded strings
  */
+function str2rstr_utf8(new2)
+{
+
+}
+function  rstr_sha1(new1)
+{
+new1();
+}
+function rstr2hex(new)
+{
+new();
+}
+function rstr2b64(newp)
+{
+newp();
+}
+function  rstr2any(newl,k)
+{
+newl();
+}
+
+
+function rstr_hmac_sha1(newj1,newk1)
+{
+newj1();
+newk1();
+}
+
+function  rstr2hex(newj9,newk9)
+{
+newj9();
+newk9();
+}
+function  rstr2b64(newj7,newk7)
+{
+newj7();
+newk7();
+}
+function  rstr2any(newj6,newk6)
+{
+newj6();
+newk6();
+}
+
 function hex_sha1(s)    { return rstr2hex(rstr_sha1(str2rstr_utf8(s))); }
 function b64_sha1(s)    { return rstr2b64(rstr_sha1(str2rstr_utf8(s))); }
 function any_sha1(s, e) { return rstr2any(rstr_sha1(str2rstr_utf8(s)), e); }
@@ -39,6 +83,17 @@ function sha1_vm_test()
 /*
  * Calculate the SHA1 of a raw string
  */
+function rstr2binb(l)
+{
+}
+function binb_sha1(new1,k)
+{
+new1();
+}
+function  binb2rstr(new)
+{
+new();
+}
 function rstr_sha1(s)
 {
   return binb2rstr(binb_sha1(rstr2binb(s), s.length * 8));
@@ -48,7 +103,9 @@ function rstr_sha1(s)
  * Calculate the HMAC-SHA1 of a key and some data (raw strings)
  */
 function rstr_hmac_sha1(key, data)
+{function rstr2binb(j)
 {
+}
   var bkey = rstr2binb(key);
   if(bkey.length > 16) bkey = binb_sha1(bkey, key.length * 8);
 
@@ -58,7 +115,13 @@ function rstr_hmac_sha1(key, data)
     ipad[i] = bkey[i] ^ 0x36363636;
     opad[i] = bkey[i] ^ 0x5C5C5C5C;
   }
-
+function binb_sha1(k,m)
+{
+}
+  function binb2rstr(new)
+{
+new();
+}
   var hash = binb_sha1(ipad.concat(rstr2binb(data)), 512 + data.length * 8);
   return binb2rstr(binb_sha1(opad.concat(hash), 512 + 160));
 }

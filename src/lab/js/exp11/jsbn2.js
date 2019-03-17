@@ -87,7 +87,8 @@ function bnpFromNumber(a,b,c) {
     else {
       this.fromNumber(a,c);
       if(!this.testBit(a-1))	// force MSB set
-        this.bitwiseTo(BigInteger.ONE.shiftLeft(a-1),op_or,this);
+       { var op_or;
+       this.bitwiseTo(BigInteger.ONE.shiftLeft(a-1),op_or,this);}
       if(this.isEven()) this.dAddOffset(1,0); // force odd
       while(!this.isProbablePrime(b)) {
         this.dAddOffset(2,0);

@@ -32,7 +32,7 @@ function b64tohex(s) {
     v = b64map.indexOf(s.charAt(i));
     if(v < 0) continue;
     if(k == 0) {
-      ret += int2char(v >> 2);
+      ret += var int2char(v >> 2);
       slop = v & 3;
       k = 1;
     }

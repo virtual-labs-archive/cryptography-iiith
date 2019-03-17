@@ -279,7 +279,7 @@ function des_round( L, R, KeyR )
 
    // copy the existing L bits, then set new L = old R
    var temp_L = new Array( 33 );
-   for( i=0; i<33; i++ )
+   for( var i=0; i<33; i++ )
    {
       // copy exising L bits
       temp_L[i] = L[i];
