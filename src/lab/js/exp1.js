@@ -53,6 +53,11 @@ function Next_Shift_Test() {
 } 
 
 function CheckAnswer() {
+	if(document.getElementById("textarea3").value=="")
+	{
+		alert("Please enter an input");
+		return ;
+	}
 	if (trim(document.getElementById("textarea3").value.toLowerCase()) == trim(answers[current_cipher]) && document.getElementById("select_ans_shift").selectedIndex == shift_indices[current_cipher]) {
 		document.getElementById("notification").value = "CORRECT!!";
 	} else {
