@@ -24,6 +24,7 @@
     <!-- Custom CSS -->
     <link href="../../../css/style.css" rel="stylesheet">
 	<script type="text/javascript" src = 'tabs.js'></script>
+	<script type="text/javascript" src = '../js/exp8/quiz_check.js'></script>
 <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', 'UA-67558473-1', 'auto');ga('send', 'pageview');</script>	
 </head>
 <body id="page-top" class="index">
@@ -106,6 +107,7 @@
 <li><input name="quest_581" type="radio" value="Electronic code Block"/>Electronic code Block</li>
 <li><input name="quest_581" type="radio" value="Electronic code Book"/>Electronic code Book</li>
 <li><input name="quest_581" type="radio" value="Electronic cipher Book"/>Electronic cipher Book</li>
+<p id="q1" style="display:none"></p> 
 </ul></li>
 <li><p>Which among the following is not CPA secure?</p>
 <ul class="multichoice">
@@ -113,6 +115,7 @@
 <li><input name="quest_593" type="radio" value="CBC"/>CBC</li>
 <li><input name="quest_593" type="radio" value="CFB"/>CFB</li>
 <li><input name="quest_593" type="radio" value="None"/>None</li>
+<p id="q2" style="display:none"></p> 
 </ul></li>
 <li><p>Which of the following are block ciphers?</p>
 <ul class="multichoice">
@@ -120,7 +123,10 @@
 <li><input name="quest_589" type="radio" value="CBC"/>CBC</li>
 <li><input name="quest_589" type="radio" value="CFB"/>CFB</li>
 <li><input name="quest_589" type="radio" value="All"/>All</li>
+<p id="q3" style="display:none"></p> 
 </ul></li>
+<input type="button" value="Submit MCQ answers" onclick="gradeQuiz()"></input>
+<br><br>
 <li>Which is the fastest mode of operation among four mode of operation?</li>
 <li>Which mode of operation is more secure?</li>
 <li>What is importance of Intialiczation Vector(IV) and CTR ?</li>
