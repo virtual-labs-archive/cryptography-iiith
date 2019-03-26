@@ -54,6 +54,3 @@ $base_url = $exp_url;
 include('../exp_template.php');
 
 ?>
-
-
-
