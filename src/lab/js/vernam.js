@@ -64,6 +64,12 @@ function Vernam_Encrypt() {
 
 function Vernam_Decrypt(f){
     ciphertext = document.getElementById("c").value;
+    for(var i=0;i<ciphertext.length;i++){
+        if(ciphertext[i]>'2'){
+            alert("WRONG INPUT");
+            return;
+        }
+    }
     key = document.getElementById("key").value;
     if(ciphertext.length < 1){ alert("please enter some ciphertext (binary only)"); return; }
     if(key.length < ciphertext.length){ alert("key must be atleast the length of ciphertext"); return; }
