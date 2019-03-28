@@ -154,8 +154,8 @@ function function_value(input, key) {
 
 function apply_function() {
     var input = document.getElementById("usertext").value;
-     
-   var l = input.length;	
+
+   var l = input.length;
     if(validate_binary(input) == 0 || l != current_l) {
 		document.getElementById("usertext").value = "Please give a binary string of size " + current_l;
 		return;
@@ -188,10 +188,10 @@ function CheckAnswer() {
         var startIndex = i*current_l;
         var gethashfor = xor_strings(iv, plaintext.substring(startIndex, startIndex+current_l));
         iv = function_value(gethashfor, key);
-    }   
+    }
     if(trim(user_answer) == trim(iv)) {
-        document.getElementById('notification').innerHTML = "CORRECT!!";
+        document.getElementById('outputarea1').innerHTML = "CORRECT!!";
     } else {
-        document.getElementById('notification').innerHTML = "Incorrect answer, please try again!";
-    }   
+        document.getElementById('outputarea1').innerHTML = "Incorrect answer, please try again!";
+    }
 }
