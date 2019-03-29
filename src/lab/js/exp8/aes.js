@@ -255,9 +255,13 @@ function checkAnswer() {
 			answer += XOR(ri, pt);
 		}
     }
-	if(trim(userAns) == trim(answer)) {
-		document.getElementById("notification").innerHTML = "CORRECT!!";
-	} else {
+  if(trim(userAns) == trim(answer)) 
+  {
+    document.getElementById("notification").innerHTML = "CORRECT!!";
+    } 
+
+  else {
 		document.getElementById("notification").innerHTML = "Sorry, answer is wrong. Please try again.";
-	}
+  }
+  document.getElementById("notification").style.color="green";
 }
