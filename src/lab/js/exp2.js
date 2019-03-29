@@ -81,7 +81,7 @@ function CalculateFreq() {
 	output += "<td bgcolor='white'; style=\"width:20px\">";
 	var num = (freq[i]/totalChars);
 	output += (Math.round((num)*100000))/1000;
-	if (num == 0) {
+	if (num === 0) {
 	    output += ".000"
 	}
 	output += "</td> ";
@@ -97,7 +97,7 @@ function CalculateFreq() {
 	output += "<td bgcolor='white'; style=\"width:20px\">";
 	var num = (freq[i]/totalChars);
 	output += (Math.round((num)*100000))/1000;
-	if (num == 0) {
+	if (num === 0) {
 	    output += ".000"
 	}
 	output += "</td> ";
@@ -117,7 +117,7 @@ function ModifyUserText() {
     var finalChar = document.getElementById("char2").value.toUpperCase(); 
     var output = "";
     for (var i=0; i<userText.length; i++) {
-	if(userText.charAt(i) == initChar) {
+	if(userText.charAt(i) === initChar) {
 	    output += finalChar;
 	} else {
 	    output += userText.charAt(i);
@@ -134,9 +134,9 @@ function ModifyUserText2() {
     var finalChar = document.getElementById("char4").value; 
     var output = "";
     for (var i=0; i<userText.length; i++) {
-	if(userText.charAt(i) == initChar) {
+	if(userText.charAt(i) === initChar) {
 	    output += finalChar;
-	} else if (userText.charAt(i) == finalChar) {
+	} else if (userText.charAt(i) === finalChar) {
 	    output += initChar;
 	} else {
 	    output += userText.charAt(i);
@@ -150,7 +150,7 @@ function ModifyUserText2() {
 function checkAnswer() {
     var userText = document.getElementById("textarea2").value.toLowerCase();
     var initChar = document.getElementById("char3").value.toLowerCase();
-    if (document.getElementById("textarea3").value.toLowerCase() == solution_plaintext[current_cipher].toLowerCase() && document.getElementById("key2").value.toLowerCase() == keys[current_cipher].toLowerCase()) {
+    if (document.getElementById("textarea3").value.toLowerCase() === solution_plaintext[current_cipher].toLowerCase() && document.getElementById("key2").value.toLowerCase() === keys[current_cipher].toLowerCase()) {
                 document.getElementById("notification").value = "CORRECT!!";
         } else {
                 document.getElementById("notification").value = "This is not correct, Please try again!";

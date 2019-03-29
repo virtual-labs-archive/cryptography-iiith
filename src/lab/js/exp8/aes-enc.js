@@ -359,17 +359,17 @@ function keyExpansion(key)
   var tk=new Array(maxkc);
   var rconpointer=0;
 
-  if(keylen==16)
+  if(keylen===16)
   {
    rounds=10;
    kc=4;
   }
-  else if(keylen==24)
+  else if(keylen===24)
   {
    rounds=12;
    kc=6
   }
-  else if(keylen==32)
+  else if(keylen===32)
   {
    rounds=14;
    kc=8
@@ -396,7 +396,7 @@ function keyExpansion(key)
     {
       keySched[r][t]=tk[j];
     }
-    if(t==4)
+    if(t===4)
     {
       r++;
       t=0;
@@ -430,7 +430,7 @@ function keyExpansion(key)
       {
         keySched[r][t]=tk[j];
       }
-      if(t==4)
+      if(t===4)
       {
         r++;
         t=0;
