@@ -38,6 +38,15 @@ function set_1024f4() {
   document.rsatest.dmq1.value="3d06982efbbe47339e1f6d36b1216b8a741d410b0c662f54f7118b27b9a4ec9d\n914337eb39841d8666f3034408cf94f5b62f11c402fc994fe15a05493150d9fd";
   document.rsatest.coeff.value="3a3e731acd8960b7ff9eb81a7ff93bd1cfa74cbd56987db58b4594fb09c09084\ndb1734c8143f98b602b981aaa9243ca28deb69b5b280ee8dcee0fd2625e53250";
 }
+function linebrk(s,n) {
+  var ret = "";
+  var i = 0;
+  while(i + n < s.length) {
+    ret += s.substring(i,i+n) + "\n";
+    i += n;
+  }
+  return ret + s.substring(i,s.length);
+}
 function do_status(s) {
   document.rsatest.status.value = s;
 }
