@@ -5,7 +5,7 @@ function trim(str) {
 function makeReadable(str) {
     var text = "";
     for( var i=0; i < str.length; i++ ) {
-	if (i%8 == 0) {
+	if (i%8 === 0) {
 	    text += " ";
 	}
         text += str.charAt(i);
@@ -23,9 +23,9 @@ function doEncryption()
   theForm.key.value = trim(theForm.key.value);
   theForm.plaintext.value = trim(theForm.plaintext.value);
 
-  if (theForm.key.value.toLowerCase().indexOf("0x") == 0)
+  if (theForm.key.value.toLowerCase().indexOf("0x") === 0)
     theForm.key.value = theForm.key.value.substring(2);
-  if (theForm.plaintext.value.toLowerCase().indexOf("0x") == 0)
+  if (theForm.plaintext.value.toLowerCase().indexOf("0x") === 0)
     theForm.plaintext.value = theForm.plaintext.value.substring(2);
   
   if (theForm.key.value.length*4 != keySizeInBits) {
@@ -59,9 +59,9 @@ function doDecryption() {
   blockSizeInBits=128;
   keySizeInBits = theForm.keySize[theForm.keySize.selectedIndex].value;
 
-  if (theForm.key.value.toLowerCase().indexOf("0x") == 0)
+  if (theForm.key.value.toLowerCase().indexOf("0x") === 0)
     theForm.key.value = theForm.key.value.substring(2);
-  if (theForm.ciphertext.value.toLowerCase().indexOf("0x") == 0)
+  if (theForm.ciphertext.value.toLowerCase().indexOf("0x") === 0)
     theForm.ciphertext.value = theForm.ciphertext.value.substring(2);
   
   if (theForm.key.value.length*4 != keySizeInBits) {
@@ -96,12 +96,12 @@ function selectMode() {
     var selectmenu = document.getElementById("select_mode");
     var chosen_option=selectmenu.options[selectmenu.selectedIndex].value;
     resetDisplay();
-    if (chosen_option == "ecb") {
+    if (chosen_option === "ecb") {
 	document.getElementById("ecbm_image").style.display = "block";
-    } else if (chosen_option == "cbc") {
+    } else if (chosen_option === "cbc") {
         document.getElementById("ivtext").style.display = "block";
         document.getElementById("calculateXor").style.display = "block";
-    } else if (chosen_option == "ofb") {
+    } else if (chosen_option === "ofb") {
         document.getElementById("ivtext").style.display = "block";
         document.getElementById("calculateXor").style.display = "block";
     } else {
@@ -115,7 +115,7 @@ function randomHexString(length) {
     var possible = "abcdef0123456789";
 
     for( var i=0; i < length; i++ ) {
-	if (i%8 == 0) {
+	if (i%8 === 0) {
 	    text += " ";
 	}
         text += possible.charAt(Math.floor(Math.random() * possible.length));
@@ -210,7 +210,7 @@ function displayXOR() {
 
 function checkAnswer() {
 	var userAns = document.getElementById("userans").value;
-	if(userAns.length == 0) {
+	if(userAns.length === 0) {
 		alert("Please type in the answer");
 		return;
 	}
@@ -221,14 +221,14 @@ function checkAnswer() {
 	var plaintext = (document.getElementById("plainarea").value).split("\n");
 	var key = hex2s(trim(document.getElementById("keyarea").value));
 
-    if (chosen_option == "ecb") {
+    if (chosen_option === "ecb") {
     	for (i=0; i<plaintext.length-1; i++) { 
 	  		var pt = trim(plaintext[i]);
   			var tmp = byteArrayToHex(rijndaelEncrypt(hex2s(pt), key, "ECB"));
 			answer += tmp;
 		}
 
-    } else if (chosen_option == "cbc") {
+    } else if (chosen_option === "cbc") {
 		var ci = trim(document.getElementById("iv").value);
 		answer += ci;
     	for (i=0; i<plaintext.length-1; i++) { 
@@ -237,7 +237,7 @@ function checkAnswer() {
   			ci = byteArrayToHex(rijndaelEncrypt(hex2s(tmp), key, "ECB"));
 			answer += ci;
 		}		
-    } else if (chosen_option == "ofb") {
+    } else if (chosen_option === "ofb") {
 		var ri = trim(document.getElementById("iv").value);
 		answer += ri;
     	for (i=0; i<plaintext.length-1; i++) { 
@@ -255,7 +255,7 @@ function checkAnswer() {
 			answer += XOR(ri, pt);
 		}
     }
-	if(trim(userAns) == trim(answer)) {
+	if(trim(userAns) === trim(answer)) {
 		document.getElementById("notification").innerHTML = "CORRECT!!";
 	} else {
 		document.getElementById("notification").innerHTML = "Sorry, answer is wrong. Please try again.";

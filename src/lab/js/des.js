@@ -8,7 +8,7 @@ function format_bitstring( ary, spacing )
    // add bits
    for( i=1; i<ary.length; i++ )
    {
-      if ( (i%spacing) == 1 )
+      if ( (i%spacing) === 1 )
          formatted_bitstring += " ";	// time to add a space
       formatted_bitstring += ary[i];	// and the bit
    }
@@ -366,7 +366,7 @@ function des_encrypt( inData, Key, do_encrypt )
       KS[i] = new Array( 49 );
 
       // how much should we shift C and D?
-      if ( i==1 || i==2 || i==9 || i == 16 )
+      if ( i===1 || i===2 || i===9 || i === 16 )
          shift_CD_1( CD );
       else
          shift_CD_2( CD );
@@ -427,7 +427,7 @@ function do_des( do_encrypt )
    get_plaintext( inData, document.stuff.indata.value );
 
    // problems??
-   if ( inData[0] == ERROR_VAL )
+   if ( inData[0] === ERROR_VAL )
    {
       return;
    }
@@ -435,7 +435,7 @@ function do_des( do_encrypt )
    // get the key from the user
    get_value( Key, document.stuff.key.value, false );
    // problems??
-   if ( Key[0] == ERROR_VAL )
+   if ( Key[0] === ERROR_VAL )
    {
       return;
    }
@@ -517,7 +517,7 @@ function changePlaintext() {
 function checkAnswer() {
     var user_answer = remove_spaces(document.getElementById('userans').value);
     var actual_answer = remove_spaces(do_tdes(true));
-    if (user_answer == actual_answer) {
+    if (user_answer === actual_answer) {
 	document.getElementById('notification').innerHTML = "CORRECT!";
     } else {
 	document.getElementById('notification').innerHTML = "Something is wrong .. please try again!";
