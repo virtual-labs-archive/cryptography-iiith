@@ -1,0 +1,388 @@
+<!-- This file needs to be edited by the lab developer to suit
+the requirements of their lab in particular.-->
+
+<!-- Add class="default" to include any element as it is
+specified in default.html. 
+Do not include class="default" to the elements that you want to
+edit -->
+
+<!DOCTYPE html>
+<html>
+<head></head>
+<body onload="set_1024f4();" onclick="rng_seed_time();" onkeypress="rng_seed_time();">
+
+<div id="experiment"> <!-- The Experiment Document Container-->
+
+  <!-- The lab Header contains the logo and the name of the lab,
+  usually displayed on the top of the page-->
+
+  <header id="experiment-header">
+  
+    <div id="experiment-header-logo" class="logo">
+      <!-- Enclose the logo image of your lab or write it in 
+      text-->
+      <img src="../images/logo.jpg" />
+    </div>
+
+    <div id="experiment-header-heading" class="heading">
+      <!-- Write the name of your lab and link it to the home 
+      page of your lab (h1 tag is preferred while writing your 
+      lab name)-->
+      <a href="../index.php">Cryptography Lab</a>	
+    </div>
+
+    <!-- Add any additional element you want to add to the lab 
+    header, For example : Help (Enclosing them with suitable 
+    div is recommended)-->
+
+  </header>
+
+
+  <!-- The lab article is the main content area where all the 
+  experiment content sits-->
+  <article id="experiment-article">
+  
+    <!-- The lab article has an header, optional navigational 
+    menu, number of sections, an optional sidebar and a closing 
+    footer-->
+     <div id="experiment-article-breadcrumb" class="breadcrumb">
+     </div>
+    
+      <header id="experiment-article-heading" class="heading">
+        <!-- You can add a welcome message or title of the 
+        experiment here -->
+        Digital Signatures Scheme
+        <!-- Add any additional element if required with proper 
+        enclosing-->
+      </header>
+
+      <!-- Navigation menu is useful to organize the view of 
+      multiple sections inside the article-->
+      <nav id="experiment-article-navigation" class="default">
+        <ul id="experiment-article-navigation-menu">
+          <!-- The menu can be dynamically generated to contain 
+          the headings of your sections or instead write the 
+          menu items of your choice individually enclosedu in 
+          <li> tag as shown below-->
+        </ul>
+      </nav>
+
+      <!-- All the sections of your lab or experiment can be 
+      enclosed together with a div element as shown below-->
+      <div id="experiment-article-sections">
+
+        <!-- First section of the article-->
+        <section id="experiment-article-section-1">
+          
+          <div id="experiment-article-section-1-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab -->
+	    <img src="../images/introduction.jpg" />
+	  </div>	
+          
+          <!-- The heading for the section can be enclosed in a 
+          div tag. -->
+          <div id="experiment-article-section-1-heading" 
+          class="heading">
+            Introduction
+          </div>
+
+          <!-- Write the section content inside a paragraph 
+          element, You can also include images with <img> tag -->
+          <div id="experiment-article-section-1-content" 
+          class="content">	
+             <p>
+		A Digital Signature is an authentication mechanism that enables the
+		creator of the message to attack a code that acts as a signature. The
+		signature is formed by taking the hash of the message and encrypting
+		the message with the creator's private key. The signature guarantees
+		the source and integrity of the message.
+	      </p>
+               <br>
+               <h3>About the experiment:</h3>
+	       <p>In Public key setting,it becomes difficult to verify for a receiver whether message is originated from claimed source.</p>
+		<p> In this experiment, we show how can a receiver verify integrity of the message in public key setting.</p>
+		<p> Your task is to verify, whether digital signature scheme really works and why it works?	 </p>
+        </div>
+
+
+      </section>
+
+      <!-- Second section of the article-->
+      <section id="experiment-article-section-2">
+        
+        <div id="experiment-article-section-2-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab. -->
+	  <img src="../images/theory.jpg" />
+	</div>
+				
+        <!-- The heading for the section can be enclosed in a 
+        div tag. -->
+        <div id="experiment-article-section-2-heading" 
+        class="heading">
+          Theory
+        </div>
+
+
+        <!-- Write the section content inside a paragraph 
+        element, we can also include images with <img> tag -->
+        <div id="experiment-article-section-2-content" 
+        class="content">
+         <p>For a very brief theory of digital signature scheme and their analysis, click <a href="media/dss1.pdf">here</a></p><br>
+			<a href="media/dss1.pdf"><img src="../images/image11.png" alt="here"/></a>
+
+        </div>
+      </section>
+
+
+      <section id="experiment-article-section-3">
+        
+        <div id="experiment-article-section-3-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab. -->
+	  <img src="../images/objective.jpg" />
+	</div>
+     
+        <div id="experiment-article-section-3-heading" 
+        class="heading">
+          Objective
+        </div>
+
+        <div id="experiment-article-section-3-content" 
+        class="content">
+          <p>To understand "How and Why Digital signature schemes?"</p>
+        </div>
+
+      </section>
+
+
+      <section id="experiment-article-section-4">
+
+        <div id="experiment-article-section-4-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab.-->
+	  <img src="../images/simulation.jpg" />
+	</div>
+
+        <div id="experiment-article-section-4-heading" 
+        class="heading">
+          Experiment
+        </div>
+
+        <div id="experiment-article-section-4-content" 
+        class="content">
+         <p>Digitally sign the plaintext with Hashed RSA.</p>
+			<form name="rsatest" onsubmit="do_encrypt();return false;">
+ <p>Plaintext (string):</p>
+<p><input name="user_input" value="test" id="input" size="40" type="text"> 
+<input onclick="document.getElementById('hash_value').value = hex_sha1(document.getElementById('input').value)" value="SHA-1" type="button"></p><br>
+<p>Hash output(hex):</p> <p><input id="hash_value" value="" size="40" readonly="true" type="text"></p><br><br>
+
+<p>Input to RSA(hex):</p> <p><input name="plaintext" value="" size="40" type="text">
+<input value="Apply RSA" onclick="do_encrypt();" type="button"></p><p>
+Digital Signature(hex):<br>
+
+<textarea name="ciphertext" rows="4" cols="70"></textarea></p><p>
+Digital Signature(base64):<br>
+<textarea name="cipherb64" rows="3" cols="70"></textarea></p><p>
+Status:<br>
+<input name="status" size="40" type="text"></p><p>
+</p><hr>
+<h2>RSA public key</h2><p>
+Public exponent (hex, F4=0x10001):<br>
+<input name="e" value="3" size="20" type="text"></p><p>
+Modulus (hex):<br>
+
+<textarea name="n" type="text" rows="4" cols="70"></textarea><br>
+<input value="1024 bit" onclick="set_1024f4();" type="button">
+<input value="1024 bit (e=3)" onclick="set_1024e3();" type="button">
+<input value="512 bit" onclick="set_512f4();" type="button">
+<input value="512 bit (e=3)" onclick="set_512e3();" type="button">
+
+                </p></form>
+        </div>
+
+      </section>
+
+      <section id="experiment-article-section-5">
+   
+        <div id="experiment-article-section-5-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab.-->
+	  <img src="../images/manual.jpg" />
+	</div>
+
+        <div id="experiment-article-section-5-heading" 
+        class="heading">
+          Manual
+        </div>
+
+        <div id="experiment-article-section-5-content" 
+        class="content">
+        <p>
+				<p><b>Step 1:</b> Enter the input text to be encrypted in the 'Plaintext' area and generate hash value for message by clicking on the <b>SHA-1</b> button</p>
+				<p><b>Step 2:</b> Copy content of <b>Hash Output(hex)</b> field  and paste it in <b>Input to RSA(hex)</b> field.</p>
+				<p><b>Step 3:</b> Select keysize of public key from <b>RSA Public key</b> section by clicking on any key button.</p> 
+				<p><b>Step 4:</b> Click on <b>Apply RSA</b> button to generate a digital signature. </p>
+	</p>
+
+        
+          </div>
+
+        </section>
+
+        <section id="experiment-article-section-6">
+      
+          <div id="experiment-article-section-6-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab.-->
+	    <img src="../images/quizzes.jpg" />
+	  </div>
+
+          <div id="experiment-article-section-6-heading" 
+          class="heading">
+            Quizzes
+          </div>
+
+          <div id="experiment-article-section-6-content" 
+          class="content">
+ 	     <ol>
+			<li>Digital signature can’t provide ______ for the message
+				<ol class="d">
+				  <li><input name="quest_644" type="radio" value="Integrity " />Integrity </li>
+				  <li><input name="quest_644" type="radio" value="Confidentiality" />Confidentiality</li>
+				  <li><input name="quest_644" type="radio" value="Non repudiation " />Non repudiation </li>
+				  <li><input name="quest_644" type="radio" value="Authentication " />Authentication </li>
+				</ol>
+			</li>
+			<li>Digital signature uses ______  for generating valid signature
+				<ol class="d">
+				  <li>Private key </li>
+				  <li>Public key</li>
+				  <li>Secret key</li>
+				  <li>None of the aboove</li>
+				</ol>
+			</li>
+			<li>Verification Algorithm uses ______  for  validating digital signature
+				<ol class="d">
+				  <li>Private key </li>
+				  <li>Public key</li>
+				  <li>Secret key</li>
+				  <li>None of the aboove</li>
+				</ol>
+			</li>
+			<li>Is digital signature scheme possible without public key cryptography
+				<ol type="d">
+				  <li>Yes </li>
+				  <li>No</li>
+				  <li>May be exist </li>
+				  <li>None of the aboove</li>
+				</ol>
+			</li>
+				
+				<li>
+					Explain importance of Hashing(using experiment)and explain why Hashing is needed ?
+				</li>
+				<li>
+					Suggest a scheme that does not use any hashing scheme.
+				<li>
+					Explain why digital signature schemes works ?
+				</li>		           
+		
+		</ol>
+              
+             
+          </div>
+
+        </section>
+
+        <section id="experiment-article-section-7">
+	  
+          <div id="experiment-article-section-7-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab. -->
+	    <img src="../images/procedure.jpg" />
+	  </div>
+	
+          <div id="experiment-article-section-7-heading" 
+          class="heading">
+	    Procedure
+	  </div>
+	
+          <div id="experiment-article-section-7-content" 
+          class="content">
+	    <p>
+	      For </b>Procedure</b> of the experiment refer <b>Theory</b> and <b>Manual</b>.
+	    </p>
+	  </div>
+	
+        </section>
+			
+		
+        <section id="experiment-article-section-8">
+   
+          <div id="experiment-article-section-8-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab.-->
+	    <img src="../images/readings.jpg" />
+	  </div>
+
+          <div id="experiment-article-section-8-heading" 
+          class="heading">
+            Further Readings
+          </div>
+
+          <div id="experiment-article-section-8-content" 
+          class="content">
+            <ul>	
+              <li>
+               <a href=http://en.wikipedia.org/wiki/Digital_signature>Wikipedia on Digital Sinatures</a>
+              </li>
+              <li>
+                <a href=http://www.cs.berkeley.edu/~luca/cs276/lecture20.pdf>Notes on Digital Signature I</a>
+              </li> 
+              <li>
+                Introduction to Modern Cryptography by Jonathan Katz and Yehuda Lindell. 
+              </li> 
+              <li>
+                <a href=http://www.cs.berkeley.edu/~luca/cs276/lecture21.pdf>Notes on Digital Signature II</a> 
+              </li>
+            </ul>
+          </div>
+
+        </section>
+
+	
+      </div>
+
+
+    <!-- An article can have a sidebar that contain related 
+    links and additional material (however it is kept optional 
+    at this moment) -->
+    <aside id="lab-article-sidebar" class="default">
+      <!-- put the content that you want to appear in the 
+      sidebar -->	
+    </aside>
+
+
+    <!-- Article footer can display related content and 
+    additional links -->						
+    <footer id="lab-article-footer" class="default">
+      <!-- Put the content that you want to appear here -->
+    </footer>
+
+  </article>
+
+
+  <!-- Links to other labs, about us page can be kept the lab 
+  footer-->
+  <footer id="lab-footer" class="footer">
+   <!-- Put the content here-->
+<a href="http://virtual-labs.ac.in/nmeict/" >Sponsored by MHRD (NME-ICT) </a> | <a href="http://virtual-labs.ac.in/licensing/" target="_blank"> Licensing Terms </a>
+</footer>
+
+</div>		
+
+</body>
+</html>

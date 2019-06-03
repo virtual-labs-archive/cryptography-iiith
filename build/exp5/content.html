@@ -1,0 +1,396 @@
+<!-- This file needs to be edited by the lab developer to suit
+the requirements of their lab in particular.-->
+
+<!-- Add class="default" to include any element as it is
+specified in default.html. 
+Do not include class="default" to the elements that you want to
+edit -->
+
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+
+<div id="experiment"> <!-- The Experiment Document Container-->
+
+  <!-- The lab Header contains the logo and the name of the lab,
+  usually displayed on the top of the page-->
+
+  <header id="experiment-header" >
+  
+    <div id="experiment-header-logo" class="logo">
+      <!-- Enclose the logo image of your lab or write it in 
+      text-->
+      <img src="../images/logo.jpg" />
+    </div>
+
+    <div id="experiment-header-heading" class="heading">
+      <!-- Write the name of your lab and link it to the home 
+      page of your lab (h1 tag is preferred while writing your 
+      lab name)-->
+      <a href="../index.php">Cryptography Lab</a>	
+    </div>
+
+    <!-- Add any additional element you want to add to the lab 
+    header, For example : Help (Enclosing them with suitable 
+    div is recommended)-->
+
+  </header>
+
+
+  <!-- The lab article is the main content area where all the 
+  experiment content sits-->
+  <article id="experiment-article">
+  
+    <!-- The lab article has an header, optional navigational 
+    menu, number of sections, an optional sidebar and a closing 
+    footer-->
+     <div id="experiment-article-breadcrumb" class="breadcrumb">
+     </div>
+    
+      <header id="experiment-article-heading" class="heading">
+        <!-- You can add a welcome message or title of the 
+        experiment here -->
+        Message Authentication Code (CBC-MAC)
+        <!-- Add any additional element if required with proper 
+        enclosing-->
+      </header>
+
+      <!-- Navigation menu is useful to organize the view of 
+      multiple sections inside the article-->
+      <nav id="experiment-article-navigation" class="default">
+        <ul id="experiment-article-navigation-menu">
+          <!-- The menu can be dynamically generated to contain 
+          the headings of your sections or instead write the 
+          menu items of your choice individually enclosedu in 
+          <li> tag as shown below-->
+        </ul>
+      </nav>
+
+      <!-- All the sections of your lab or experiment can be 
+      enclosed together with a div element as shown below-->
+      <div id="experiment-article-sections">
+
+        <!-- First section of the article-->
+        <section id="experiment-article-section-1">
+          
+          <div id="experiment-article-section-1-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab -->
+	    <img src="../images/introduction.jpg" />
+	  </div>	
+          
+          <!-- The heading for the section can be enclosed in a 
+          div tag. -->
+          <div id="experiment-article-section-1-heading" 
+          class="heading">
+            Introduction
+          </div>
+
+          <!-- Write the section content inside a paragraph 
+          element, You can also include images with <img> tag -->
+          <div id="experiment-article-section-1-content" class="content">	
+             <p>
+		A Cipher Block Chaining Message Authentication Code (CBC-MAC), is a
+		technique for constructing a message authentication code from a block
+		cipher. 
+	     </p>
+                    <br>
+                    <h3>About the experiment:</h3>
+	     <p>In the experiment we provide a "dummy" block cipher (that is just a
+		function and has none of the properties of a real block cipher)&nbsp;
+		and&nbsp; ask you to use it to compute the CBC_MAC tag of an arbitrary
+		message<br>
+
+	     </p>
+         </div>
+
+
+      </section>
+
+      <!-- Second section of the article-->
+      <section id="experiment-article-section-2">
+        
+        <div id="experiment-article-section-2-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab. -->
+	  <img src="../images/theory.jpg" />
+	</div>
+				
+        <!-- The heading for the section can be enclosed in a 
+        div tag. -->
+        <div id="experiment-article-section-2-heading" 
+        class="heading">
+          Theory
+        </div>
+
+
+        <!-- Write the section content inside a paragraph 
+        element, we can also include images with <img> tag -->
+        <div id="experiment-article-section-2-content" 
+        class="content">
+         <p>For a very brief introduction to message authentication codes and secure CBC-MAC, click <a href="media/Message%20Authentication%20Codes.pdf">here</a><br>
+			<a href="media/Message Authentication Codes.pdf"><img src="../images/image5.png" alt="here"/></a><br><br>
+	</p>
+        </div>
+      </section>
+
+
+      <section id="experiment-article-section-3">
+        
+        <div id="experiment-article-section-3-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab. -->
+	  <img src="../images/objective.jpg" />
+	</div>
+     
+        <div id="experiment-article-section-3-heading" 
+        class="heading">
+          Objective
+        </div>
+
+        <div id="experiment-article-section-3-content" 
+        class="content">
+          <p>
+            To learn how to compute the tag of secure CBC-MAC for an arbitrary message
+	assuming that we are provided with a pseudorandom function
+          </p> 
+       
+         
+        </div>
+
+      </section>
+
+
+      <section id="experiment-article-section-4">
+
+        <div id="experiment-article-section-4-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab.-->
+	  <img src="../images/simulation.jpg" />
+	</div>
+
+        <div id="experiment-article-section-4-heading" 
+        class="heading">
+          Experiment
+        </div>
+
+        <div id="experiment-article-section-4-content" 
+        class="content">
+          <pre>   Plaintext: <textarea name="plaintext" cols="50" rows="4" readonly="readonly" id="plaintext">1100000000111100101010</textarea>   <input name="changePlainText" value="Next Plaintext" onclick="next_plain_text()" type="button"> <br>
+      Key, k: <textarea name="key" cols="50" rows="1" readonly="readonly" id="key">11100100</textarea>   <input name="changeKey" value="Next Key" onclick="next_key()" type="button"><br>
+length of Initialization Vector (IV), l, <textarea name="l" cols="4" rows="1" id="l">4</textarea> where l &lt; (the length of plaintext above)/2 <br>
+          IV: <textarea name="iv" cols="50" rows="1" readonly="readonly" id="iv">1100</textarea>   <input name="changeIV" value="Next IV" onclick="next_IV()" type="button"><br><br><br>
+Put your text of size l to get the corresponding value of F<sub>k</sub>(text) of size l.<br>
+   Your text: <textarea name="usertext" cols="50" rows="1" id="usertext">11001010</textarea>   <input name="applyFunction" value="Apply Function" onclick="apply_function()" type="button">        <input name="nextFunction" value="Choose another Function" onclick="next_function()" type="button">
+Function output: <textarea name="functionvalue" cols="50" rows="1" readonly="readonly" id="functionvalue"></textarea><br><br>
+Final Output: <textarea name="output" cols="50" rows="1" id="outputarea"></textarea> <input name="checkAnswer" value="Check Answer!" onclick="CheckAnswer()" type="button">
+<br><br></pre>
+<p style="font-weight: bold; text-decoration: underline; font-style: italic; text-align: center;">SECOND PART OF THE EXPERIMENT</p>
+
+<br>
+<pre></pre>
+
+
+<p>Select the option you would use to make CBC-MAC secure </p><br>
+<p>
+<select id="secureOptions" onchange="select();">
+  <option value="key" selected="selected">Compute and use your key</option>
+  <option value="length">Prepend the message with its length</option>
+  <option value="keys">Two keys</option>
+</select>
+</p>	
+<pre>      Plaintext: <textarea name="plaintext" cols="50" rows="4" readonly="readonly" id="plaintext">1100000000111100101010</textarea>   <input name="changePlainText" value="Next Plaintext" onclick="next_plain_text()" type="button"> <br>
+   <div id="user_message" style="color: red;">
+ Your Plaintext: <textarea name="plaintext" cols="50" rows="4" id="plaintext"></textarea> <br>
+    </div>
+            Key: <textarea name="key" cols="50" rows="1" readonly="readonly" id="key">11100100</textarea>   <input name="changeKey" value="Another Key" onclick="next_key()" type="button"><br>
+	<div id="userKey" style="color: red;">
+ Calculated Key: <textarea name="key" cols="50" rows="1" id="key"></textarea> <br> </div>
+	<div id="key_generated2" style="color: red;">
+     Second Key: <textarea name="key2" cols="50" rows="1" readonly="readonly" id="key2">11100100</textarea>   <input value="Another Key" onclick="next_key2()" type="button"><br> </div>
+
+length of Initialization Vector (IV), l, <textarea name="l" cols="4" rows="1" id="l">4</textarea> where l &lt; (the length of plaintext above)/2 <br>
+             IV: <textarea name="iv" cols="50" rows="1" readonly="readonly" id="iv">1100</textarea>   <input name="changeIV" value="Next IV" onclick="next_IV()" type="button"><br><br><br>
+Put your text of size l to get the corresponding value of F<sub>k</sub>(text) of size l.<br>
+      Your text: <textarea name="usertext" cols="50" rows="1" id="usertext">11001010</textarea>   <input name="applyFunction" value="Apply Function" onclick="apply_function()" type="button">
+                                <input name="nextFunction" value="Next Function" onclick="next_function()" type="button">
+Function output: <textarea name="functionvalue" cols="50" rows="1" readonly="readonly" id="functionvalue"></textarea><br><br>
+   Final Output: <textarea name="output" cols="50" rows="1" id="outputarea"></textarea>
+
+
+                </pre>
+        </div>
+
+      </section>
+
+      <section id="experiment-article-section-5">
+   
+        <div id="experiment-article-section-5-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab.-->
+	  <img src="../images/manual.jpg" />
+	</div>
+
+        <div id="experiment-article-section-5-heading" 
+        class="heading">
+          Manual
+        </div>
+
+        <div id="experiment-article-section-5-content" 
+        class="content">
+           <p>
+                                STEP 1: Select a plaintext to be encrypted.<br><br>
+                                STEP 2: Select 'l' such that l &lt; (length of plaintext)/2.<br><br>
+                                STEP 3: Select an Initialization Vector, IV of length l.<br><br>
+STEP 4: Get the value of F(x) by providing a string of length l in the
+field titled 'Your text' and clicking on 'Apply Function'. Repeat this
+for as many times as you need to get the encrypted text for the
+plaintext selected in Step 1. You can change the function if you wish
+to.<br><br>
+                                STEP 5: Write the final cipher text in 'Final Output' field.</p>
+<p>STEP 6: Once you have learnt to work with the basic CBC-MAC, you can
+make it secure either by prepending the message length or by using
+multiple keys (as described in the theory section).&nbsp; You may
+accordingly work with the second part of the experiment (this is very
+similar to the first part and hence your answer in not checked)<br>
+
+                        </p>
+
+
+          </div>
+
+        </section>
+
+        <section id="experiment-article-section-6">
+      
+          <div id="experiment-article-section-6-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab.-->
+	    <img src="../images/quizzes.jpg" />
+	  </div>
+
+          <div id="experiment-article-section-6-heading" 
+          class="heading">
+            Quizzes
+          </div>
+
+          <div id="experiment-article-section-6-content" 
+          class="content">
+            
+           <p>1. If a MAC tag is K-bits long, how much work is needed to find a collision to that specific value.</p>
+<ul class="multichoice">
+  <li><input name="quest_592" type="radio" value="$$ 2^{k/2} $$" />$$ 2^{k/2} $$</li>
+  <li><input name="quest_592" type="radio" value="$$ K^2$$" />$$ K^2$$</li>
+  <li><input name="quest_592" type="radio" value="K!" />K!</li>
+  <li><input name="quest_592" type="radio" value="$$ K^K$$" />$$ K^K$$</li>
+</ul>
+
+	<p>2. The out put length of SHA – I is _____________ bits</p>
+<ul class="multichoice">
+  <li><input name="quest_583" type="radio" value="128" />128</li>
+  <li><input name="quest_583" type="radio" value="160" />160</li>
+  <li><input name="quest_583" type="radio" value="64" />64</li>
+  <li><input name="quest_583" type="radio" value="256" />256</li>
+</ul>
+
+	<p>3. Best way to achieve both privacy and message integrity</p>
+<ul class="multichoice">
+  <li><input name="quest_584" type="radio" value="Encrypt and Authenticate" />Encrypt and Authenticate</li>
+  <li><input name="quest_584" type="radio" value="Authenticate then Encrypt" />Authenticate then Encrypt</li>
+  <li><input name="quest_584" type="radio" value="Encrypt then Authenticate" />Encrypt then Authenticate</li>
+  <li><input name="quest_584" type="radio" value="All " />All </li>
+</ul>
+	    
+
+          </div>
+
+        </section>
+
+        <section id="experiment-article-section-7">
+	  
+          <div id="experiment-article-section-7-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab. -->
+	    <img src="../images/procedure.jpg" />
+	  </div>
+	
+          <div id="experiment-article-section-7-heading" 
+          class="heading">
+	    Procedure
+	  </div>
+	
+          <div id="experiment-article-section-7-content" 
+          class="content">
+	    <p>
+	     For </b>Procedure</b> of the experiment refer <b>Theory</b> and <b>Manual</b>.
+	    </p>
+	  </div>
+	
+        </section>
+			
+		
+        <section id="experiment-article-section-8">
+   
+          <div id="experiment-article-section-8-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab.-->
+	    <img src="../images/readings.jpg" />
+	  </div>
+
+          <div id="experiment-article-section-8-heading" 
+          class="heading">
+            Further Readings
+          </div>
+
+          <div id="experiment-article-section-8-content" 
+          class="content">
+            <ul>	
+              <li>
+                <a href=http://en.wikipedia.org/wiki/CBC-MAC>Wikipedia</a>
+              </li>
+              <li>
+                <a href=http://www.cs.berkeley.edu/~luca/cs276/lecture08.pdf>Notes on CBC-MAC</a>
+              </li> 
+              <li>
+                Introduction to Modern Cryptography by Jonathan Katz and Yehuda Lindell.
+              </li> 
+             
+            </ul>
+          </div>
+
+        </section>
+
+	
+      </div>
+
+
+    <!-- An article can have a sidebar that contain related 
+    links and additional material (however it is kept optional 
+    at this moment) -->
+    <aside id="lab-article-sidebar" class="default">
+      <!-- put the content that you want to appear in the 
+      sidebar -->	
+    </aside>
+
+
+    <!-- Article footer can display related content and 
+    additional links -->						
+    <footer id="lab-article-footer" class="default">
+      <!-- Put the content that you want to appear here -->
+    </footer>
+
+  </article>
+
+
+  <!-- Links to other labs, about us page can be kept the lab 
+  footer-->
+  <footer id="lab-footer" class="footer">
+   <!-- Put the content here-->
+<a href="http://virtual-labs.ac.in/nmeict/" >Sponsored by MHRD (NME-ICT) </a> | <a href="http://virtual-labs.ac.in/licensing/" target="_blank"> Licensing Terms </a>
+</footer>
+
+</div>		
+
+</body>
+</html>
