@@ -120,6 +120,8 @@
 <li><input name="quest_584" type="radio" value="Encrypt then Authenticate"/>Encrypt then Authenticate</li>
 <li><input name="quest_584" type="radio" value="All "/>All </li>
 </ul>
+<button onclick="check()">Submit</button>
+<button onclick="reset()">Reset</button>
 </div>						</div>
 					</div>
 			</div>
@@ -222,6 +224,57 @@
 	  });
 	 
 	});
+	function check(){
+		var correct_ans=0,wrong_ans=0;
+		if(!($('input[name="quest_592"]:checked').val())){
+			alert("Please answer all the questions");
+			return;
+		}
+		if(!($('input[name="quest_583"]:checked').val())){
+			alert("Please answer all the questions");
+			return;
+		}
+		if(!($('input[name="quest_584"]:checked').val())){
+			alert("Please answer all the questions");
+			return;
+		}
+		if($('input[name="quest_592"]:checked').val()=='K!'){
+			correct_ans++;
+		}
+		else{
+			wrong_ans++;
+		}
+		if($('input[name="quest_583"]:checked').val()=='160'){
+			correct_ans++;
+		}
+		else{
+			wrong_ans++;
+		}
+		if($('input[name="quest_584"]:checked').val()=='Encrypt then Authenticate'){
+			correct_ans++;
+		}
+		else{
+			wrong_ans++;
+		}
+		alert("Number of correct ans: "+correct_ans+"\n"+"Correct answers are selected!");
+		$('input[name="quest_592"][value="K!"]').prop("checked",true);
+		$('input[name="quest_583"][value="160"]').prop("checked",true);
+		$('input[name="quest_584"][value="Encrypt then Authenticate"]').prop("checked",true);
+	}
+	function reset(){
+		$('input[name="quest_592"][value="K!"]').prop("checked",false);
+		$('input[name="quest_583"][value="160"]').prop("checked",false);
+		$('input[name="quest_584"][value="Encrypt then Authenticate"]').prop("checked",false);
+		$('input[name="quest_592"][value="$$ 2^{k/2} $$"]').prop("checked",false);
+		$('input[name="quest_592"][value="$$ K^2$$"]').prop("checked",false);
+		$('input[name="quest_592"][value="$$ K^K$$"]').prop("checked",false);
+		$('input[name="quest_583"][value="128"]').prop("checked",false);
+		$('input[name="quest_583"][value="256"]').prop("checked",false);
+		$('input[name="quest_583"][value="64"]').prop("checked",false);
+		$('input[name="quest_584"][value="Encrypt and Authenticate"]').prop("checked",false);
+		$('input[name="quest_584"][value="Authenticate then Encrypt"]').prop("checked",false);
+		$('input[name="quest_584"][value="All"]').prop("checked",false);
+	}
 	</script>
 	
 </html>

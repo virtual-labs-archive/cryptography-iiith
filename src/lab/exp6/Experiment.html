@@ -119,7 +119,7 @@ Put your text of size 2l to get the corresponding value of hash of size l.<br>
    Your text: <textarea cols="50" id="usertext" name="usertext" rows="1">11001010</textarea>   <input name="getHash" onclick="get_hash()" type="button" value="get hash">
 Hashed value: <textarea cols="50" id="hashvalue" name="hashvalue" readonly="readonly" rows="1">0011</textarea><br><br>
 Final Output: <textarea cols="50" id="cipherarea" name="output" rows="1"></textarea>  <input name="checkAnswer" onclick="checkAnswer()" type="button" value="Check Answer!">
-<div id="notification" style="width: 300px; height: 10px; padding-top: 20px;"></div>
+<div id="notification" style="width: 1000px; height: 10px; padding-top: 20px;"></div>
 </input></br></br></input></br></br></br></br></br></input></br></br></br></input></br></br></input></pre>
 </br></br></br></br></br></div>						</div>
 					</div>
@@ -224,5 +224,10 @@ Final Output: <textarea cols="50" id="cipherarea" name="output" rows="1"></texta
 	 
 	});
 	</script>
+	<style>
+		textarea{
+			max-width: 950px;
+		}
+	</style>
 	
 </html>

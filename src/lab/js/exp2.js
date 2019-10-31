@@ -116,6 +116,14 @@ function ModifyUserText() {
     var initChar = document.getElementById("char1").value.toLowerCase(); 
     var finalChar = document.getElementById("char2").value.toUpperCase(); 
     var output = "";
+    if(initChar=""){
+        alert("Enter a value to be replaced");
+        return;
+    }
+    if(finalChar=""){
+        alert("Enter a value to replace");
+        return;
+    }
     for (var i=0; i<userText.length; i++) {
 	if(userText.charAt(i) == initChar) {
 	    output += finalChar;
@@ -124,7 +132,7 @@ function ModifyUserText() {
         }
     }
     var replacement_notification = "You replaced " + initChar + " by " + finalChar + "\n";
-    document.getElementById("replacements").innerHTML += replacement_notification;
+    document.getElementById("replacements").innerHTML += replacement_notification+"\n";
     document.getElementById("textarea2").value = output;
 }
 

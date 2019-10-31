@@ -64,6 +64,12 @@ function Vernam_Encrypt() {
 
 function Vernam_Decrypt(f){
     ciphertext = document.getElementById("c").value;
+    for(var i=0;i<ciphertext.length;i++){
+        if(ciphertext[i]>'2'){
+            alert("WRONG INPUT");
+            return;
+        }
+    }
     key = document.getElementById("key").value;
     if(ciphertext.length < 1){ alert("please enter some ciphertext (binary only)"); return; }
     if(key.length < ciphertext.length){ alert("key must be atleast the length of ciphertext"); return; }
@@ -273,7 +279,11 @@ function generate_all_pairs() {
 }
 
 function checkAnswer() {
-    if (document.getElementById("yesno").value == 'yes')
+    if(document.getElementById("yesno").value == ''){
+        alert("Enter if yes or no!");
+        return;
+    }
+    if (document.getElementById("yesno").value == 'yes'||document.getElementById("yesno").value == 'YES')
     {
         document.getElementById("notification").value = "This is not correct, Please try again!";
 	return;
@@ -283,6 +293,18 @@ function checkAnswer() {
     if (m1.length == 0 || m2.length == 0) {
 	alert("Please enter values for m1 and m2");
 	return;
+    }
+    for(int i=0;i<m1.length;i++){
+        if(m1[i]>='2'){
+            alert("WRONG ENTERED VALUE");
+            return;
+        }
+    }
+    for(int i=0;i<m2.length;i++){
+        if(m2[i]>='2'){
+            alert("WRONG ENTERED VALUE");
+            return;
+        }
     }
     var key = document.getElementById("user_key").value;
     key = resize_key(key);
