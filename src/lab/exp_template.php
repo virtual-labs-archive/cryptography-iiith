@@ -70,7 +70,6 @@
 	<!-- Enclose the logo image of your lab or write it in 
 	text-->
 	<a href="<?php echo $vlab_url?>"><div class="imagemap">
-		<img src="http://virtual-labs.ac.in/images/virtualLabsLogo.jpg" alt="" usemap="#logos" />
 
 	
 		<map name="logos">
