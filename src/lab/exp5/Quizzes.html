@@ -51,7 +51,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			            <div class="collapse navbar-collapse menu-div" id="bs-example-navbar-collapse-1" style="border: 0px;">
 			               
 			                <ul class="nav navbar-nav navbar-right menu-ul search-ul" style="position: relative; top: -5px;">
-			                <!--	<li>
+			                	<!--<li>
 			                		<form action="../../search-result.html" method="get">
 			                        	<input class="search-textbox" id="q" name="q" placeholder="SEARCH FOR A LAB" type="text"/>
 			                        	<input class="search-button" type="submit" value=""/>
@@ -134,28 +134,40 @@ Lab"> <h3 class="text-h3-darkblue" style="margin-top:
 						<div class="col-md-10 lab-list-col-10">
 							
 							<!--edit -->
-<h1 class="text-h1-lightblue">Message Authentication Code (CBC-MAC)</h1><div class="content" id="experiment-article-section-6-content">
-<p>1. If a MAC tag is K-bits long, how much work is needed to find a collision to that specific value.</p>
-<ul class="multichoice">
-<li><input name="quest_592" type="radio" value="$$ 2^{k/2} $$"/>$$ 2^{k/2} $$</li>
-<li><input name="quest_592" type="radio" value="$$ K^2$$"/>$$ K^2$$</li>
-<li><input name="quest_592" type="radio" value="K!"/>K!</li>
-<li><input name="quest_592" type="radio" value="$$ K^K$$"/>$$ K^K$$</li>
-</ul>
-<p>2. The out put length of SHA â I is _____________ bits</p>
-<ul class="multichoice">
-<li><input name="quest_583" type="radio" value="128"/>128</li>
-<li><input name="quest_583" type="radio" value="160"/>160</li>
-<li><input name="quest_583" type="radio" value="64"/>64</li>
-<li><input name="quest_583" type="radio" value="256"/>256</li>
-</ul>
-<p>3. Best way to achieve both privacy and message integrity</p>
-<ul class="multichoice">
-<li><input name="quest_584" type="radio" value="Encrypt and Authenticate"/>Encrypt and Authenticate</li>
-<li><input name="quest_584" type="radio" value="Authenticate then Encrypt"/>Authenticate then Encrypt</li>
-<li><input name="quest_584" type="radio" value="Encrypt then Authenticate"/>Encrypt then Authenticate</li>
-<li><input name="quest_584" type="radio" value="All "/>All </li>
-</ul>
+<h1 class="text-h1-lightblue">Cryptographic Hash Functions and Applications(HMAC)</h1><div class="content" id="experiment-article-section-6-content">
+<ol> <li><p>Which criterion ensures that we canât find two messages that hash to the same digest?</p>
+<ol class="d">
+<li><input name="quest_590" type="radio" value="One-wayness"/>One-wayness</li>
+<li><input name="quest_590" type="radio" value="Weak-collision-resistance"/>Weak-collision-resistance</li>
+<li><input name="quest_590" type="radio" value="Strong-collision-resistance "/>Strong-collision-resistance </li>
+<li><input name="quest_590" type="radio" value="None"/>None</li>
+</ol></li>
+<li><p>Which criterion Ensures that it must be extremely difficult or impossible to create the message if the message digest is given.</p>
+<ol class="d">
+<li><input name="quest_591" type="radio" value="One-wayness"/>One-wayness</li>
+<li><input name="quest_591" type="radio" value="Weak-collision-resistance"/>Weak-collision-resistance</li>
+<li><input name="quest_591" type="radio" value="Strong-collision resistance"/>Strong-collision resistance</li>
+<li><input name="quest_591" type="radio" value="None"/>None</li>
+</ol></li>
+<li><p>Consider the function h: {0,1}<sup>8</sup> -&gt; {0,1}<sup>4</sup>. Suppose h(x) = x <sup>xmod 5</sup> mod 16, x in [0, 255]. The collision in h occurs for.</p>
+<ol class="d">
+<li><input name="quest_594" type="radio" value="(1, 17)"/>(1, 17)</li>
+<li><input name="quest_594" type="radio" value="(2, 16)"/>(2, 16)</li>
+<li><input name="quest_594" type="radio" value="(1, 16)"/>(1, 16)</li>
+<li><input name="quest_594" type="radio" value="(2, 17)"/>(2, 17)</li>
+</ol></li>
+<li><p>The Merkle-Damgard Transform is mainly useful for</p>
+<ol class="d">
+<li><input name="quest_582" type="radio" value="Converting any fixed-length collision resistant hash function to an arbitrary length collision resistant hash function "/>Converting any fixed-length collision resistant hash function to an arbitrary length collision resistant hash function </li>
+<li><input name="quest_582" type="radio" value="Converting arbitrary length hash function to a fixed length hash function "/>Converting arbitrary length hash function to a fixed length hash function </li>
+<li><input name="quest_582" type="radio" value="Constructing hash function from random function "/>Constructing hash function from random function </li>
+<li><input name="quest_582" type="radio" value="None"/>None</li>
+</ol></li>
+<li>Understand HMAC scheme and find a break it using availble source code</li>
+<li>Understand Merkel-Damgard transform and Explain,how we are using it for HMAC? </li>
+<li>Understand and explain analogy between SHA1 and our dummy HMAC function</li>
+<li>Explain why HMAC is secure and on what assumptions this security is based?</li>
+</ol>
 </div>						</div>
 					</div>
 			</div>

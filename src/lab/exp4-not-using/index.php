@@ -1,12 +1,4 @@
- <script language="JavaScript" type="text/javascript" src="../js/exp11/rsa-dss.js"></script>
-  <script language="JavaScript" type="text/javascript" src="../js/exp11/rsa2.js"></script>
-  <script language="JavaScript" type="text/javascript" src="../js/exp11/sha1.js"></script>
-  <script language="JavaScript" type="text/javascript" src="../js/exp11/rsa.js"></script>
-  <script language="JavaScript" type="text/javascript" src="../js/exp11/jsbn.js"></script>
-  <script language="JavaScript" type="text/javascript" src="../js/exp11/jsbn2.js"></script>
-  <script language="JavaScript" type="text/javascript" src="../js/exp11/prng4.js"></script>
-  <script language="JavaScript" type="text/javascript" src="../js/exp11/rng.js"></script>
-  <script language="JavaScript" type="text/javascript" src="../js/exp11/base64.js"></script>  
+<script type="application/javascript" src="../js/rsa.js"></script> 
 <?php
 
 include('../simple_html_dom.php');

@@ -7,7 +7,7 @@ edit --><!DOCTYPE html>
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-W59SWTR');</script><!--End Google Tag Manager--></head>
+})(window,document,'script','dataLayer','GTM-W59SWTR');</script><!--End Google Tag Manager--><link href="expstyle.css" rel="stylesheet" type="text/css"/></head>
 <body><!--Google Tag Manager (noscript)--><noscript class="gtm"><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-W59SWTR" style="display:none;visibility:hidden" width="0"></iframe></noscript><!--End Google Tag Manager (noscript)-->
 
 <div id="experiment"> <!-- The Experiment Document Container-->
@@ -50,7 +50,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <header class="heading" id="experiment-article-heading">
         <!-- You can add a welcome message or title of the 
         experiment here -->
-        From DES to 3-DES
+        AES and Modes of Operation
         <!-- Add any additional element if required with proper 
         enclosing-->
       </header>
@@ -88,10 +88,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           element, You can also include images with <img> tag -->
           <div class="content" id="experiment-article-section-1-content">	
             <p>
-           	In this experiment, you are asked to design the triple DES cryptosystem provided that you are given an implementation of DES
+		   In this experiment, you are asked to encrypt long messages using various modes of operation wherein a block cipher (in this case, AES) is provided to you
             </p>
 
-          
+        
         </div>
 
 
@@ -115,8 +115,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <!-- Write the section content inside a paragraph 
         element, we can also include images with <img> tag -->
         <div class="content" id="experiment-article-section-2-content">
-         <p>For a very brief theory of Digital encryption Standard and their analysis, click <a href="media/DES1.pdf">here</a></p><br/>
-			<a href="media/DES1.pdf"><img alt="here" src="../images/image7.png"/></a>
+<p>For a very brief theory of "Advanced Encryption Standard" and their analysis, click <a href="media/16_AES.pdf">here</a></p>
+          <p>For a very brief theory of "Modes of Encryption"  and their analysis, click <a href="media/Modes of operation.pdf">here</a></p>
+			<p><img alt="here" id="ecbm_image" src="../images/ecbm.png"/></p><center><b>Electronic Code Book(ECB) mode</b></center>
+			<p><img alt="here" id="cdbm_image" src="../images/cdbm.png"/></p><center><b>Cipher Block Chaining(CBC) mode</b> </center>
+			<p><img alt="here" id="ctr_image" src="../images/ctr.png"/></p><center><b>Contur mode</b></center>
+			<p><img alt="here" id="ofbm_imgae" src="../images/ofbm.png"/></p><center><b>Output FeedBack mode</b></center>
+
 
         </div>
       </section>
@@ -135,9 +140,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
         <div class="content" id="experiment-article-section-3-content">
           <p>
-           To understand how to convert a DES implementation to a triple-DES implementation
+             To understand the need, strenghts and weaknesses of various modes of operation of block ciphers
           </p> 
-              
+       
+         
         </div>
 
       </section>
@@ -155,66 +161,126 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </div>
 
         <div class="content" id="experiment-article-section-4-content">
-          <p><br/></p><hr/><br/><p><b>PART I</b></p>
-	
-	<p>		</p><form name="stuff">
-<table>
-    <tbody>
-      <tr>
-        <td valign="top">Message</td>
-        <td><input id="plaintext" readonly="readonly" size="65" type="text" value=" 00010100 11010111 01001001 00010010 01111100 10011110 00011011 1000001"/>
-            <input onclick="changePlaintext();" type="button" value="Change plaintext"/><br/>
-      </td></tr>
-      <tr>
-        <td>Key Part A</td>
-        <td><input id="keya" readonly="readonly" size="25" type="text" value="3b3898371520f75e"/>
-            <input onclick="changeKeyA();" type="button" value="Change Key A"/></td>
-      </tr>
-      <tr>
-        <td>Key Part B</td>
-        <td><input id="keyb" name="keyb" readonly="readonly" size="25" type="text" value="922fb510c71f436e"/>
-            <input onclick="changeKeyB();" type="button" value="Change Key B"/></td>
-      </tr>
-    </tbody>
-  </table>
+			<h2>AES (Rijndael) Encryption</h2>
+			<h3>PART I</h3>
+			<form name="aestest">
+			<p>Choose your mode of operation:
+			<select id="select_mode" name="select_mode" onchange="selectMode();" size="1">
+                            <option selected="selected" value="ecb">Electronic Code Book (ECB)</option>
+                            <option value="cbc">Cipher Block Chaining</option>
+                            <option value="ofb">Output Feedback</option>
+                            <option value="ctr">Counter mode</option>
+                        </select></p>
 
- <br/><hr/><br/><p><b>PART II</b></p>	
- 
+			<hr/>
+			<h3>PART II</h3>
+			<p></p><pre>Key size in bits: <select id="keySize" name="keySize"><option selected="selected" value="128">128</option><option value="192">192</option><option value="256">256</option></select><p></p>
+ <p></p>Plaintext: <textarea cols="50" id="plainarea" name="plainarea" readonly="readonly" rows="6"></textarea>   <input name="changePlainText" onclick="nextPlainText()" type="button" value="Next Plaintext"/><p></p>
+       Key: <textarea cols="50" id="keyarea" name="keyarea" readonly="readonly" rows="1"></textarea>   <input name="changeKey" onclick="nextKey()" type="button" value="Next Keytext"/> <div id="ivtext">
+        IV: <textarea cols="50" id="iv" name="iv" readonly="readonly" rows="1"></textarea>   <input name="changeIV" onclick="nextIV()" type="button" value="Next IV"/> </div> <div id="ctrtext">
+       CTR: <textarea cols="50" id="ctr" name="ctr" readonly="readonly" rows="1"></textarea>   <input name="changeCTR" onclick="nextCTR()" type="button" value="Next CTR"/> </div> </pre>
+<div id="calculateXor">
+<hr/><h3>PART III</h3>
+<p>Calculate XOR:</p><pre><textarea cols="50" id="num1" name="num1" rows="1"></textarea>
+     <textarea cols="50" id="num2" name="num2" rows="1"></textarea> <input name="calculateXOR" onclick="displayXOR()" type="button" value="Calculate XOR"/>
+<p>XOR: <textarea cols="50" id="xor" name="xor" readonly="readonly" rows="1"></textarea></p><p></p></pre> </div>
 
-  <table>
-    <tbody>
-      <tr>
-        <td valign="top">Your text to be encrypted/decrypted:</td>
-        <td><input id="plaintext" name="indata" size="65" type="text"/>
-      </td></tr>
-      <tr>
-        <td>Key to be used:</td>
-        <td><input id="key" name="key" size="25" type="text"/>
-      </td></tr>
-      <tr>
-        <td align="center" colspan="2">
-            <input onclick="do_des(true);" type="button" value="DES Encrypt"/>
-            <input onclick="do_des(false);" type="button" value="DES Decrypt"/><br/>
-	</td>
-      </tr>
-      <tr>
-        <td valign="top">Output:</td>
-        <td><input name="outdata" size="65" type="text"/><br/>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</form>
-<hr/><br/><p><b>PART III</b></p>	
-  <p>Enter your answer here: </p>
-  <p><input id="userans" size="65" type="text"/></p> <p><input onclick="checkAnswer();" type="button" value="Check Answer!"/> </p>
-  <div id="notification" style="width: 300px; height: 10px; padding-top: 20px;"></div>
 
-	        
-            
-          <p></p>
+<hr/><h3>PART IV</h3>
+			<table><tbody>
+			<tr>
+			<td>Key in hex: </td>
+			<td><input name="key" size="66" type="text"/></td></tr>
+			<tr><td>Plaintext in hex: </td>
+			<td><input name="plaintext" size="66" type="text"/></td>
+			</tr>
+
+			<tr>
+			<td>Ciphertext in hex: </td>
+			<td><input name="ciphertext" size="66" type="text"/></td>
+			</tr>
+
+			<tr>
+			<td> </td>
+			<td>
+			<input onclick="doEncryption()" type="button" value="Encrypt"/>     
+			<input onclick="doDecryption()" type="button" value="Decrypt"/>     
+			<input type="reset" value="Clear"/></td>
+			</tr>
+			</tbody></table>
+			</form>
+			<hr/><h3>PART V</h3>
+			  <p>Enter your answer here:</p>
+			 <p><input id="userans" size="65" type="text"/> <input onclick="checkAnswer();" type="button" value="Check Answer!"/></p>
+			  <div id="notification" style="width: 300px; height: 10px; padding-top: 20px;"></div>
+
+                </div>
+
+<!----       <h2>AES (Rijndael) Encryption</h2>
+			<form name="aestest">
+			<h3>PART I</h3>
+			<p>Choose your mode of operation:</p>
+			<p>
+			<select id="select_mode" name="select_mode" size="1" onchange="selectMode();">
+                            <option value="ecb" selected="selected">Electronic Code Book (ECB)</option>
+                            <option value="cbc">Cipher Block Chaining</option>
+                            <option value="ofb">Output Feedback</option>
+                            <option value="ctr">Counter mode</option>
+                        </select>
+			</p>
+			<hr>
+			<h3>PART II</h3>
+			<pre>Key size in bits: <select name="keySize" id="keySize"><option value="128" selected="selected">128</ption><option value="192">192</option><option value="256">256</option></select>
+
+ <p>Plaintext: <textarea name="plainarea" cols="50" rows="6" readonly="readonly" id="plainarea"></textarea>   <input name="changePlainText" value="Next Plaintext" onclick="nextPlainText()" type="button"></p>
+      <p>Key: <textarea name="keyarea" cols="50" rows="1" readonly="readonly" id="keyarea"></textarea>   <input name="changeKey" value="Next Keytext" onclick="nextKey()" type="button">
+ <div id="ivtext"></p>
+	<p>IV: <textarea name="iv" cols="50" rows="1" readonly="readonly" id="iv"></textarea>   <input name="changeIV" value="Next IV" onclick="nextIV()" type="button"> </div> <div id="ctrtext"></p>
+       <p>CTR: <textarea name="ctr" cols="50" rows="1" readonly="readonly" id="ctr"></textarea>   <input name="changeCTR" value="Next CTR" onclick="nextCTR()" type="button"></p> </pre>
+<hr>
+<h3>PART III</h3>
+<div id="calculateXor">
+<pre>Calculate XOR:<br><textarea name="num1" cols="50" rows="1" id="num1"></textarea>
+     <textarea name="num2" cols="50" rows="1" id="num2"></textarea> <input name="calculateXOR" value="Calculate XOR" onclick="displayXOR()" type="button">
+XOR: <textarea name="xor" cols="50" rows="1" readonly="readonly" id="xor"></textarea></pre> </div>
+
+
+
+
+<hr>
+<h3>PART IV</h3>
+
+			<table><tbody>
+			<tr>
+			<td>Key in hex: </td>
+			<td><input size="66" name="key" type="text"></td></tr>
+			<tr><td>Plaintext in hex: </td>
+			<td><input size="66" name="plaintext" type="text"></td>
+			</tr>
+
+			<tr>
+			<td>Ciphertext in hex: </td>
+			<td><input size="66" name="ciphertext" type="text"></td>
+			</tr>
+
+			<tr>
+			<td>&nbsp;</td>
+			<td>
+			<input value="Encrypt" onclick="doEncryption()" type="button"> &nbsp; &nbsp; 
+			<input value="Decrypt" onclick="doDecryption()" type="button"> &nbsp; &nbsp; 
+			<input value="Clear" type="reset"></td>
+			</tr>
+			</tbody></table>
+			</form>
+			<hr>
+<h3>PART V</h3>
+			 <p> Enter your answer here:</p>
+			 <p> <input id="userans" size="65" type="text"></p> <p><input value="Check Answer!" onclick="checkAnswer();" type="button"> </p><br>
+			  <div id="notification" style="width: 300px; height: 10px; padding-top: 20px;"></div>
+		</p>
+
         </div>
-
+-------->
       </section>
 
       <section id="experiment-article-section-5">
@@ -229,22 +295,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </div>
 
         <div class="content" id="experiment-article-section-5-content">
-          <p> 
-           <b>Step 1:</b> Generate Plaintext <b>m</b>, <b>keyA</b> and <b>keyB</b> by clicking on rexpective buttons <b>PART I</b> of the simulation page.  <br/><br/>
-				<b>Step 2:</b> Enter generated Plaintext <b>m</b> from <b>PART I</b> to <b>PART II</b> in "Your text to be encrypted/decrypted:" block. <br/><br/>
-				<b>Step 3:</b> Enter generated <b>keyA</b> from <b>PART I</b> to <b>PART II</b>  "Key to be used:" block and click on DES encrpt button to output ciphertext <b>c1</b>.This is First Encryption. <br/><br/>
-				<b>Step 4:</b> Enter generated ciphertext <b>c1</b> from <b>PART II</b>  "Output:" Block to <b>PART II</b> in "Your text to be encrypted/decrypted:" block.  <br/><br/>
-				<b>Step 5:</b> Enter generated <b>keyB</b> from <b>PART I</b> to <b>PART II</b> in "Key to be used:" block and click on DES decrypt button to output ciphertect <b>c2</b>.This is Second Encryption. <br/><br/>
-				<b>Step 6:</b> Enter generated  ciphertext <b>c2</b> from <b>PART II</b>  "Output:" block to <b>PART II</b> in "Your text to be encrypted/decrypted:" block. <br/><br/>
-				<b>Step 7:</b> Enter generated <b>keyA</b> from <b>PART I</b> to <b>PART II</b>  "Key to be used:" block and click on DES encrpt button to output ciphertext <b>c3</b>.This is Third Encryption. As Encryption is done thrice.This Scheme is called triple DES.<br/><br/>
-				<b>Step 7:</b> Enter generated ciphertext <b>c3</b> from <b>PART II</b> "Output:" Block to  <b>PART III</b> "Enter your answer here:" block inorder to verify your Triple DES.<br/><br/> 
-            </p>
-
-          </div>
+		<ul>
+			<li><b>Step I :</b> Choose a mode of operation from <i>PART I</i> </li>
+			<li><b>Step II :</b> Select KeySize, Plaintext, KeyText, Intialization vector(IV)(for ECB and OFB modes only) 
+                             and CTR(forctr mode only) in <i>PART II</i></li>
+			<li><b>Step III :</b> Whenever necessay use XOR opeartion in <i>PART III</i> in accordance with choosen mode of operation</li>
+			<li><b>Step IV : </b> Use fuction <b>F<sub>K</sub></b> and "Key in hex:" field in <i>PART IV</i> should be filled keytext generated in <b>Step2</b></li>
+			
+			<li><b>Step V : </b> Fill "Plaintext in hex:" field with approriate value in accordance with choosen mode of operation and click on encrypt button</li>
+			<li><b>Step VI :</b> Enter your answer in <i>PART V</i> to check your ciphertext</li> 
+         </ul></div>
 
         </section>
 
-	<section id="experiment-article-section-6">
+        <section id="experiment-article-section-6">
       
           <div class="icon" id="experiment-article-section-6-icon">
 	    <!-- Enclose the icon image of your lab.-->
@@ -257,42 +321,42 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
           <div class="content" id="experiment-article-section-6-content">
 	<ol>
-		<li><p>In DES input, key length ___ bits and plaintext length ____ bits.</p>
-<ol class="d">
-  <li><input name="quest_585" type="radio" value="56 bit key length, 64 bit plaintext "/>56 bit key length, 64 bit plaintext </li>
-  <li><input name="quest_585" type="radio" value="56 bit key length, 120 bit plaintext "/>56 bit key length, 120 bit plaintext </li>
-  <li><input name="quest_585" type="radio" value="64 bit key length, 120 bit plaintext "/>64 bit key length, 120 bit plaintext </li>
-  <li><input name="quest_585" type="radio" value="64 bit key length, 64 bit plaintext "/>64 bit key length, 64 bit plaintext </li>
-</ol></li>
 
-		<li><p>DES stands for _________ and AES stands for __________</p>
-<ol class="d">
-  <li><input name="quest_586" type="radio" value="Data Encryption software, Advanced Encryption Software"/>Data Encryption software, Advanced Encryption Software</li>
-  <li><input name="quest_586" type="radio" value="Data Encryption Standard, Advanced Encryption Standard"/>Data Encryption Standard, Advanced Encryption Standard</li>
-  <li><input name="quest_586" type="radio" value="Data Encryption System, Advanced Encryption System"/>Data Encryption System, Advanced Encryption System</li>
-  <li><input name="quest_586" type="radio" value="None"/>None</li>
-</ol></li>
+		<li><p>ECB stands for</p>
+		<ul class="multichoice">
+		  <li><input name="quest_581" type="radio" value="Electronic cipher Block"/>Electronic cipher Block</li>
+		  <li><input name="quest_581" type="radio" value="Electronic code Block"/>Electronic code Block</li>
+		  <li><input name="quest_581" type="radio" value="Electronic code Book"/>Electronic code Book</li>
+		  <li><input name="quest_581" type="radio" value="Electronic cipher Book"/>Electronic cipher Book</li>
+		</ul></li>
 
-		<li><p>DES has an initial and final permutation block and ____ rounds</p>
-<ol class="d">
-  <li><input name="quest_587" type="radio" value="14"/>14</li>
-  <li><input name="quest_587" type="radio" value="16"/>16</li>
-  <li><input name="quest_587" type="radio" value="8"/>8</li>
-  <li><input name="quest_587" type="radio" value="12"/>12</li>
-</ol></li>
+		<li><p>Which among the following is not CPA secure?</p>
+		<ul class="multichoice">
+		  <li><input name="quest_593" type="radio" value="ECB"/>ECB</li>
+		  <li><input name="quest_593" type="radio" value="CBC"/>CBC</li>
+		  <li><input name="quest_593" type="radio" value="CFB"/>CFB</li>
+		  <li><input name="quest_593" type="radio" value="None"/>None</li>
+		</ul></li>
 
-		<li><p>In DES the length of each round key?</p>
-<ol class="d">
-  <li><input name="quest_588" type="radio" value="16 bit"/>16 bit</li>
-  <li><input name="quest_588" type="radio" value="32 bit"/>32 bit</li>
-  <li><input name="quest_588" type="radio" value="54 bit"/>54 bit</li>
-  <li><input name="quest_588" type="radio" value="48 bit"/>48 bit</li>
-</ol></li>
+		<li><p>Which of the following are block ciphers?</p>
+		<ul class="multichoice">
+		  <li><input name="quest_589" type="radio" value="ECB"/>ECB</li>
+		  <li><input name="quest_589" type="radio" value="CBC"/>CBC</li>
+		  <li><input name="quest_589" type="radio" value="CFB"/>CFB</li>
+		  <li><input name="quest_589" type="radio" value="All"/>All</li>
+		</ul></li>
 
+          
+		<li>Which is the fastest mode of operation among four mode of operation?</li>
+		<li>Which mode of operation is more secure?</li>
+		<li>What is importance of Intialiczation Vector(IV) and CTR ?</li>
+		<li>Why ECB is not CPA-secure and Why CBC is CPA-secure?</li>
+		<li>Suppose IV is not random.Then is CBC and OFB mode both secure</li> 
+         
 	</ol>
-	   </div>
-	</section>
-	
+       </div>
+
+        </section>
 
         <section id="experiment-article-section-7">
 	  
@@ -307,7 +371,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	
           <div class="content" id="experiment-article-section-7-content">
 	    <p>
-	     For Procedure of the experiment refer <b>Theory</b> and <b>Manual</b>.
+	      For Procedure of the experiment refer <b>Theory</b> and <b>Manual</b>.
 	    </p>
 	  </div>
 	
@@ -328,16 +392,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <div class="content" id="experiment-article-section-8-content">
             <ul>	
               <li>
-                <a href="http://en.wikipedia.org/wiki/Triple_DES">Wikipedia On Triple DES</a>
+                <a href="http://en.wikipedia.org/wiki/Advanced_Encryption_Standard">Wikipedia on Advanced Encryption Standard</a>
               </li>
               <li>
-               <a href="http://en.wikipedia.org/wiki/Data_Encryption_Standard">Wikipedia On DES</a>
+                <a href="http://en.wikipedia.org/wiki/Block_cipher_modes_of_operation">Wikipedia on Block Cipher Modes Of Operation</a>
               </li> 
               <li>
-               Introduction to Modern Cryptography by Jonathan Katz and Yehuda Lindell.
+                <a href="http://www.cs.berkeley.edu/~luca/cs276/lecture06.pdf">Notes on Modes of operation</a>
               </li> 
               <li>
-                <a href="http://www.cs.berkeley.edu/~luca/cs276/lecture10draft.pdf">Notes on AES</a>
+                Introduction To Modern Cryptography by Jonathan Katz and Yehuda Lindell.
               </li>
             </ul>
           </div>
@@ -345,7 +409,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </section>
 
 	
-
       </div>
 
 
