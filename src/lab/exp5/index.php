@@ -1,14 +1,5 @@
-<script type="application/javascript" src="../js/exp6/hmac.js"></script>
-  <script language="JavaScript" type="text/javascript" src="../js/exp6/jsbn.js"></script>
-  <script language="JavaScript" type="text/javascript" src="../js/exp6/sha1.js"></script>
-  <script language="JavaScript" type="text/javascript" src="../js/exp6/base64.js"></script>	
-  <script language="JavaScript" type="text/javascript" src="../js/exp6/hmac.js"></script>
-  <script language="JavaScript" type="text/javascript" src="../js/exp6/jsbn2.js"></script>
-  <script language="JavaScript" type="text/javascript" src="../js/exp6/prng4.js"></script>
-  <script language="JavaScript" type="text/javascript" src="../js/exp6/rng.js"></script>
-  <script language="JavaScript" type="text/javascript" src="../js/exp6/rsa.js"></script>
-  <script language="JavaScript" type="text/javascript" src="../js/exp6/rsa2.js"></script>
-  <script language="JavaScript" type="text/javascript" src="../js/exp6/rsa-dss.js"></script>  
+<script type="application/javascript" src="../js/cbc-mac.js"></script>
+<script type="application/javascript" src="../js/secure_cbc-mac.js"></script>  
 <?php
 
 include('../simple_html_dom.php');

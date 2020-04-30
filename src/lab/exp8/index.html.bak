@@ -58,7 +58,10 @@
   <!-- All JavaScript at the bottom, except for Modernizr which
   enables HTML5 elements & feature detects -->
   <script type="text/javascript" src="js/modernizr-1.5.min.js"></script>
-  <script type="application/javascript" src="../js/key_sharing.js"></script>
+  <script type="application/javascript" src="../js/exp8/aes-enc.js"></script>
+  <script type="application/javascript" src="../js/exp8/aes-dec.js"></script>
+  <script type="application/javascript" src="../js/exp8/aes-test.js"></script>
+  <script type="application/javascript" src="../js/exp8/aes.js"></script>
 
 </head>
 
@@ -144,8 +147,7 @@
   </script>
 
   <!--<script type="text/javascript" src="../js/MathJax/MathJax.js"> -->
- 
-
+  
   <!-- ******** ADD/OVERRIDE JAVASCRIPT FILES HERE ********* -->
   
 

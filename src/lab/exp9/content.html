@@ -50,7 +50,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <header class="heading" id="experiment-article-heading">
         <!-- You can add a welcome message or title of the 
         experiment here -->
-        Public-Key Cryptosystems (PKCSv1.5)
+        Diffie-Hellman Key Establishment
         <!-- Add any additional element if required with proper 
         enclosing-->
       </header>
@@ -88,7 +88,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           element, You can also include images with <img> tag -->
           <div class="content" id="experiment-article-section-1-content">	
             <p>
-            In this experiment, we give an implementation of "textbook" RSA and ask you to design a secure system in line with the public-key standard(PKCSv1.5)
+            In this experiment, we simulate certain "toy" versions of the popular Diffie-Hellman secure key exchange protocol
             </p>
 
          
@@ -115,12 +115,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <!-- Write the section content inside a paragraph 
         element, we can also include images with <img> tag -->
         <div class="content" id="experiment-article-section-2-content">
-            <p> For a very brief theory of shift ciphers and their analysis, click <a href="media/PKCS1.pdf">here</a><br/>
-
-		<a href="media/PKCS1.pdf"><img alt="here" src="../images/image10.png"/></a><br/>
-
-
-	    </p>
+          <p>For a very brief theory of shift ciphers and their analysis, click <a href="media/DHKE1.pdf">here</a><br/></p>
+			<p><a href="media/DHKE1.pdf"><img alt="here" src="../images/image9.png"/></a></p>
         </div>
       </section>
 
@@ -138,9 +134,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
         <div class="content" id="experiment-article-section-3-content">
           <p>
-            To understand PKCS v1.5 scheme.
+            To understand the DH-key exchange protocol
           </p> 
        
+         
         </div>
 
       </section>
@@ -158,51 +155,68 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </div>
 
         <div class="content" id="experiment-article-section-4-content">
-          <p>
-	       </p><form name="rsatest" onsubmit="do_encrypt();return false;">
-			<p>Plaintext (string):</p><br/>
-			<p><input name="plaintext" size="60" type="text" value="test"/><br/>
-
-			<input onclick="do_encrypt();" type="button" value="encrypt"/></p>
-			<p>
-			Ciphertext (hex):<br/>
-			<textarea cols="70" name="ciphertext" rows="4"></textarea><br/>
-			<input onclick="do_decrypt();" type="button" value="decrypt"/></p><p>
-			Decrypted Plaintext (string):<br/>
-			<input name="decrypted" size="60" type="text"/></p><p>
-			Status:<br/>
-			<input name="status" size="60" type="text"/></p><p>
-			</p><hr/>
-			<h2>RSA private key</h2><p>
-			<input onclick="set_1024f4();" type="button" value="1024 bit"/>
-			<input onclick="set_1024e3();" type="button" value="1024 bit (e=3)"/>
-
-			<input onclick="set_512f4();" type="button" value="512 bit"/>
-			<input onclick="set_512e3();" type="button" value="512 bit (e=3)"/>
-			ĂÂ  <input onclick="do_genrsa();" type="button" value="Generate"/>
-			bits = <input name="bits" size="10" type="text" value="512"/>
-			</p><p>
-			Modulus (hex):<br/>
-			<textarea cols="70" name="n" rows="4" type="text"></textarea></p><p>
-			Public exponent (hex, F4=0x10001):<br/>
-			<input name="e" size="20" type="text" value="3"/></p><p>
-			Private exponent (hex):<br/>
-			<textarea cols="70" name="d" rows="4" type="text"></textarea></p><p>
-
-			P (hex):<br/>
-			<textarea cols="70" name="p" rows="2" type="text"></textarea></p><p>
-			Q (hex):<br/>
-			<textarea cols="70" name="q" rows="2" type="text"></textarea></p><p>
-			D mod (P-1) (hex):<br/>
-			<textarea cols="70" name="dmp1" rows="2" type="text"></textarea></p><p>
-			D mod (Q-1) (hex):<br/>
-			<textarea cols="70" name="dmq1" rows="2" type="text"></textarea></p><p>
-			1/Q mod P (hex):<br/>
-
-			<textarea cols="70" name="coeff" rows="2" type="text"></textarea></p>
-		</form>
-            
-          <p></p>
+          
+		<form name="stuff">
+			<p>Public Information:</p> <br/>
+			<p>Prime Number: </p>
+			<p><input id="prime" readonly="readonly" size="20" type="text" value=""/>
+			    <input onclick="nextPrime();" type="button" value="Generate Prime"/></p> <br/>
+			<p>Generator G:</p> <p><input id="generator" readonly="readonly" size="20" type="text" value=""/>
+			    <input onclick="nextGenerator();" type="button" value="Another Generator"/></p> <br/>
+		     <table style="float: left;">
+			    <tbody>
+				<tr><td><center><font color="red">Alice</font></center></td>
+			      </tr>
+			      <tr>
+				<td valign="top">Key: <input id="keyA" readonly="readonly" size="20" type="text" value=""/>
+				    <input onclick="nextKeyA();" type="button" value="Generate A"/></td>
+			      </tr>
+			      <tr>
+				<td><input id="encryptA" readonly="readonly" size="20" type="text" value=""/>
+				    <input onclick="calculateGA();" type="button" value="Calculate Ga"/></td>
+			      </tr>
+			      <tr>
+				    <td><input onclick="sendA();" type="button" value="Send Ga to B"/></td>
+			      </tr>
+			      <tr>
+				<td>Received: <input id="receivedA" readonly="readonly" size="20" type="text" value=""/></td>
+			      </tr>
+			      <tr>
+				    <td><input onclick="calculateGAB();" type="button" value="Calculate Gab"/>
+				    <input id="encryptAB" readonly="readonly" size="20" type="text" value=""/></td>
+			      </tr>
+			    </tbody>
+		       </table> 
+		    
+		   	
+		       <table style="float: right;">
+			    <tbody>
+				<tr><td><center><font color="red">Bob</font></center></td>
+			      </tr>
+			      <tr>
+				<td valign="top">Key: <input id="keyB" readonly="readonly" size="20" type="text" value=""/>
+				    <input onclick="nextKeyB();" type="button" value="Generate B"/></td>
+			      </tr>
+			      <tr>
+				<td><input id="encryptB" readonly="readonly" size="20" type="text" value=""/>
+				    <input onclick="calculateGB();" type="button" value="Calculate Gb"/></td>
+			      </tr>
+			      <tr>
+				    <td><input onclick="sendB();" type="button" value="Send Gb to A"/></td>
+			      </tr>
+			      <tr>
+				<td>Received: <input id="receivedB" readonly="readonly" size="20" type="text" value=""/></td>
+			      </tr>
+			      <tr>
+				    <td><input onclick="calculateGBA();" type="button" value="Calculate Gba"/>
+				    <input id="encryptBA" readonly="readonly" size="20" type="text" value=""/></td>
+			      </tr>
+			    </tbody>
+		        </table>
+			<p style="clear:both;">
+		    
+		</p></form>
+          
         </div>
 
       </section>
@@ -219,62 +233,75 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </div>
 
         <div class="content" id="experiment-article-section-5-content">
-          <p>      
-				</p><p><b>Step 1:</b> Enter the input text to be encrypted in the 'Plaintext' area </p>
-				<p><b>Step 2:</b> Select keysize of public key from <b>RSA Private key</b> section by clicking on one of the key button.</p> 
-				<p><b>Step 3:</b> Click on <b>encrypt</b> button to generate a ciphertext. </p>
-	<p></p>    
+         <p>
+				<b>STEP1:</b> Firslty,choose a large prime number <b>p</b> and a generator <b>g</b> for that prime.<br/><br/>
+				<b>STEP 2:</b> Secondly,both Alice and Bob generate their respective keys <b>A</b> and <b>B</b>. 
+                                     And (<b>ga</b>,<b>gb</b>) for their keys respectively.<br/><br/>	 
+				<b>STEP 3:</b> Both Alice and bob send exchange their  <b>ga</b>,<b>gb</b>.<br/><br/>
+				<b>STEP 4:</b> Finally,both calculate their public keys <b>gab</b> and <b>gba</b> repectively.<br/><br/>
+				<b>STEP 5:</b> If both <b>gab</b> and <b>gba</b> are equal then Deffie-Hellman key exchange is verified.
 
-          </div>
-
+	</p>
+	  </div>
+	
         </section>
-
-        <section id="experiment-article-section-6">
+	
+	  <section id="experiment-article-section-6">
       
           <div class="icon" id="experiment-article-section-6-icon">
 	    <!-- Enclose the icon image of your lab.-->
 	    <img src="../images/quizzes.jpg"/>
-	  </div>	
-	  
+	  </div>
 
           <div class="heading" id="experiment-article-section-6-heading">
             Quizzes
-	  </div>	
-	  <div class="content" id="experiment-article-section-6-content">
-	   <ol>            
-		<li>Let p = 17, q = 11 and N = pq. If (in the public-key) e= 7, then a possible value for the trap-door d (in the private-key) in an RAS cryptosystem is
-			<ol list-style-type="lower-latin">
-			  <li><input name="quest_651" type="radio" value="22"/>22</li>
-			  <li><input name="quest_651" type="radio" value="153"/>153</li>
-			  <li><input name="quest_651" type="radio" value="7"/>7</li>
-			  <li><input name="quest_651" type="radio" value="23"/>23</li>
-			</ol>
-		</li>
-		<li>Encrypt the message m = 57 with the textbook RSA with the public key pk = N= 253, e = 3
-			<ol list-style-type="lower-latin">
-			  <li><input name="quest_652" type="radio" value="240"/>240</li>
-			  <li><input name="quest_652" type="radio" value="250"/>250</li>
-			  <li><input name="quest_652" type="radio" value="257"/>257</li>
-			  <li><input name="quest_652" type="radio" value="196"/>196</li>
-			</ol>
-		</li>
-		<li>In Asymmetric-Key cipher, the sender uses the _____ key
-			<ol class="multichoice" type="a">
-			  <li><input name="quest_642" type="radio" value="Private"/>Private</li>
-			  <li><input name="quest_642" type="radio" value="Public"/>Public</li>
-			  <li><input name="quest_642" type="radio" value="Either Private or Public"/>Either Private or Public</li>
-			  <li><input name="quest_642" type="radio" value="None"/>None</li>
-			</ol>
-		</li>
-
-              
-			<li>Understand PKCSv1.5 scheme(using experimetn) and try to break above scheme.</li>
-			<li>Why PKCSv1.5 is more Secure</li>
-
-		
-	   </ol>
-	     
           </div>
+
+          <div class="content" id="experiment-article-section-6-content">
+
+	<ol>
+		<li><p>101 <sup>4,800,000,023</sup> mod 35.</p>
+			<ul class="multichoice">
+			  <li><input name="quest_647" type="radio" value="36"/>36</li>
+			  <li><input name="quest_647" type="radio" value="9"/>9</li>
+			  <li><input name="quest_647" type="radio" value="26"/>26</li>
+			  <li><input name="quest_647" type="radio" value="17"/>17</li>
+			</ul>
+		</li>
+		<li><p>Which among these is a generator of Z<sup>*</sup><sub>13</sub></p>
+			<ul class="multichoice">
+			  <li><input name="quest_649" type="radio" value="3"/>3</li>
+			  <li><input name="quest_649" type="radio" value="4"/>4</li>
+			  <li><input name="quest_649" type="radio" value="7"/>7</li>
+			  <li><input name="quest_649" type="radio" value="2"/>2</li>
+			</ul>
+		</li>
+		<li><p>The set of quadratic residues modulo 211 has cardinality of</p>
+			<ul class="multichoice">
+			  <li><input name="quest_650" type="radio" value="210"/>210</li>
+			  <li><input name="quest_650" type="radio" value="106"/>106</li>
+			  <li><input name="quest_650" type="radio" value="212"/>212</li>
+			  <li><input name="quest_650" type="radio" value="105"/>105</li>
+			</ul>
+		</li>
+		<li><p>N=90 then Ø(n) =? Where Ø(n) is the number of elements co-prime to ‘n’ [Ø(n) is also called Euler Totient function]</p>
+			<ul class="multichoice">
+			  <li><input name="quest_639" type="radio" value="8"/>8</li>
+			  <li><input name="quest_639" type="radio" value="24"/>24</li>
+			  <li><input name="quest_639" type="radio" value="48"/>48</li>
+			  <li><input name="quest_639" type="radio" value="14"/>14</li>
+			</ul>
+		</li>
+            
+		 
+			  <li>Run experiment with different prime numbers and check whether you can exhange same public key at both ends</li>
+			  <li>Run with different combinations of Primes numbers and generators</li>
+			  <li>Try to understand Discrete log Problem using experiment</li> 	
+		     
+	</ol>
+
+          </div>
+
         </section>
 
         <section id="experiment-article-section-7">
@@ -288,14 +315,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	    Procedure
 	  </div>
 	
-          <div class="content" id="experiment-article-section-7-content">
+          <div 246f3d60049c32f4b3a816ad86529cf52e2c1de5="" class="content" id="experiment-article-section-7-content">
 	    <p>
 	      For Procedure of the experiment refer <b>Theory</b> and <b>Manual</b>.
 	    </p>
 	  </div>
 	
         </section>
-		
+			
 		
         <section id="experiment-article-section-8">
    
@@ -311,13 +338,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <div class="content" id="experiment-article-section-8-content">
             <ul>	
               <li>
-                <a href="http://en.wikipedia.org/wiki/PKCS1">Wikipedia on PKCS1</a>
+                <a href="http://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange">Wikipedia</a>
               </li>
               <li>
-               <a href="http://www.cs.berkeley.edu/~luca/cs276/lecture18.pdf">Notes on RSA</a>
+                <a href="http://www.cs.berkeley.edu/~luca/cs276/lecture17.pdf">Notes on Diffie Hellman Key Exchange</a>
               </li> 
               <li>
-                Introduction to Modern Cryptography by Jonathan Katz and Yehuda Lindell.
+               Introduction to Modern Cryptography by Jonathan Katz and Yehuda Lindell.
               </li> 
               
             </ul>
@@ -326,6 +353,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </section>
 
 	
+
       </div>
 
 

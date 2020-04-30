@@ -1,4 +1,7 @@
-<script type="application/javascript" src="../js/key_sharing.js"></script>  
+<script type="application/javascript" src="../js/exp8/aes-enc.js"></script>
+  <script type="application/javascript" src="../js/exp8/aes-dec.js"></script>
+  <script type="application/javascript" src="../js/exp8/aes-test.js"></script>
+  <script type="application/javascript" src="../js/exp8/aes.js"></script>  
 <?php
 
 include('../simple_html_dom.php');
