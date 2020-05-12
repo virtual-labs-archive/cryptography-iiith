@@ -11,6 +11,7 @@ body {
     overflow-x: hidden;
     font-family:'Raleway' !important;
     min-height: 100%;
+/*    font-size:16.5px;*/
 }
 
 html {
@@ -18,7 +19,8 @@ html {
 }
 
 p {
-    font-size: 16px;
+    font-size: 17.5px;
+    text-align: justify;
 }
 
 /*** Calendar **********************/
@@ -295,6 +297,7 @@ a:focus,
 a:active,
 a.active {
     outline: 0;
+    font-size="16.5px !important;"
 }
 @media(min-width:768px) {
     .navbar-fixed-top {
